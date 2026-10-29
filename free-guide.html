@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Guide | AI Digital Society</title>
+<meta name="description" content="The Faceless Content System, free. One working session a week builds all your Facebook and Instagram content, and it posts itself. No face needed.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.fg-form{margin-top:30px;max-width:520px}
+.fg-form input[type=email]{width:100%;padding:16px 22px;border-radius:999px;border:1.5px solid var(--gold);background:var(--black-2);color:var(--cream);font:inherit;margin-bottom:12px}
+.fg-form label{display:flex;gap:10px;align-items:flex-start;font-size:14px;opacity:.8;margin:6px 0 16px}
+.fg-form .btn{width:100%;text-align:center}
+.fg-msg{margin-top:12px;font-size:15px;min-height:22px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo.png" alt="AI Digital Society logo"><span>AI Digital Society</span></a>
+  <ul>
+    <li><a href="index.html#products">The products</a></li>
+    <li><a href="index.html#story">My story</a></li>
+    <li><a href="club.html">The Club</a></li>
+    <li><a href="#soon">My space</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero phero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Free guide &middot; The exact method I use</div>
+    <h1>the faceless <em>content system.</em></h1>
+    <p class="sub">One working session a week builds all your Facebook and Instagram content, and it posts itself. No face needed. Step by step, with the exact prompts I give Claude. <b>Free. I email it to you.</b></p>
+    <form class="fg-form" id="fg-form">
+      <input type="email" id="fg-email" placeholder="Your email" aria-label="Your email" required>
+      <input type="text" id="fg-website" name="website" style="display:none" tabindex="-1" autocomplete="off">
+      <label><input type="checkbox" id="fg-consent"> Yes, send me the guide and your emails. You can stop them any time.</label>
+      <button class="btn btn-gold" id="fg-btn" type="submit">Send me the free guide &rarr;</button>
+      <div class="fg-msg" id="fg-msg"></div>
+    </form>
+  </div>
+  <div class="mock">
+    <div class="mock-top"><img src="img/logo.png" alt=""><span>What is inside</span></div>
+    <ul class="checks" style="color:var(--cream)">
+      <li>Your week in 5 steps</li>
+      <li>How to build a faceless Facebook page, in 10 steps</li>
+      <li>The rules file, so week twelve looks like week one</li>
+      <li>The three formats: text, pictures, Reels</li>
+      <li>The weekly build, step by step</li>
+      <li>The pool, the morning sender, the Content Board</li>
+      <li>Five copy-and-paste prompts for Claude</li>
+      <li>A ready-made Claude skill you can install</li>
+    </ul>
+  </div>
+</div></header>
+
+<section class="light"><div class="wrap two">
+  <div>
+    <div class="eyebrow">Why it is free</div>
+    <h2 class="big">this is the method. <em>the products just make it faster.</em></h2>
+  </div>
+  <div>
+    <p style="font-size:18px;margin-bottom:16px">I run several pages with this. Three formats, one session a week, and the posting runs itself. You can do all of it with the guide alone.</p>
+    <p style="font-size:18px;margin-bottom:16px">When you want the board built for you, the Content Board is $27. When you want your brand, your content and your products made for you, the Club is $97. But start here. It is free, and it is the whole thing.</p>
+    <a class="btn btn-dark" href="#fg-form">Get the free guide &rarr;</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>&copy; 2026 AI Digital Society</div>
+  <div class="links"><a href="#soon">Privacy</a><a href="index.html">Home</a></div>
+</div>
+<p class="disc">This guide describes a working method. It is not a guarantee of results, and it contains no income claims.</p>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById("fg-form"),msg=document.getElementById("fg-msg"),btn=document.getElementById("fg-btn");
+  function say(t,bad){msg.textContent=t;msg.style.color=bad?"#e7a58f":"#E0B85A";}
+  form.addEventListener("submit",async function(e){
+    e.preventDefault();
+    var email=document.getElementById("fg-email").value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){say("Please enter a valid email address.",true);return;}
+    if(!document.getElementById("fg-consent").checked){say("Please tick the box so I know you want the guide and my emails.",true);return;}
+    btn.disabled=true;btn.textContent="Sending...";
+    // SIGNUP_ENDPOINT is filled in at go-live (Whop free product, or the guide-subscribe function with guide "faceless").
+    var SIGNUP_ENDPOINT="";
+    if(!SIGNUP_ENDPOINT){say("Sign-up is not connected yet.",true);btn.disabled=false;btn.textContent="Send me the free guide →";return;}
+    try{
+      var res=await fetch(SIGNUP_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,consent:true,website:document.getElementById("fg-website").value,source:"ads-site-free-guide",guide:"faceless"})});
+      var data=await res.json().catch(function(){return{};});
+      if(res.ok&&data.ok){form.querySelector("input[type=email]").style.display="none";form.querySelector("label").style.display="none";btn.style.display="none";say("Done! Check your inbox for The Faceless Content System. It can take a few minutes, and it may land in spam.");}
+      else{say(data.error||"Something went wrong. Please try again.",true);btn.disabled=false;btn.textContent="Send me the free guide →";}
+    }catch(err){say("Something went wrong. Please try again.",true);btn.disabled=false;btn.textContent="Send me the free guide →";}
+  });
+})();
+</script>
+</body>
+</html>

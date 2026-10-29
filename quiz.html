@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where to Start | AI Digital Society</title>
+<meta name="description" content="Not sure where to start? Answer 5 quick questions and I will tell you your first step.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.quiz-wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px;min-height:70vh}
+.progress{height:4px;background:var(--line-dark);border-radius:4px;margin-bottom:44px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.qnum{margin-bottom:12px}
+.quiz-wrap h1{font-size:clamp(32px,5vw,48px);margin-bottom:30px}
+.opt{display:block;width:100%;text-align:left;background:var(--black-2);color:var(--cream);border:1.5px solid var(--line-dark);border-radius:16px;padding:18px 22px;margin-bottom:12px;font:inherit;font-size:17px;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--gold);background:rgba(201,160,74,.08)}
+.back{background:none;border:0;color:var(--cream);opacity:.6;font:inherit;font-size:14px;cursor:pointer;margin-top:14px}
+.result{text-align:center}
+.result .card{margin:30px auto 0;max-width:520px;text-align:left}
+.result .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+.hide{display:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo.png" alt="AI Digital Society logo"><span>AI Digital Society</span></a>
+  <ul>
+    <li><a href="index.html#products">The products</a></li>
+    <li><a href="index.html#story">My story</a></li>
+    <li><a href="club.html">The Club</a></li>
+  </ul>
+</div></nav>
+
+<main class="quiz-wrap">
+  <div id="quiz">
+    <div class="progress"><i id="bar"></i></div>
+    <div class="eyebrow qnum" id="qnum"></div>
+    <h1 id="q"></h1>
+    <div id="opts"></div>
+    <button class="back hide" id="back">&larr; Back</button>
+  </div>
+
+  <div id="result" class="result hide">
+    <div class="eyebrow">Your first step</div>
+    <h1 style="font-size:clamp(34px,5vw,54px);margin:14px 0">start with <em id="rname"></em></h1>
+    <p class="lead" style="margin:0 auto" id="rwhy"></p>
+    <div class="card" style="background:var(--cream-card)">
+      <span class="tag" id="rtag"></span>
+      <h3 id="rtitle"></h3>
+      <p id="rdesc"></p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-gold" id="rbtn" href="#soon">See the page &rarr;</a>
+      <a class="btn btn-ghost" href="club.html">Or get everything in the Club</a>
+    </div>
+    <button class="back" id="retake" style="margin-top:28px">Take it again</button>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <div>&copy; 2026 AI Digital Society</div>
+  <div class="links"><a href="index.html">Home</a><a href="club.html">The Club</a></div>
+</div></footer>
+
+<script>
+var products = {
+  guide:   {name:"the free Faceless Content System", tag:"Free guide", title:"The Faceless Content System", desc:"One working session a week builds all your Facebook and Instagram content, and it posts itself. No face needed, with the exact prompts I give Claude.", why:"You are just getting started. The free guide shows you the whole method before you spend a dollar."},
+  board:   {name:"the Content Board", tag:"$27", title:"The Content Board", desc:"One page shows every page and every day. Posts wait in the pool, and tomorrow goes to Blotato each morning.", why:"You already post, you just lose track. The board shows you everything in one look."},
+  content: {name:"the Content System", tag:"App", title:"The Content System", desc:"Your posts, pictures and reels, written and made for you in your own style, ready to post.", why:"You want to be seen. This makes your content for you, so showing up stops being a chore."},
+  brand:   {name:"BrandBuilder", tag:"App", title:"BrandBuilder", desc:"Answer a few questions and get your whole look: logo, colors, fonts and a website prompt you can use today.", why:"You want it to look real. Get your brand first and everything else gets easier."},
+  library: {name:"the Product Library", tag:"Library", title:"The Product Library", desc:"Ready-made books you can make your own, so you are never starting from a blank page.", why:"You need something to sell. Start with a finished product and make it yours."},
+  club:    {name:"the Club", tag:"The Club", title:"The Club", desc:"BrandBuilder, the Content System and the Product Library, all in one purchase.", why:"You want the whole path, not one piece. The Club gives you brand, content and products together."}
+};
+var questions = [
+  {q:"Where are you right now?", a:[
+    ["I have an idea but I do not know where to start","guide"],
+    ["I have no idea what to sell yet","library"],
+    ["I post already but I lose track of what is scheduled","board"],
+    ["I want it all, I just need a plan","club"]]},
+  {q:"What slows you down the most?", a:[
+    ["Too much to learn and I do not know the first step","guide"],
+    ["Keeping track of what goes out and when","board"],
+    ["I do not know what my business should look like","brand"],
+    ["I keep buying things and finishing none","club"]]},
+  {q:"How do you feel about tech?", a:[
+    ["Nervous. Keep it very simple","guide"],
+    ["Fine if someone shows me the steps","club"],
+    ["I am okay, I just need the tools","content"],
+    ["I would rather not be on camera at all","brand"]]},
+  {q:"What do you want in the next 30 days?", a:[
+    ["My first simple steps, with no cost","guide"],
+    ["A month of content ready to post","content"],
+    ["A real brand and website","brand"],
+    ["My first product made and ready","library"]]},
+  {q:"How do you like to learn?", a:[
+    ["Step by step, at my own pace","guide"],
+    ["Show me, then let me copy it","club"],
+    ["Give me the tool and get out of the way","content"],
+    ["Hand me something finished I can adjust","library"]]}
+];
+var i = 0, score = {}, answers = [];
+function $(id){return document.getElementById(id)}
+function show(){
+  $("qnum").textContent = "Question " + (i+1) + " of " + questions.length;
+  $("q").textContent = questions[i].q;
+  $("bar").style.width = (i/questions.length*100) + "%";
+  $("back").classList.toggle("hide", i === 0);
+  var box = $("opts"); box.innerHTML = "";
+  questions[i].a.forEach(function(o){
+    var b = document.createElement("button");
+    b.className = "opt"; b.textContent = o[0];
+    b.onclick = function(){ answers[i] = o[1]; next(); };
+    box.appendChild(b);
+  });
+}
+function next(){
+  i++;
+  if(i < questions.length){ show(); return; }
+  score = {};
+  answers.forEach(function(k){ score[k] = (score[k]||0)+1; });
+  var best = "club", top = -1;
+  Object.keys(score).forEach(function(k){ if(score[k] > top){ top = score[k]; best = k; } });
+  var p = products[best];
+  $("rname").textContent = p.name; $("rwhy").textContent = p.why;
+  $("rtag").textContent = p.tag; $("rtitle").textContent = p.title; $("rdesc").textContent = p.desc;
+  $("rbtn").href = {club:"club.html",content:"content-system.html",brand:"brandbuilder.html",library:"product-library.html",board:"content-board.html",guide:"free-guide.html"}[best];
+  $("quiz").classList.add("hide"); $("result").classList.remove("hide");
+  window.scrollTo(0,0);
+}
+$("back").onclick = function(){ if(i>0){ i--; show(); } };
+$("retake").onclick = function(){ i = 0; answers = []; $("result").classList.add("hide"); $("quiz").classList.remove("hide"); show(); };
+show();
+</script>
+</body>
+</html>
