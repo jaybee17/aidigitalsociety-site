@@ -237,3 +237,10 @@ body.has-bar{padding-bottom:80px}
 section.doors{padding-bottom:30px}
 section.doors[data-split]{padding-top:34px}
 section.doors[data-split="club"]{padding-bottom:90px}
+@media(max-width:760px){.inside{grid-template-columns:1fr!important}.inside .item{padding:22px}}
+/* stats: dark gold-edged tiles so the numbers pop */
+.stats{grid-template-columns:1fr 1fr;gap:14px;border-top:0;padding-top:0;margin-top:30px}
+.stats>div{background:var(--black-2);border:2px solid var(--gold);border-radius:18px;padding:22px 22px 18px;box-shadow:0 10px 26px rgba(60,40,10,.22)}
+.stats b{font-size:54px;line-height:1.05;font-weight:500;color:var(--gold-bright);text-shadow:0 0 22px rgba(224,184,90,.35)}
+.stats span{display:block;margin-top:8px;font-size:15px;font-weight:600;letter-spacing:.02em;color:var(--cream);opacity:.92}
+@media(max-width:600px){.stats b{font-size:44px}.stats>div{padding:18px 16px 14px}}
