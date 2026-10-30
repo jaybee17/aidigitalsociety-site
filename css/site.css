@@ -209,3 +209,6 @@ body.has-bar{padding-bottom:80px}
 .shot{padding:56px 0 0}
 .shot-frame{border:1px solid var(--gold);border-radius:22px;padding:10px;background:var(--black-2);box-shadow:0 0 80px rgba(201,160,74,.14)}
 .shot-frame img{border-radius:14px;width:100%;display:block}
+
+.grid2c{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:48px auto 0;max-width:780px}
+@media(max-width:900px){.grid2c{grid-template-columns:1fr}}
