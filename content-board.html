@@ -27,7 +27,7 @@
     <h1>steal my faceless <em>content system.</em></h1>
     <p class="sub">A step-by-step guide, in simple words and pictures, that teaches Claude to write, design and schedule your posts and Reels in your own voice. <b>Set it up once. Claude does about 90% of the work.</b></p>
     <div class="pricetag"><span class="only">Only</span><span class="amt">$27</span><span class="note">One payment &middot; No monthly fee</span></div>
-    <a class="btn btn-gold" href="#soon">Steal my system &rarr;</a>
+    <a class="btn btn-gold" href="#buy">Steal my system &rarr;</a>
     <div class="micro">Instant access &middot; Secure payment &middot; All sales are final</div>
   </div>
   <div class="coverbox" style="padding:10px"><div style="max-width:380px;margin:0 auto;border:3px solid #C9A04A;border-radius:10px;padding:8px;background:#0B0A08;box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 80px rgba(201,160,74,.18)"><img src="img/guide-cover-web.jpg" alt="The Faceless Content System e-guide cover" style="width:100%;display:block;border-radius:4px"></div><div style="text-align:center;margin-top:20px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C9A04A">E-guide &middot; PDF &middot; 42 pages</div></div>
@@ -104,7 +104,7 @@
       <small style="display:block;opacity:.6;margin-top:6px">One payment &middot; No monthly fee</small>
       <ul><li>Instant access</li>
         <li>Yours to keep</li></ul>
-      <a class="btn btn-dark" href="#soon" style="display:block;text-align:center">Steal my system &rarr;</a>
+      <a class="btn btn-dark" href="#buy" style="display:block;text-align:center">Steal my system &rarr;</a>
     </div>
   </div>
 </div></section>
@@ -142,8 +142,8 @@
   </div>
 </div></section>
 
-<section class="light" id="soon"><div class="wrap center"><div class="eyebrow">Opening very soon</div><h2 class="big">the doors are not open <em>just yet.</em></h2><p class="lead" style="max-width:600px;margin:0 auto 24px">The Faceless Content System will be ready to buy very soon. Start with the free guide while you wait. It is a small, easy first week.</p><a class="btn btn-dark" href="free-guide.html">Get the free guide &rarr;</a></div></section>
-<section><div class="wrap center"><h2 class="big">steal my system. <em>start your first week.</em></h2><p class="lead" style="max-width:620px;margin:0 auto 26px">One payment. No monthly fee from me. Claude does about 90% of the work. This is a digital product, so all sales are final.</p><a class="btn btn-gold" href="#soon">Steal my system &rarr;</a></div></section>
+
+<section><div class="wrap center"><h2 class="big">steal my system. <em>start your first week.</em></h2><p class="lead" style="max-width:620px;margin:0 auto 26px">One payment. No monthly fee from me. Claude does about 90% of the work. This is a digital product, so all sales are final.</p><a class="btn btn-gold" href="#buy">Steal my system &rarr;</a></div></section>
 <section class="doors"><div class="wrap">
   <div class="center">
     <div class="eyebrow">Three doors</div>
@@ -180,6 +180,27 @@
 <p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
 </footer>
 
-<div class="stickybar"><div class="wrap"><span><b>The Faceless Content System</b> &middot; $27</span><a class="btn btn-gold" href="#soon">Steal my system &rarr;</a></div></div>
+<div class="stickybar"><div class="wrap"><span><b>The Faceless Content System</b> &middot; $27</span><a class="btn btn-gold" href="#buy">Steal my system &rarr;</a></div></div>
+<script>/*START_CHECKOUT*/
+async function startCheckout(btn){
+  const label = btn.textContent;
+  btn.style.pointerEvents='none'; btn.textContent='Loading…';
+  try {
+    const res = await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/product-checkout', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},
+      body: JSON.stringify({ product: 'facelessSystem' })
+    });
+    const data = await res.json();
+    if (data.url) { window.location.href = data.url; return; }
+    throw new Error('no url');
+  } catch (e) {
+    btn.style.pointerEvents=''; btn.textContent=label;
+    alert('Something went wrong starting checkout. Please try again.');
+  }
+}
+document.querySelectorAll('a[href="#buy"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); startCheckout(a); }));
+window.addEventListener('pageshow', () => { document.querySelectorAll('a[href="#buy"]').forEach(a => { a.style.pointerEvents=''; }); });
+</script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you | AI Digital Society</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+<style>
+.ty-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:70px 24px;background:#F4EEDF}
+.ty-card{max-width:620px;width:100%;background:#FFFBF0;border:1px solid #D9C48E;border-radius:22px;padding:46px 40px;text-align:center;color:#14120E;box-shadow:0 20px 60px rgba(120,90,20,.12)}
+.ty-card h1{font-family:var(--serif);font-size:42px;margin:0 0 12px}.ty-card h1 em{color:#9A7425}
+.ty-card p{font-size:17px;line-height:1.6;margin:0 0 18px;opacity:.85}
+.ty-btn{display:block;background:#C9A04A;color:#14120E;font-weight:700;text-decoration:none;border-radius:999px;padding:16px 24px;margin:8px 0}
+.ty-btn.alt{background:transparent;border:2px solid #C9A04A}
+.ty-steps{text-align:left;background:#F4EEDF;border-radius:14px;padding:16px 22px;margin:22px 0 0;font-size:16px;line-height:1.6}
+.ty-spin{width:28px;height:28px;border:3px solid #D9C48E;border-top-color:#C9A04A;border-radius:50%;margin:0 auto;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}.ty-error{color:#b23b3b;font-weight:600}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo.png" alt="AI Digital Society logo"><span>AI Digital Society</span></a>
+  <ul>
+    <li><a href="index.html#products">The products</a></li>
+    <li><a href="index.html#story">My story</a></li>
+    <li><a href="club.html">The Club</a></li>
+    <li><a href="#soon">My space</a></li>
+  </ul>
+</div></nav>
+<div class="ty-wrap"><div class="ty-card" id="ty-card"><div class="ty-spin"></div><p style="margin-top:20px">Confirming your payment…</p></div></div>
+<footer><div class="wrap">
+  <div>&copy; 2026 AI Digital Society</div>
+  <div class="links"><a href="#soon">Terms of sale</a><a href="#soon">Refunds</a><a href="#soon">Privacy</a><a href="index.html">Home</a></div>
+</div>
+<p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
+</footer>
+<script>
+const params = new URLSearchParams(location.search);
+const sessionId = params.get('session_id'), product = params.get('product');
+const card = document.getElementById('ty-card');
+const esc = (t) => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function verify(){
+  if(!sessionId){ card.innerHTML='<p class="ty-error">Missing session. If you just paid, check your email receipt or write to josee@joseebedard.com.</p>'; return; }
+  try{
+    const res = await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/verify-product-payment',{method:'POST',headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},body:JSON.stringify({sessionId,product})});
+    const data = await res.json();
+    if(!res.ok || !data.verified){ card.innerHTML='<p class="ty-error">'+esc(data.error||'Could not confirm payment')+'. If you were charged, write to josee@joseebedard.com and I will sort it out.</p>'; return; }
+    const extras = (data.extras||[]).map(e=>'<a class="ty-btn alt" href="'+esc(e.url)+'" download>'+esc(e.label)+'</a>').join('');
+    card.innerHTML = '<h1>you are <em>in.</em></h1><p>Thank you for getting <b>'+esc(data.productName)+'</b>. Your download is ready.</p><a class="ty-btn" href="'+esc(data.downloadUrl)+'" download>Download the guide (PDF) &rarr;</a>'+extras+'<div class="ty-steps"><b>Start here:</b><br>1. Open the PDF and go to page 3.<br>2. It shows you what the zip file is, and how to add it to Claude.<br>3. Then follow the guide one page at a time.</div><p style="margin-top:20px;font-size:14px">I also emailed these links to '+esc(data.email||'you')+'. It can take a few minutes, and it may land in your spam folder.</p>';
+  }catch(e){ card.innerHTML='<p class="ty-error">Something went wrong confirming your payment. Please write to josee@joseebedard.com.</p>'; }
+}
+verify();
+</script>
+</body></html>
