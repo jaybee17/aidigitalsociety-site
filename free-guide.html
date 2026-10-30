@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/site.css">
 <style>
 .fg-form{margin-top:30px;max-width:520px}
-.fg-form input[type=email]{width:100%;padding:16px 22px;border-radius:999px;border:1.5px solid var(--gold);background:var(--black-2);color:var(--cream);font:inherit;margin-bottom:12px}
+.fg-form input[type=email],.fg-form input#fg-name{width:100%;padding:16px 22px;border-radius:999px;border:1.5px solid var(--gold);background:var(--black-2);color:var(--cream);font:inherit;margin-bottom:12px}
 .fg-form label{display:flex;gap:10px;align-items:flex-start;font-size:14px;opacity:.8;margin:6px 0 16px}
 .fg-form .btn{width:100%;text-align:center}
 .fg-msg{margin-top:12px;font-size:15px;min-height:22px}
@@ -35,6 +35,7 @@
     <p class="sub">Never used AI? Not sure what to sign up for, what to download or what to type? This free guide walks you through the very first click, with pictures, until your first 7 posts are written and scheduled. <b>I email it to you.</b></p>
     <p class="sub" style="font-size:15px;opacity:.85;margin-top:-6px">From someone who has not had a job in over 17 years.</p>
     <form class="fg-form" id="fg-form">
+      <input type="text" id="fg-name" placeholder="Your first name" aria-label="Your first name" autocomplete="given-name" maxlength="60" required>
       <input type="email" id="fg-email" placeholder="Your email" aria-label="Your email" required>
       <input type="text" id="fg-website" name="website" style="display:none" tabindex="-1" autocomplete="off">
       <label><input type="checkbox" id="fg-consent"> Yes, send me the guide and your emails. You can stop them any time.</label>
@@ -80,6 +81,8 @@
   function say(t,bad){msg.textContent=t;msg.style.color=bad?"#e7a58f":"#E0B85A";}
   form.addEventListener("submit",async function(e){
     e.preventDefault();
+    var name=document.getElementById("fg-name").value.trim();
+    if(!name){say("Please tell me your first name.",true);return;}
     var email=document.getElementById("fg-email").value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){say("Please enter a valid email address.",true);return;}
     if(!document.getElementById("fg-consent").checked){say("Please tick the box so I know you want the guide and my emails.",true);return;}
@@ -88,9 +91,9 @@
     var SIGNUP_ENDPOINT="https://trobqziwskkxclablptx.supabase.co/functions/v1/guide-subscribe";
     if(!SIGNUP_ENDPOINT){say("Sign-up is not connected yet.",true);btn.disabled=false;btn.textContent="Send me the free guide →";return;}
     try{
-      var res=await fetch(SIGNUP_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,consent:true,website:document.getElementById("fg-website").value,source:"ads-site-free-guide",guide:"faceless"})});
+      var res=await fetch(SIGNUP_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:name,email:email,consent:true,website:document.getElementById("fg-website").value,source:"ads-site-free-guide",guide:"faceless"})});
       var data=await res.json().catch(function(){return{};});
-      if(res.ok&&data.ok){form.querySelector("input[type=email]").style.display="none";form.querySelector("label").style.display="none";btn.style.display="none";say("Done! Check your inbox for The Faceless Content System. It can take a few minutes, and it may land in spam.");}
+      if(res.ok&&data.ok){form.querySelector("input[type=email]").style.display="none";document.getElementById("fg-name").style.display="none";form.querySelector("label").style.display="none";btn.style.display="none";say("Done, "+name+"! Check your inbox for Your First Faceless Week. It can take a few minutes, and it may land in spam.");}
       else{say(data.error||"Something went wrong. Please try again.",true);btn.disabled=false;btn.textContent="Send me the free guide →";}
     }catch(err){say("Something went wrong. Please try again.",true);btn.disabled=false;btn.textContent="Send me the free guide →";}
   });
