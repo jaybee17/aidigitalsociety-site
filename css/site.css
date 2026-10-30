@@ -212,3 +212,11 @@ body.has-bar{padding-bottom:80px}
 
 .grid2c{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:48px auto 0;max-width:780px}
 @media(max-width:900px){.grid2c{grid-template-columns:1fr}}
+
+.clubcard{display:grid!important;grid-template-columns:1.1fr 1fr;gap:40px;padding:36px!important;margin-top:48px;align-items:center}
+.clubpics{display:grid;gap:16px}
+.clubtext h3{font-size:44px;margin:10px 0 6px}
+.clubtext ul{margin-top:14px}
+.clubtext .price{font-size:46px}
+.clubnote{opacity:.75;font-size:15px;margin:2px 0 18px}
+@media(max-width:900px){.clubcard{grid-template-columns:1fr;gap:24px;padding:26px!important}.clubtext h3{font-size:36px}}
