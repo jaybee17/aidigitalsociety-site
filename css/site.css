@@ -231,3 +231,5 @@ body.has-bar{padding-bottom:80px}
 .doors .card .btn-ghost{color:#7A5A12;border-color:#9A7425}
 .doors .card .btn-ghost:hover{background:rgba(154,116,37,.12)}
 .doors .card .price small,.doors .clubnote{color:var(--black)}
+.doors .card{box-shadow:0 10px 30px rgba(60,40,10,.18);border-color:rgba(154,116,37,.45)}
+.doors .card.feat{box-shadow:0 0 0 2px var(--gold),0 10px 30px rgba(60,40,10,.18)}
