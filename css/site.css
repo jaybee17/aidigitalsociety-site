@@ -220,3 +220,6 @@ body.has-bar{padding-bottom:80px}
 .clubtext .price{font-size:46px}
 .clubnote{opacity:.75;font-size:15px;margin:2px 0 18px}
 @media(max-width:900px){.clubcard{grid-template-columns:1fr;gap:24px;padding:26px!important}.clubtext h3{font-size:36px}}
+.hero .quiz{display:inline-block;margin-top:26px;padding:16px 30px;border:2px solid var(--gold);border-radius:999px;background:rgba(201,160,74,.14);color:#F3DFA8;font-size:20px;font-weight:600;text-decoration:none;box-shadow:0 0 28px rgba(201,160,74,.28);transition:background .2s}
+.hero .quiz:hover{background:rgba(201,160,74,.28)}
+@media(max-width:600px){.hero .quiz{font-size:17px;padding:14px 22px}}
