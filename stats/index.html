@@ -84,15 +84,15 @@ td.n,th.n{text-align:right;white-space:nowrap}
   </div>
   <div class="card"><h2>Visitors by site</h2><div class="grid" id="sites"></div></div>
   <div class="two">
-    <div class="card"><h2>Top pages on joseebedard.com</h2><table id="pages"></table></div>
+    <div class="card"><h2>Top pages on aidigitalsociety.com</h2><table id="pages"></table></div>
     <div class="card"><h2>Where visitors come from</h2><table id="refs"></table></div>
   </div>
   <div class="two">
     <div class="card"><h2>What sold</h2><table id="sold"></table></div>
     <div class="card"><h2>Email lists</h2><table id="lists"></table></div>
   </div>
-  <div class="card"><h2>Latest orders</h2><table id="recent"></table></div>
-  <div class="card"><h2>Free orders ($0): who and why</h2><table id="free"></table><p class="note" style="margin-top:10px">These finished at $0. "100% off code" means a discount code was used. They are not counted as sales.<span id="hid"></span></p></div>
+  <div class="card" style="display:none"><h2>Latest orders</h2><table id="recent"></table></div>
+  <div class="card" style="display:none"><h2>Free orders ($0): who and why</h2><table id="free"></table><p class="note" style="margin-top:10px">These finished at $0. "100% off code" means a discount code was used. They are not counted as sales.<span id="hid"></span></p></div>
   <p class="note">Numbers come from Cloudflare, Stripe and Brevo. Cloudflare counts page views, not button clicks.</p>
 </div>
 
@@ -113,7 +113,7 @@ async function load() {
   const r = await fetch(URL_ + "/functions/v1/stats-data", {
     method: "POST",
     headers: { "Content-Type": "application/json", apikey: KEY, Authorization: "Bearer " + KEY, "x-user-token": session.access_token },
-    body: JSON.stringify({ days }),
+    body: JSON.stringify({ days, site: "aidigitalsociety.com" }),
   });
   if (r.status === 401) { $("app").classList.add("hide"); $("login").classList.remove("hide"); $("msg").textContent = "This login is not allowed to see stats."; await sb.auth.signOut(); return; }
   const d = await r.json();
@@ -126,7 +126,7 @@ async function load() {
   const sites = cf.sites || {};
   const maxV = Math.max(1, ...Object.values(sites).map((s) => s.views || 0));
   $("sites").innerHTML = Object.entries(sites).map(([h, s]) => `<div class="stat"><b>${s.views || 0}</b><span>${esc(h)}</span><div class="bar"><i style="width:${Math.round(((s.views || 0) / maxV) * 100)}%"></i></div></div>`).join("") || '<p class="note">No visit data yet.</p>';
-  const main = sites["joseebedard.com"] || { pages: [], refs: [] };
+  const main = sites["aidigitalsociety.com"] || { pages: [], refs: [] };
   $("pages").innerHTML = '<tr><th>Page</th><th class="n">Views</th></tr>' + (main.pages.map((p) => `<tr><td>${esc(p.path)}</td><td class="n">${p.views}</td></tr>`).join("") || '<tr><td colspan="2" class="note">Nothing yet.</td></tr>');
   $("refs").innerHTML = '<tr><th>Source</th><th class="n">Views</th></tr>' + (main.refs.map((p) => `<tr><td>${esc(p.source)}</td><td class="n">${p.views}</td></tr>`).join("") || '<tr><td colspan="2" class="note">Nothing yet.</td></tr>');
 
@@ -149,7 +149,7 @@ function renderLanding(l) {
   t.innerHTML = "<tr><th>Page</th><th class='n'>Visitors</th><th class='n'>Converted</th><th class='n'>Rate</th><th class='n'>Last 7 days</th><th class='n'>Week before</th><th class='n'>Change</th><th>What counts</th></tr>" +
     ((l.rows || []).map((r) => {
       const ch = r.change === null ? "<span class='dim'>-</span>" : "<span class='" + (r.change >= 0 ? "up" : "down") + "'>" + (r.change >= 0 ? "+" : "") + Math.round(r.change) + "%</span>";
-      const name = r.page.replace(/^joseebedard\.com/, "");
+      const name = r.page.replace(/^aidigitalsociety\.com/, "");
       return "<tr class='" + (r.flag ? "flag" : "") + "'><td>" + esc(name || "/") + "</td><td class='n'>" + r.visitors + "</td><td class='n'>" + (r.converted === null ? "<span class='dim'>-</span>" : r.converted) + "</td><td class='n'>" + pct(r.rate) + "</td><td class='n'>" + pct(r.last7) + "</td><td class='n'>" + pct(r.prev7) + "</td><td class='n'>" + ch + "</td><td class='note'>" + esc(r.goal || "No sign-up goal") + "</td></tr>";
     }).join("") || "<tr><td class='note' colspan='8'>No visits counted yet. Numbers start filling in from the day the tracker was installed.</td></tr>");
   drawChart(l.daily || []);
