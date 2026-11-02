@@ -82,6 +82,7 @@ td.n,th.n{text-align:right;white-space:nowrap}
   <div class="card lp"><h2>Every landing page</h2><table id="lp"></table>
     <p class="note" style="margin-top:10px">A red mark means the sign-up rate dropped 20% or more compared with the week before. "Converted" means joined that page's email list or paid for that page's product. It is an estimate, because someone can read one page and sign up from another.</p>
   </div>
+  <div class="card"><h2>Clicks from this site to your apps</h2><table id="clicks"></table><p class="note" style="margin-top:10px">People who landed on the app after clicking a "See the app" button here.</p></div>
   <div class="card"><h2>Visitors by site</h2><div class="grid" id="sites"></div></div>
   <div class="two">
     <div class="card"><h2>Top pages on aidigitalsociety.com</h2><table id="pages"></table></div>
@@ -121,6 +122,8 @@ async function load() {
   $("summary").innerHTML = d.summary.map((l) => `<p>${esc(l)}</p>`).join("");
 
   renderLanding(d.landing || {});
+  const ac = d.adsClicks || {};
+  $("clicks").innerHTML = '<tr><th>Goes to</th><th class="n">Visits</th></tr>' + ((ac.rows || []).map((r) => `<tr><td>${esc(r.site)}</td><td class="n">${r.visits}</td></tr>`).join("") || '<tr><td colspan="2" class="note">Nothing yet.</td></tr>');
   const cf = d.cloudflare || {};
   $("cfwarn").classList.toggle("hide", !!cf.connected);
   const sites = cf.sites || {};
