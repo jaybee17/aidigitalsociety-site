@@ -6,6 +6,9 @@
 <meta name="robots" content="noindex, nofollow">
 <title>The Club: one app for your whole online business | AI Digital Society</title>
 <meta name="description" content="Stop juggling 99 apps. The Club is one all-in-one app with one login: video lessons, a product builder, your brand, 72 finished books and your content tools. Works with a free Google key, and with Claude too. One payment, no monthly fee.">
+<link rel="preconnect" href="https://trobqziwskkxclablptx.supabase.co">
+<link rel="preconnect" href="https://checkout.stripe.com">
+<link rel="dns-prefetch" href="https://js.stripe.com">
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -678,7 +681,7 @@
 <script>
 async function startCheckout(btn){
   const label = btn.textContent;
-  btn.style.pointerEvents='none'; btn.textContent='Loading...';
+  btn.style.pointerEvents='none'; btn.textContent='Opening secure checkout... one moment';
   try {
     const res = await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/product-checkout', {
       method:'POST',
