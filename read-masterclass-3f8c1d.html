@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<title>The A-to-Z Masterclass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Newsreader:ital,wght@1,400;1,500;1,600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EEDF; --card:#FBF7EC; --ink:#1C1A17; --gold:#B9903E;
+    --gold-light:#CBA85C; --gold-bright:#D6A843; --muted:#6B6456; --line:#E5DCC6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--card);color:var(--ink);font-family:'Inter',sans-serif;font-size:11.5pt;line-height:1.62;}
+  @page{size:letter;margin:0;}
+  .page{width:8.5in;min-height:11in;padding:0.85in 0.9in;background:var(--card);position:relative;break-after:page;overflow:hidden;}
+  .page.flow{}
+  /* ---------- cover ---------- */
+  .cover{background:#161310;color:var(--cream);display:flex;flex-direction:column;justify-content:space-between;padding:1in 0.95in;}
+  .cover .kicker{font-family:'JetBrains Mono',monospace;font-size:9.5pt;letter-spacing:0.22em;color:var(--gold-bright);text-transform:uppercase;}
+  .cover h1{font-size:46pt;line-height:1.04;font-weight:900;letter-spacing:-0.02em;margin:22pt 0 16pt;}
+  .cover h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var(--gold-bright);}
+  .cover .sub{font-size:13.5pt;color:#CFC7B4;max-width:5.6in;line-height:1.6;}
+  .cover .band{border-top:1px solid rgba(214,168,67,.35);padding-top:18pt;display:flex;justify-content:space-between;align-items:flex-end;}
+  .cover .band .who{font-size:11pt;color:var(--cream);font-weight:700;}
+  .cover .band .who span{display:block;font-weight:400;color:#9C947F;font-size:9.5pt;margin-top:2pt;}
+  .cover .chips{display:flex;gap:8pt;flex-wrap:wrap;margin-top:26pt;}
+  .cover .chip{font-family:'JetBrains Mono',monospace;font-size:8.5pt;letter-spacing:.06em;border:1px solid rgba(214,168,67,.5);color:var(--gold-bright);padding:5pt 10pt;border-radius:99px;}
+  /* ---------- typography ---------- */
+  .kick{font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10pt;}
+  h2{font-size:26pt;font-weight:900;letter-spacing:-0.015em;line-height:1.12;margin-bottom:14pt;}
+  h2 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var(--gold);}
+  h3{font-size:14.5pt;font-weight:800;margin:20pt 0 8pt;}
+  h4{font-size:11.5pt;font-weight:800;margin:14pt 0 5pt;}
+  p{margin-bottom:9pt;}
+  p.lead{font-size:13pt;line-height:1.6;color:#3A362F;}
+  ul,ol{margin:0 0 10pt 16pt;}
+  li{margin-bottom:5pt;}
+  strong{font-weight:700;}
+  .gold{color:var(--gold);}
+  .quote{font-family:'Newsreader',serif;font-style:italic;font-size:15pt;color:var(--ink);border-left:3px solid var(--gold);padding:6pt 0 6pt 14pt;margin:14pt 0;}
+  .note{background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6pt;padding:11pt 13pt;margin:12pt 0;font-size:10.5pt;}
+  .note .nt{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4pt;}
+  .warn{border-left-color:#B0542B;}
+  .warn .nt{color:#B0542B;}
+  pre{background:#211D18;color:#EDE6D4;font-family:'JetBrains Mono',monospace;font-size:8.6pt;line-height:1.55;padding:12pt 14pt;border-radius:8pt;margin:10pt 0 14pt;white-space:pre-wrap;break-inside:auto;}
+  pre .c{color:#8F8672;}
+  code{font-family:'JetBrains Mono',monospace;font-size:9.3pt;background:var(--cream);border:1px solid var(--line);padding:1pt 4pt;border-radius:3pt;}
+  .steps{counter-reset:st;margin:12pt 0;}
+  .step{display:flex;gap:11pt;margin-bottom:10pt;break-inside:avoid;}
+  .step .n{counter-increment:st;flex:0 0 22pt;height:22pt;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;font-size:11pt;display:flex;align-items:center;justify-content:center;}
+  .step .n::before{content:counter(st);}
+  .step .t{flex:1;}
+  .step .t b{display:block;margin-bottom:1pt;}
+  table{width:100%;border-collapse:collapse;margin:10pt 0 14pt;font-size:10pt;}
+  th{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6pt 8pt;border-bottom:2px solid var(--gold);}
+  td{padding:7pt 8pt;border-bottom:1px solid var(--line);vertical-align:top;}
+  .emp{background:var(--cream);border:1px solid var(--line);border-radius:8pt;padding:11pt 13pt;margin-bottom:9pt;break-inside:avoid;}
+  .emp b{color:var(--ink);}
+  .emp .role{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3pt;}
+  .pagenum{position:absolute;bottom:0.45in;right:0.9in;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--muted);}
+  .footbrand{position:absolute;bottom:0.45in;left:0.9in;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--muted);letter-spacing:.08em;}
+  .shot{width:100%;border:1px solid var(--line);border-radius:8pt;display:block;margin:8pt 0 3pt;}
+  .cap{font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--muted);letter-spacing:.05em;margin-bottom:12pt;}
+  .linkbox{background:#F6EDD8;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6pt;padding:10pt 13pt;margin:10pt 0;font-size:10.5pt;}
+  .linkbox .nt{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3pt;}
+  .linkbox a{color:var(--gold);font-weight:700;font-family:'JetBrains Mono',monospace;font-size:9.5pt;text-decoration:none;word-break:break-all;}
+  .toc-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dotted var(--line);padding:7pt 0;font-size:11.5pt;}
+  .toc-row .no{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:9pt;margin-right:10pt;}
+  .toc-row b{font-weight:700;}
+  .big-divider{background:#161310;color:var(--cream);display:flex;flex-direction:column;justify-content:center;}
+  .big-divider .kick{color:var(--gold-bright);}
+  .big-divider h2{color:var(--cream);font-size:34pt;}
+  .big-divider p{color:#CFC7B4;font-size:13pt;max-width:5.4in;}
+
+  .mod{background:#161310;color:var(--cream);display:flex;flex-direction:column;justify-content:center;}
+  .mod .num{font-family:'Newsreader',serif;font-style:italic;font-size:120pt;line-height:.9;color:var(--gold-bright);margin-bottom:6pt;}
+  .mod h2{color:var(--cream);font-size:34pt;}
+  .mod p{color:#CFC7B4;font-size:13pt;max-width:5.4in;}
+  .mod .kick{color:var(--gold-bright);}
+  .mod .by{margin-top:22pt;border-top:1px solid rgba(214,168,67,.35);padding-top:12pt;font-family:'JetBrains Mono',monospace;font-size:8.5pt;letter-spacing:.1em;color:#9C947F;}
+  .goal{background:#161310;color:var(--cream);border-radius:10pt;padding:12pt 15pt;margin:12pt 0;font-size:10.8pt;}
+  .goal .nt{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-bright);display:block;margin-bottom:4pt;}
+  .time{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.1em;border:1px solid var(--gold);color:var(--gold);padding:2pt 8pt;border-radius:99px;margin-bottom:8pt;}
+  .tool{background:#fff;border:1px solid var(--line);border-radius:10pt;padding:10pt 13pt;margin-bottom:8pt;break-inside:avoid;}
+  .tool h4{margin:0 0 2pt;font-size:11.5pt;} .tool p{margin:0 0 3pt;font-size:10pt;line-height:1.5;}
+  .tool a{color:var(--gold);font-weight:700;font-family:'JetBrains Mono',monospace;font-size:8.8pt;text-decoration:none;word-break:break-all;}
+  .az{display:grid;grid-template-columns:1fr 1fr;gap:6pt 14pt;margin:8pt 0;}
+  .az div{display:flex;gap:8pt;align-items:baseline;border-bottom:1px dotted var(--line);padding:4pt 0;font-size:10pt;break-inside:avoid;}
+  .az b{font-family:'Newsreader',serif;font-style:italic;font-size:17pt;color:var(--gold);flex:0 0 18pt;}
+  .src{font-family:'JetBrains Mono',monospace;font-size:7.8pt;letter-spacing:.08em;color:var(--muted);margin:-4pt 0 10pt;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10pt;margin:8pt 0;}
+  .two>div{background:var(--cream);border:1px solid var(--line);border-radius:8pt;padding:9pt 12pt;font-size:10pt;break-inside:avoid;}
+  .two b{display:block;font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:3pt;}
+  .chk{list-style:none;margin-left:0;} .chk li{padding-left:20pt;position:relative;} .chk li::before{content:'☐';position:absolute;left:0;color:var(--gold);font-size:12pt;}
+
+  /* tighter flow so fewer pages spill */
+  html,body{font-size:10.9pt;line-height:1.52;}
+  .page{padding:0.62in 0.88in 0.7in;}
+  h2{font-size:24pt;margin-bottom:10pt;} h3{font-size:13.5pt;margin:15pt 0 6pt;} h4{margin:10pt 0 4pt;}
+  p{margin-bottom:7pt;} p.lead{font-size:12.4pt;line-height:1.5;}
+  li{margin-bottom:3pt;} ul,ol{margin-bottom:8pt;}
+  pre{font-size:8.1pt;line-height:1.45;padding:7pt 11pt;margin:6pt 0 8pt;}
+  .note{padding:8pt 12pt;margin:9pt 0;font-size:10.2pt;} .goal{padding:9pt 14pt;margin:9pt 0;}
+  .step{margin-bottom:7pt;} .quote{font-size:14pt;margin:10pt 0;padding:4pt 0 4pt 12pt;}
+  table{margin:7pt 0 10pt;font-size:9.8pt;} td{padding:5pt 8pt;}
+  .tool{padding:8pt 12pt;margin-bottom:6pt;} .two{margin:6pt 0;gap:8pt;} .shot{margin:6pt 0 2pt;max-height:2.6in;width:auto;max-width:100%;display:block;margin-left:auto;margin-right:auto;object-fit:contain;}
+  .cover .cv{margin-top:40pt;display:grid;grid-template-columns:1fr 3.05in;gap:0.35in;align-items:center;}
+  .cover .cv h1{font-size:36pt;margin:14pt 0 12pt;} .cover .cv .sub{font-size:11.5pt;line-height:1.55;}
+  .cover .logo{width:2.6in;height:1.42in;overflow:hidden;margin-bottom:14pt;} .cover .logo img{width:4.1in;height:4.1in;max-height:none;max-width:none;display:block;margin:-1.25in 0 0 -0.72in;mix-blend-mode:lighten;}
+  .cover .ph{width:3.05in;height:5.3in;border-radius:12pt;border:1.5pt solid var(--gold-bright);object-fit:cover;object-position:50% 22%;box-shadow:0 0 30pt rgba(214,168,67,.25);}
+  .toc-row{padding:5.5pt 0;font-size:11pt;}
+</style>
+<style>
+html,body{background:#1d1a15 !important}
+.webbar{position:sticky;top:0;z-index:50;background:#0B0A08;color:#F4EEDF;border-bottom:1px solid #C9A04A;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:10px 18px;font-family:Inter,sans-serif;font-size:14px}
+.webbar b{font-weight:700}
+.webbar a{background:#C9A04A;color:#161310 !important;text-decoration:none !important;border-radius:999px;padding:8px 16px;font-weight:700;white-space:nowrap}
+.webbar a.ghost{background:none;border:1.5px solid #C9A04A;color:#E8BE5A !important}
+.webbar .r{display:flex;gap:10px}
+#sheet{margin:0 auto;width:8.5in}
+#sheet a[href]{text-decoration:underline;text-decoration-color:#C9A04A;cursor:pointer}
+#sheet .page{margin:0 auto 22px;box-shadow:0 10px 40px rgba(0,0,0,.5);break-after:auto}
+@media(max-width:560px){.webbar b{display:none}.webbar{justify-content:center}}
+</style>
+</head>
+<body>
+<div class="webbar"><b>The A-to-Z Masterclass &middot; read online</b><div class="r"><a class="ghost" href="my-space.html">Back to my member page</a><a href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-A-to-Z-Masterclass.pdf" target="_blank" rel="noopener">Download the PDF</a></div></div>
+<div id="sheet">
+<!-- ============ COVER ============ -->
+<div class="page cover">
+  <div>
+    <div class="logo"><img src="masterclass-shots/ads-logo.png" alt="AI Digital Society"></div>
+    <div class="kicker">The Club · Member Edition</div>
+    <div class="cv">
+      <div>
+        <h1>The A-to-Z<br><em>Masterclass</em></h1>
+        <p class="sub">My whole system, step by step. From the mindset that gets you started, to Claude, your brain file, your customer, your AI helpers, your AI twin, your first product, and how to sell it. Every prompt included. Copy me.</p>
+        <div class="chips">
+          <span class="chip">MINDSET</span><span class="chip">CLAUDE</span><span class="chip">BRAIN FILE</span><span class="chip">AI HELPERS</span><span class="chip">AI TWIN</span><span class="chip">FIRST PRODUCT</span><span class="chip">SELL IT</span>
+        </div>
+      </div>
+      <img class="ph" src="masterclass-shots/josee-lake.webp" alt="Josée Bédard">
+    </div>
+  </div>
+  <div class="band">
+    <div class="who">Josée Bédard<span>Founder, AI Digital Society</span></div>
+    <div class="kicker" style="font-size:8.5pt;">EDITION 1 · 2026</div>
+  </div>
+</div>
+
+<!-- ============ WELCOME ============ -->
+<div class="page">
+  <div class="kick">Read this first</div>
+  <h2>Welcome. Here is the <em>truth</em> up front.</h2>
+  <p class="lead">I'm Josée. I'm 58. I have not had a job in over 17 years. I have worked for myself, full time, ever since.</p>
+  <p>I used to be a rural mail carrier. Then I tried every get rich quick scheme out there, and none of them worked. So I learned real skills and built my own digital products and affiliate offers, and that finally worked. Over 30,000 products sold, a top 3% affiliate, a Facebook community of 140K. Then I opened a digital marketing agency and ran it for seven years on 80-hour weeks. Then my body said stop. I burned out, collapsed and ended up in the ICU. I shut the agency down.</p>
+  <p>I rebuilt quietly, with no face on camera and no staff. Instead, I built thirteen AI helpers that do the work, so the business no longer depends on me for every task. It is the best work life I have had.</p>
+  <p>That has changed. My profile is now built with my real face. Since I am showing you how to create an avatar, I decided to show mine too. It would not feel right to teach you this and hide. Everything you see of me here is true, and you get to be creative with yours: show your face, use an avatar, or build something in between.</p>
+  <p>Now I show people how to build the same thing, one simple step at a time. When I rebuilt, I made one rule: <strong>I will never again build a business on my last bit of energy.</strong> That rule is why this system is small, calm and simple. It is built so a tired person can run it.</p>
+  <div class="quote">You are not starting from zero. You are starting from experience.</div>
+  <h3>What this masterclass is</h3>
+  <p>It is everything I do, from A to Z, in the order I would do it if I started over today. It brings together my videos, my guides, my apps and my daily routine in one place.</p>
+  <h3>What it is not</h3>
+  <p>It is not "money while you sleep." I do not promise you any income. Nobody honestly can. My story is my own and it is not typical. What I can promise is a clear path, a patient helper, and the time to go at your own pace.</p>
+  <div class="note"><span class="nt">Honesty note</span>I use an AI version of myself in my videos, and I tell you so. Some links in this guide are my affiliate links. I only name tools I use myself.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">02</div></div>
+
+<div class="page">
+  <div class="kick">How to use this masterclass</div>
+  <h2>Small steps. <em>Your pace.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Do one module at a time.</b> Each module has a goal and a time. Most take one sitting. Some take a week. Nobody is timing you.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Pause and do the step.</b> Reading is not doing. When you see a gold step, do it before you turn the page.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Copy the prompts exactly.</b> Every dark box is something you can paste into Claude. Fill in the [brackets] with your own words.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Copy me.</b> Do exactly what I am doing. I don't mind. I would rather you copy me than stay stuck. Then make it yours, in your own voice.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Keep your 10 percent.</b> AI does about 90 percent of the work. You decide, you approve, you press publish. That part is yours.</div></div>
+  </div>
+  <div class="note"><span class="nt">Menus change</span>Claude, Higgsfield and every other tool change their screens often. If your screen looks different from mine, look for the same word in the menu. Or take a screenshot and ask Claude: "I'm stuck. What do I do from here?"</div>
+  <div class="note warn"><span class="nt">Three safety rules for every module</span>1. Never type passwords, bank numbers, card numbers or ID numbers into any AI chat.<br>2. Claude can be wrong and still sound sure. Check anything about health, money or law with a real person.<br>3. Read everything before it goes out with your name on it.</div>
+  <div class="goal"><span class="nt">My job in three words</span>Decide. Approve. Press publish.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">03</div></div>
+
+<!-- ============ MAP ============ -->
+<div class="page">
+  <div class="kick">The big picture</div>
+  <h2>The whole system on <em>one page.</em></h2>
+  <p>Here is how everything fits together. Each step feeds the next one. You do not need all of it on day one. Start at the top and walk down.</p>
+  <table>
+    <tbody><tr><th>Step</th><th>What it is</th><th>Module</th></tr>
+    <tr><td><b>Mindset</b></td><td>You are not behind. Small steps. You keep the 10 percent.</td><td>1</td></tr>
+    <tr><td><b>Claude</b></td><td>Your patient helper. You can't break it.</td><td>2</td></tr>
+    <tr><td><b>Brain file</b></td><td>One page that tells Claude who you are and how you talk.</td><td>3</td></tr>
+    <tr><td><b>Your customer</b></td><td>Who you help, in their own words. Then pick one idea.</td><td>4</td></tr>
+    <tr><td><b>AI helpers</b></td><td>One helper, one job. Plus a quality gate.</td><td>5</td></tr>
+    <tr><td><b>AI twin and voice</b></td><td>Your face and voice, made once, used often, always honest.</td><td>6</td></tr>
+    <tr><td><b>Brand and pictures</b></td><td>Make the design decisions once. Claude repeats them.</td><td>7</td></tr>
+    <tr><td><b>Content</b></td><td>Posts, carousels, reels, stories that sound like you.</td><td>8</td></tr>
+    <tr><td><b>Research</b></td><td>Listen to what real people say. Never guess.</td><td>9</td></tr>
+    <tr><td><b>Your first product</b></td><td>One file. One problem. One honest price.</td><td>10</td></tr>
+    <tr><td><b>Sell it</b></td><td>Your front door, website, scheduler, email.</td><td>11</td></tr>
+    <tr><td><b>Daily routine</b></td><td>Thirty minutes a day and a 30-day plan.</td><td>12</td></tr>
+  </tbody></table>
+  <div class="quote">Claude makes the content. The scheduler delivers it. You make the decisions.</div>
+  <p>And here is the loop that keeps it going: <strong>the content brings the people. The people leave comments. The comments become your next product. And the next product gives you more to talk about.</strong></p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">04</div></div>
+
+<!-- ============ CONTENTS ============ -->
+<div class="page">
+  <div class="kick">Contents</div>
+  <h2>What's <em>inside</em></h2>
+  <div class="toc-row"><span><span class="no">01</span><b>Mindset</b> · you are not behind</span></div>
+  <div class="toc-row"><span><span class="no">02</span><b>Claude from zero</b> · install it and say hello</span></div>
+  <div class="toc-row"><span><span class="no">03</span><b>Your brain file</b> · the one page that runs everything</span></div>
+  <div class="toc-row"><span><span class="no">04</span><b>Your customer</b> · who you help and what to make</span></div>
+  <div class="toc-row"><span><span class="no">05</span><b>Your AI helpers</b> · one job each, plus a quality gate</span></div>
+  <div class="toc-row"><span><span class="no">06</span><b>Your AI twin and voice</b> · Higgsfield, step by step</span></div>
+  <div class="toc-row"><span><span class="no">07</span><b>Your brand and pictures</b> · decide once</span></div>
+  <div class="toc-row"><span><span class="no">08</span><b>Content that sounds like you</b> · posts, stories, reels</span></div>
+  <div class="toc-row"><span><span class="no">09</span><b>Research</b> · listen, don't guess</span></div>
+  <div class="toc-row"><span><span class="no">10</span><b>Your first product</b> · from idea to PDF</span></div>
+  <div class="toc-row"><span><span class="no">11</span><b>Sell it and show up</b> · front door, website, scheduler</span></div>
+  <div class="toc-row"><span><span class="no">12</span><b>Your daily routine</b> · 30 minutes and a 30-day plan</span></div>
+  <div class="toc-row"><span><span class="no">A</span><b>The A-to-Z checklist</b> · 26 steps</span></div>
+  <div class="toc-row"><span><span class="no">B</span><b>The prompt bank</b> · every prompt in one place</span></div>
+  <div class="toc-row"><span><span class="no">C</span><b>Tools and links</b></span></div>
+  <div class="toc-row"><span><span class="no">D</span><b>When you get stuck</b> · and my honest rules for AI</span></div>
+  <div class="note" style="margin-top:14pt"><span class="nt">Your apps work with this</span>This masterclass pairs with your three Club apps: The AI Content System, BrandBuilder and The Product Library. Each module tells you when to use them.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">05</div></div>
+
+<!-- ============ TOOLS ============ -->
+<div class="page">
+  <div class="kick">Before you start</div>
+  <h2>What you <em>need.</em></h2>
+  <p>You can start with the first row only. Add the rest when you reach the module that uses them.</p>
+  <div class="tool"><h4>Claude</h4><p>Your whole team lives here. Start on the free plan. Move up only if you hit the daily limit again and again.</p><a href="https://claude.ai/referral/F8tzMGyYig" target="_blank" rel="noopener">claude.ai/referral/F8tzMGyYig</a></div>
+  <div class="tool"><h4>Higgsfield · your AI twin</h4><p>Makes pictures and talking videos of you from your real photos and your own voice. Used in Module 6.</p><a href="https://higgsfield.ai?fpr=josee-9610b8" target="_blank" rel="noopener">higgsfield.ai?fpr=josee-9610b8</a></div>
+  <div class="tool"><h4>Eden · research</h4><p>Finds posts that did far better than normal, and lets you read what people say under them. Used in Module 9.</p><a href="https://eden.so/?via=eden-6ebcdbf62229" target="_blank" rel="noopener">eden.so/?via=eden-6ebcdbf62229</a></div>
+  <div class="tool"><h4>Blotato · scheduler</h4><p>Posts to Facebook, Instagram and Threads for you, on the days and times you pick. Used in Module 11.</p><a href="https://blotato.com/?ref=josee" target="_blank" rel="noopener">blotato.com/?ref=josee</a></div>
+  <div class="tool"><h4>Your three Club apps</h4><p>The AI Content System, BrandBuilder and The Product Library. Open them from your member page.</p><a href="https://aidigitalsociety.com/my-space.html" target="_blank" rel="noopener">aidigitalsociety.com/my-space.html</a></div>
+  <div class="tool"><h4>A community, for your front door</h4><p>Mine is on Skool. I answer every question there myself.</p><a href="https://skool.com/ai-digital-society-5263" target="_blank" rel="noopener">skool.com/ai-digital-society-5263</a></div>
+  <p class="src">TIP: ONE FOLDER ON YOUR COMPUTER CALLED "MY AI BUSINESS" IS ALL THE ORGANIZING YOU NEED TO START.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">06</div></div>
+<!-- ============ MODULE 1 : MINDSET ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">01</div>
+  <h2>Mindset: you are <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">not behind.</em></h2>
+  <p>Before any tool, we fix the thing that stops most people: the story in your head. This is the shortest module and the most important one.</p>
+  <div class="by">ABOUT 30 MINUTES · FROM MY VIDEOS 5, 6, 22, 29, 37, 40, 44, 46, 48, 50</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 1 · Part 1</div>
+  <h2>Three stories that keep you <em>stuck.</em></h2>
+  <p class="lead">I said all three of these to myself, more than once, at the start. They sound true. They are not.</p>
+  <div class="two">
+    <div><b>The story</b>"I'm too old."</div><div><b>The truth</b>You have decades of judgment. AI can make things. It cannot judge them. You can.</div>
+    <div><b>The story</b>"It's too complicated."</div><div><b>The truth</b>Using AI means talking. If you can send a text message, you have every skill this needs.</div>
+    <div><b>The story</b>"I'm not techy."</div><div><b>The truth</b>You don't need to be. I don't code, I don't design and I don't edit video. Claude does the heavy part.</div>
+  </div>
+  <h3>You are not starting from zero</h3>
+  <p>The word "reinvent" tells your brain you are not good enough. Do not use it. The starting line moved: AI got good only a couple of years ago, so everybody is a beginner. Writing, design and tech are now done by a computer. What is left is what you already have: <strong>your judgment, your story, and knowing what you want.</strong></p>
+  <div class="quote">You keep your experience. You change how you use your energy.</div>
+  <h3>Your story is material, not baggage</h3>
+  <p>If life knocked you down, that is not a weakness. People do not follow perfect lives. They follow honest ones. Someone is one step behind you right now.</p>
+  <div class="note"><span class="nt">Do this now · 5 minutes</span>On paper or in your phone notes, write down <b>three things people always ask you about</b>. Cooking for one. Getting through a hard year. Saving money. Fixing something at home. Write them. You will use them in Module 4.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">08</div></div>
+
+<div class="page">
+  <div class="kick">Module 1 · Part 2</div>
+  <h2>Decide. Approve. <em>Press publish.</em></h2>
+  <p class="lead">This is my whole job. Three words. Everything else, I hand over.</p>
+  <div class="two">
+    <div><b>AI does about 90 percent</b>Research. First drafts. Pictures. Layouts. Sorting hundreds of comments. Scheduling.</div>
+    <div><b>You do the 10 percent</b>You decide what to say. You read every word and approve it. You press publish.</div>
+  </div>
+  <p>The 10 percent is not optional. If you skip it, the system only publishes mistakes faster. I read every post myself before it goes out. I watch every video all the way through. Nothing goes public until I say go.</p>
+  <h3>Why this works when courses don't</h3>
+  <p>Most people never finish a course. There are four reasons. The video mountain, with forty hours you will never watch. Generic advice. No clear next move. And amnesia: everything you learn leaks away by Friday.</p>
+  <p>A system fixes all four. The knowledge lives in files, not in your memory. The next move is always one small step. And your helpers remember everything.</p>
+  <div class="quote">Courses give you videos. This gives you helpers.</div>
+  <h3>The finish-one rule</h3>
+  <p>Do you have guides and courses you bought and never opened? You are not lazy. Buying feels like progress, but nothing has changed yet. Try this once:</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Pick one.</b> Which one thing, if you did it, would help you most this month? Move it to your desktop. Everything else goes in a folder called "Later."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Set a timer for twenty minutes.</b> Do not read it all. Find the first thing it tells you to do, and do that one thing.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Tell one person.</b> "I'm finishing this one guide this week. Can you ask me on Friday how it went?"</div></div>
+  </div>
+  <div class="note"><span class="nt">The same rule for this masterclass</span>Do not try to do all twelve modules this week. Finished does not mean you read every page. It means you got what you needed.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">09</div></div>
+
+<div class="page">
+  <div class="kick">Module 1 · Part 3</div>
+  <h2>Build on ground <em>you own.</em></h2>
+  <p>Two lessons I learned the hard way, and they shape everything in this system.</p>
+  <h3>1. Never build on your last bit of energy</h3>
+  <p>I built an agency on pure energy. It nearly broke me. Now my business is built from small pieces, with limits. I start from drafts, not blank pages. Everything is saved. And nothing goes public without my yes.</p>
+  <h3>2. Never build your whole life on one platform</h3>
+  <p>When a payment company froze my account, the money stopped overnight. That is why I now keep my own website, my own shop, my own checkout and my own email list. Social media can change overnight. Your list and your website cannot be turned off by someone else.</p>
+  <div class="quote">Don't build your whole life on one platform. And don't build it on your last bit of energy.</div>
+  <h3>Say yes on purpose</h3>
+  <p>Tired because you say yes to everything? Say these out loud once, so they are ready:</p>
+  <table>
+    <tbody><tr><th>When you need a pause</th><th>When you need a kind no</th></tr>
+    <tr><td>"Let me check and get back to you."</td><td>"Thank you for asking. I can't this time. I hope it goes well."</td></tr>
+    <tr><td>"I need to think about it. Can I answer tomorrow?"</td><td>"I can't take that on right now, but thank you for thinking of me."</td></tr>
+    <tr><td>"I'll have to look at my week first."</td><td>"That's not going to work for me, but I'm cheering for you."</td></tr>
+  </tbody></table>
+  <p>A pause is not a no. A yes that costs your peace is not free. Practice with Claude (fill in the request):</p>
+  <pre>I need to say no to a request, and I feel nervous about it. Here is the request: [write it in your own words]. Please write me three short, kind ways to say no, in my voice. No long apology. No excuses. Warm, but clear.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">10</div></div>
+
+<div class="page">
+  <div class="kick">Module 1 · Part 4</div>
+  <h2>Two lists that show you <em>where to go.</em></h2>
+  <p class="lead">You don't want to stop working. You want to stop running on empty. There is a difference, and this takes ten minutes.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Make two lists.</b> Left side: "what fills me up." Right side: "what empties me out." Left might be helping a friend figure something out, or making something with your hands. Right might be meetings that could have been a message, or pretending you are fine.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Paste both lists into Claude</b> with the prompt below. Claude may notice a pattern. Those are clues, and they are yours. If it is not quite right, say "that's not quite right, try again."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Find what people always ask you for.</b> Use the second prompt. If nothing comes, ask someone you trust: "What do I always help you with?"</div></div>
+  </div>
+  <pre>read my two lists, what do you notice, and what pattern do you see in what fills me up?</pre>
+  <pre>ask me one question at a time to find the thing people always ask me for, and after ten questions, tell me what you see.</pre>
+  <h3>The honest rules I follow</h3>
+  <ul>
+    <li><strong>I tell people when I use AI.</strong> In my videos, in my descriptions, and in YouTube's own setting.</li>
+    <li><strong>I check every fact.</strong> Claude does the first draft. I check the facts.</li>
+    <li><strong>I promise nothing I can't keep.</strong> No income numbers. No "you will." If I can't prove it, I don't say it.</li>
+    <li><strong>I give it ninety days.</strong> Not ninety days of rushing. Ninety days of small steps. A little bit, most days.</li>
+  </ul>
+  <div class="goal"><span class="nt">Module 1 done when</span>You have your three "people always ask me" things, your two lists, and you have said "I'm not behind" out loud once.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">11</div></div>
+
+<!-- ============ MODULE 2 : CLAUDE ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">02</div>
+  <h2>Claude <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">from zero.</em></h2>
+  <p>Never used it? Perfect. This module assumes exactly that. By the end you will have Claude on your computer and a real first conversation behind you.</p>
+  <div class="by">ABOUT 1 HOUR · FROM MY VIDEOS 26, 30, 31, 35, 36, 40, 42</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 2 · Part 1</div>
+  <h2>What Claude is, and why <em>one tool.</em></h2>
+  <p class="lead">Claude is an AI assistant. You type to it, the way you would text a smart friend. If you can send a text message, you can use Claude.</p>
+  <p>It never gets tired of you. It never sighs. It never makes you feel silly for asking. Google finds pages. Claude does the job with you.</p>
+  <h3>Is it free?</h3>
+  <p>Yes, to start. The free plan is plenty to learn on. There is a daily limit. When you reach it, Claude politely tells you to come back later. Nothing breaks and nothing is lost. If you hit that limit every single day, then think about a paid plan. Not before.</p>
+  <h3>Why only one tool</h3>
+  <p>I only use Claude. Not five different programs. Pick one front door for your AI work and stay with it for a month. Then you do not have to decide where to go every time. Tech does not have to be complicated. If it adds work, the answer is no.</p>
+  <h3>You can't break it</h3>
+  <ul>
+    <li><strong>Typing in the chat box can't break anything.</strong> You are not changing a setting or deleting a file.</li>
+    <li><strong>A wrong answer?</strong> Say "try again" or "that's not what I meant." Or start a new chat. It is one click and costs nothing. Think of a notepad: you turn the page.</li>
+    <li><strong>Messy is fine.</strong> Type like you talk, typos and all. There is no secret language.</li>
+    <li><strong>The real waste</strong> is a free afternoon where you could have tried it and didn't. An unopened guide teaches you nothing. A messy first chat teaches you a lot.</li>
+  </ul>
+  <div class="note warn"><span class="nt">The three careful things</span>1. Never type passwords, bank numbers, card numbers or ID numbers.<br>2. Claude can be wrong and sound sure. Check health, money and law with a real person.<br>3. Keep a copy of any real file before you let a tool touch it.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">13</div></div>
+
+<div class="page">
+  <div class="kick">Module 2 · Step 1</div>
+  <h2>Install Claude, <em>click by click.</em></h2>
+  <div class="time">15 MINUTES, ONE TIME</div>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Open the sign-up page.</b> Open your browser (Chrome, Edge, Safari, whatever you already use). Click the long address bar at the top, type <a href="https://claude.ai" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">claude.ai</a> and press Enter. To get a free week of the paid plan, use my link: <a href="https://claude.ai/referral/F8tzMGyYig" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">claude.ai/referral/F8tzMGyYig</a></div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Create your account.</b> Click "Continue with Google" (easiest), or type your email and click continue. Open your inbox, type the code back into Claude, give your first name and agree to the rules.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Download the desktop app.</b> In the address bar type <a href="https://claude.ai/download" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">claude.ai/download</a> and press Enter. Choose Windows or Mac. If you do not have an Apple computer, it is almost certainly Windows.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Install it.</b> When the file finishes, click it. If the computer asks to allow changes, click yes. Then next, next, install. Double click the little orange star.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Put Claude on your phone.</b> App Store or Google Play, search "Claude," pick the one made by Anthropic. Sign in with the same account. You can talk to it with the microphone.</div></div>
+  </div>
+  <h4>A quick look around</h4>
+  <p>A big empty page. A message box in the middle. A left menu with <b>New chat</b>, <b>Chats</b> and <b>Projects</b>. Chats are all your old conversations, saved. Send a message with the little arrow or the Enter key.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">14</div></div>
+
+<div class="page">
+  <div class="kick">Module 2 · Step 2</div>
+  <h2>Your first message. <em>Tell it who you are.</em></h2>
+  <p>Do not type a Google question. Tell Claude who you are. Click the message box and paste this, changing the details to fit you:</p>
+  <pre>Hi Claude, this is my first time using you, and I'm a little nervous. I'm over fifty, and I want to start a simple digital business online. Can you explain, in simple words, how you can help me do that?</pre>
+  <p>Read the answer slowly. Then answer in the same box. Ask a follow-up, such as <b>"I don't know what to sell yet, which of those should I start with?"</b> That back and forth is a conversation.</p>
+  <h3>Ask it to explain anything</h3>
+  <ul>
+    <li>"Explain that again, but simpler."</li>
+    <li>"Explain it like I'm ten."</li>
+    <li>"What does that word mean?"</li>
+    <li>"Can you give me an example?"</li>
+    <li>"Can you do it in smaller steps?"</li>
+  </ul>
+  <h3>My favorite trick: the screenshot</h3>
+  <p>When you are stuck on any screen, show Claude what you see.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Take the picture.</b> Windows: hold the Windows key and Shift, press S, drag a box around what you want. Mac: hold Command and Shift, press 4, drag a box.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Paste it into Claude.</b> Click the message box and press Ctrl+V (Mac: Command+V). The picture appears.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Ask.</b> Type the line below and press Enter. Claude tells you what to click, step by step.</div></div>
+  </div>
+  <pre>I'm stuck. What do I do from here? Give me the steps.</pre>
+  <p>You can also add a photo of a letter or a bill. Click the plus sign near the message box, pick the photo, and type "can you explain this letter to me in simple words?"</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">15</div></div>
+
+<div class="page">
+  <div class="kick">Module 2 · Step 3</div>
+  <h2>Give it one <em>real job.</em></h2>
+  <p>Now use it for something real, so you feel the difference. Here is mine. Change it to a real task you have today.</p>
+  <pre>I need to write an email to my insurance company. They made a mistake on my bill. They charged me twice for the same visit. Please help me write a polite one.</pre>
+  <p>Then make it yours, one small change at a time:</p>
+  <ul>
+    <li>"make it shorter"</li>
+    <li>"make it warmer"</li>
+    <li>"make it sound more like me. I'm friendly, but I get to the point."</li>
+  </ul>
+  <p>To copy it into your email, highlight the text, press Ctrl+C, open your email, click the message, press Ctrl+V. Before you send, check every name, number and date.</p>
+  <div class="quote">Claude writes the first draft. You make it right.</div>
+  <h3>A gentle way to start with words you already have</h3>
+  <p>Take a short email, a note to a neighbor, or a message you have been meaning to send. Paste it in and type: <b>"make this a little shorter and a little warmer."</b> Keep what you like. If Claude changes something you did not want, say "put it back the way it was."</p>
+  <h3>If you feel nervous</h3>
+  <pre>I'm new to this and a little nervous about messing up. Please be gentle. Ask me one question at a time, and help me do one small thing today.</pre>
+  <h3>Starting over, and other small fixes</h3>
+  <table>
+    <tbody><tr><th>If this happens</th><th>Do this</th></tr>
+    <tr><td>You want a clean start</td><td>Click New chat (top left). Old chats stay in your list.</td></tr>
+    <tr><td>The answer looks odd</td><td>Say "that doesn't look right. Try again."</td></tr>
+    <tr><td>You hit the daily limit</td><td>Close it. Come back later. Nothing is lost.</td></tr>
+    <tr><td>You can't find a button</td><td>Look for the same word in the menu, or ask Claude where it is.</td></tr>
+  </tbody></table>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">16</div></div>
+
+<div class="page">
+  <div class="kick">Module 2 · Step 4</div>
+  <h2>Make a project. <em>Stop starting from zero.</em></h2>
+  <p>Here is the problem: every new chat, Claude has forgotten who you are. A normal chat is like a sticky note. A <b>project</b> is like a folder on a shelf. It is one notebook for one job. The files and rules live inside it, so every chat in it already knows you.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Open Projects.</b> In the left menu, click Projects. You will see boxes. Each one is a project. You may have none yet.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Click "New project."</b> It asks what you are working on. Give it a short name, such as "My Business." Then one plain sentence: "this is where I work with Claude on my business." Click create.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Look around.</b> On the right you will see Instructions, Context and Memory. Context is your files. Memory is what Claude keeps for this project. Instructions are the rules, and they are the most important part.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Add a gentle instruction to start.</b> Click "add" next to Instructions and paste the lines below. In Module 3 you will replace this with your brain file.</div></div>
+  </div>
+  <pre>I'm new to this. Please use simple words and short sentences. Ask me one question at a time. Never delete or change my files. Always check with me before you decide something for me.</pre>
+  <img class="shot" src="masterclass-shots/frame-claude-project.jpg" alt="A Claude project">
+  <div class="cap">A REAL FRAME FROM ONE OF MY VIDEOS · THIS IS WHAT A PROJECT LOOKS LIKE</div>
+  
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">17</div></div><div class="page"><div class="note warn"><span class="nt">Files in a project</span>I keep a separate project for each job. Only add files you are comfortable sharing, and use copies. Keep passwords, tax papers and bank statements out.</div><div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">18</div></div>
+
+<div class="page">
+  <div class="kick">Module 2 · Your first week</div>
+  <h2>Five minutes a day, <em>for seven days.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Day 1.</b> Say hello and tell Claude who you are. Use the first message from Step 2.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 2.</b> Ask it to explain one thing that has confused you. Then ask again, simpler.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 3.</b> Write one real email together.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 4.</b> Take a screenshot of something confusing. Ask "what do I do from here?"</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 5.</b> Make your project.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 6.</b> Start the brain file interview (Module 3).</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Day 7.</b> Finish it and save it.</div></div>
+  </div>
+  <div class="note"><span class="nt">Make it a habit</span>Pin the Claude tab in your browser, or put it on your home screen. Open it with your morning coffee, even just to say good morning. Ten minutes a day for a week is about seventy minutes, roughly one movie. You can start with five.</div>
+  <h3>What to leave for later</h3>
+  <p>Claude can do a lot, and that is actually the problem. It is a staircase. You don't start on the tenth step. Leave these for later, not never: connecting your email and calendar, setting tasks on a schedule, teaching Claude a job to repeat, and the coding tools. You do not need any of them to build a real business. When your brain file and your first helper work, then add the next thing.</p>
+  <div class="goal"><span class="nt">Module 2 done when</span>Claude is on your computer and phone, you have had three real conversations, and you made one project.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">19</div></div>
+<!-- ============ MODULE 3 : BRAIN FILE ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">03</div>
+  <h2>Your <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">brain file.</em></h2>
+  <p>One page. It tells Claude who you are, who you help, how you talk and what you never do. It is the single most important thing in this whole system.</p>
+  <div class="by">ABOUT 45 MINUTES · FROM MY VIDEOS 4, 8, 15, 17, 31, 33, 35</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 3 · Part 1</div>
+  <h2>Why Claude keeps <em>forgetting you.</em></h2>
+  <p class="lead">AI is a brilliant employee with total amnesia. Every new chat, it has no idea who you are. So its first answer is flat.</p>
+  <p>Imagine a brand new helper walks into your kitchen on day one. Of course the first thing she makes is generic. She doesn't know you yet. The fix is a short page you would hand to a new helper on her first day. I call it the <b>brain file</b>.</p>
+  <div class="quote">The problem is not your prompt. The problem is that Claude doesn't know you yet.</div>
+  <p>It fits on one side of a piece of paper. And it changes every answer you get. Google was built to answer a question and forget you. A brain file turns Claude into a hired helper who finally has a memory.</p>
+  <h3>The four parts</h3>
+  <table>
+    <tbody><tr><th>Part</th><th>What goes in</th></tr>
+    <tr><td><b>1. Who I am and who I help</b></td><td>Two or three short lines. Who you are, what you did before, what you are starting. And who you want to help: not everybody, one kind of person and what worries them.</td></tr>
+    <tr><td><b>2. How I talk</b></td><td>Short sentences? Kitchen table words? Humor? A list of words you like and words you never use. Paste two or three things you really wrote and say "write like this."</td></tr>
+    <tr><td><b>3. My rules</b></td><td>The most important part, and the most skipped. What Claude must never do. When something goes wrong, it is almost always because a rule was missing.</td></tr>
+    <tr><td><b>4. What I'm working on now</b></td><td>One short paragraph with this month's goal. Change it every month in five minutes.</td></tr>
+  </tbody></table>
+  <div class="note"><span class="nt">My own example, all four parts</span>
+  Part one. I'm fifty eight. I make guides for women over fifty who want to start something of their own and feel behind.<br>
+  Part two. I talk in short sentences and simple words, like I'm at the kitchen table with a friend. I never use big fancy words, and I never talk down to anyone.<br>
+  Part three. Never promise results. Never make up facts. Always show me everything before it goes out.<br>
+  Part four. This month I'm finishing a new guide and posting three times a week.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">21</div></div>
+
+<div class="page">
+  <div class="kick">Module 3 · Step by step</div>
+  <h2>Let Claude <em>interview you.</em></h2>
+  <p>Don't stare at a blank page. Claude builds the brain file from your own answers, one question at a time. This takes about twenty minutes. Make a cup of tea.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Open your project</b> from Module 2 and start a new chat inside it.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Paste the interview prompt</b> below and press Enter.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Answer like you are talking to a friend.</b> Short and messy is fine. You can use the microphone. If you are not sure, say "I'm not sure. Can you give me a few examples?"</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Read what it writes, slowly.</b> Ask: does this sound like me? If not, say "that's not right, I would never say that word."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Say "please write this as my brain file."</b> Then select all, copy, go to your project, click Instructions, paste and save.</div></div>
+  </div>
+  <pre>Interview me, so you can write my brain file, a short note about who I am, who I help, what I know, and how I talk. Ask me eight simple questions, one at a time. Then write the brain file in plain words, under three hundred words, so I can save it and use it every time.</pre>
+  <h4>A longer version, if you want more depth</h4>
+  <pre>Please interview me. One question at a time. I want you to learn who I am, how I talk, and what I care about. Ask me one question. Wait for my answer. Then ask the next one. Don't rush. Ask me about my story. My work. What I love. What I never want to sound like. When you're done, write everything up as a short note about me.</pre>
+  <div class="note"><span class="nt">No project yet?</span>No problem. Save the brain file in a note on your computer called "Brain File." Paste it at the very start of every new chat, then say what you need.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">22</div></div>
+
+<div class="page">
+  <div class="kick">Module 3 · Test it</div>
+  <h2>The two-answer test, and <em>how it grows.</em></h2>
+  <p>Ask the same thing twice. Once in a new chat with no brain file. Once after pasting it. Compare the two.</p>
+  <pre>write a short, friendly Facebook post inviting people to my free guide.</pre>
+  <p>If the second answer is not more like you, add two or three real sentences you wrote to Part 2. Then try again.</p>
+  <h3>Tell it once, it writes the rule down</h3>
+  <p>Every time Claude gets something wrong, you tell it once. Then you make it write the lesson into your brain file. This is the secret. The system gets better every single week.</p>
+  <pre>that's not how I talk, here's what I would say: [your words].</pre>
+  <pre>please update my brain file with that lesson.</pre>
+  <p>I have written eighty-one rules into mine over time. Simple words. No big promises. No made-up stories. My three colors only. Month twelve knows my business better than a brand new hire ever could, because it never walks out the door at five o'clock with what it learned.</p>
+  <h3>Three mistakes to avoid</h3>
+  <ul>
+    <li><strong>Too long.</strong> Ten pages gets Claude lost. One page is plenty.</li>
+    <li><strong>No rules.</strong> Without rules, Claude will happily make things up. Write a "never" list.</li>
+    <li><strong>Private things.</strong> No passwords, no bank numbers, no private details about your family.</li>
+  </ul>
+  <div class="goal"><span class="nt">Module 3 done when</span>You have a brain file in your project instructions, and a test post that sounds like you. If you only do one module from this masterclass, do this one.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">23</div></div>
+
+<!-- ============ MODULE 4 : YOUR CUSTOMER ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">04</div>
+  <h2>Your <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">customer.</em></h2>
+  <p>Who do you help, and what do they need? Everything you make starts here. The answers are already out there, in the comments. You just have to read them.</p>
+  <div class="by">ABOUT 2 HOURS, OVER A FEW DAYS · FROM MY VIDEOS 20, 21, 22, 24, 27, 34, 38, 46, 51</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 1</div>
+  <h2>Start with what you <em>already know.</em></h2>
+  <p class="lead">Your best idea is not something you invent. It is something people already come to you for.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Make three lists</b> on paper. List one: every job and role you have had, even small ones. List two: things you know how to do, your skills and tricks. List three: things you got through, hard times and lessons, and what you wish someone had told you at the start. Don't judge. Just write.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Write what people already ask you.</b> What do friends ask you about? What do people at church or the gym ask you to explain? What do you answer without thinking? Write ten. Use your "three things" from Module 1 as a start.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Let Claude see the pattern.</b> Paste your lists and use this:</div></div>
+  </div>
+  <pre>Here are my three lists. What patterns do you see? What do I know that I might not realize is useful to someone else? Be honest, and don't flatter me.</pre>
+  <h3>Easy for you. Hard for them.</h3>
+  <p>That gap is your product. A retired nurse can make a guide of questions to ask your doctor. A teacher can make printable lesson plans. A gardener can make a first-garden guide. A bookkeeper can make a simple budget planner. Someone who cared for a parent can make a caregiver checklist. A home cook can make a family recipe book. Nobody calls someone who knows nothing. They call you, because you know.</p>
+  <div class="note warn"><span class="nt">Examples, not promises</span>These are examples of how experience can become a guide. I can't promise what any idea will earn. Nobody honestly can.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">25</div></div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 2</div>
+  <h2>Listen, <em>don't guess.</em></h2>
+  <p class="lead">This is how I find what to make. I read the comments on one good post. I did it on 872 comments, and my audience told me exactly what to build. I stopped guessing. They already wrote it.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Search their fear, not your topic.</b> Not "AI business." Type what they feel: "too old to start," "starting over at fifty five," "don't know where to start." Write down the three fears you hear most from your people. Those are your search words.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Pick the right post.</b> You want a real person telling a real story, with lots of comments. Skip posts where everyone comments one word to get a link, posts that say only "age is just a number," and posts with only "you look amazing."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Read the comments, not the post.</b> Scroll past the video to the comments. Open the replies too, they are more honest. When a comment makes you stop, copy it exactly as written. Don't fix the spelling. Don't make it prettier.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Keep every one in one document.</b> I call it my hook bank. Their words, saved exactly, with where you found them.</div></div>
+  </div>
+  <p>Where to look: YouTube comments (long and honest), Instagram, Facebook groups, Substack, and your own Facebook posts.</p>
+  <div class="note"><span class="nt">Keep it private</span>When you paste comments into Claude, take out names first. Never paste anything private.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">26</div></div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 2, continued</div>
+  <h2>Let Claude sort them. <em>You choose.</em></h2>
+  <div class="steps" style="counter-reset:st 4">
+    <div class="step"><div class="n"></div><div class="t"><b>Paste the comments into Claude</b> and sort them by the fear behind each one. This takes a couple of minutes. Claude does the sorting. You make the choices.</div></div>
+  </div>
+  <pre>Here are comments from people I want to help. Sort them into piles by the fear behind each comment. Which pile is the biggest? What are the three strongest comments in each pile? Use their words. Do not make anything up that is not in the comments.</pre>
+  <p>Piles I often see: too old. Scared of the camera. Worried about money. Feeling invisible or useless. "I don't know where to start." I expected "AI is too hard" to be the biggest pile. It wasn't. People were not scared of the technology. The question, over and over, was <b>"Pivot to what?"</b> That one line changed my message, and it became my free guide.</p>
+  <div class="steps" style="counter-reset:st 5">
+    <div class="step"><div class="n"></div><div class="t"><b>Their words plus your simple answer equals a hook.</b> They said: "I'm sixty two and close to posting my first video." Hook: "I'm fifty eight. If you've been close to starting for a year, this is for you."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Post it and watch.</b> Read the comments on your own post. "This is me," "I needed this," or a tagged friend means you hit something real. End with a question and those comments become your next hooks. The method feeds itself.</div></div>
+  </div>
+  <h3>Your biggest pile is your product</h3>
+  <ol>
+    <li>Your biggest pile is your product idea.</li>
+    <li>Their questions are your titles.</li>
+    <li>Solve one problem for one kind of person. "Find your niche in one afternoon" works. "Everything you need to build a business" does not.</li>
+    <li>Their words are your sales page. They think "this was made for me."</li>
+    <li>Test with a post before you build. If people write "this is me," build it. Crickets? Try the next pile.</li>
+  </ol>
+  <div class="note"><span class="nt">Your 30-minute weekly routine</span>5 minutes: search one fear and pick one real-story post. 15 minutes: copy 10 to 15 comments into your hook bank. 5 minutes: paste them into Claude and see the biggest pile. 5 minutes: ask for five hooks and pick your three favorites.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">27</div></div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 3</div>
+  <h2>Build your <em>customer avatar.</em></h2>
+  <p class="lead">Your customer avatar is one real-sounding person you are making this for. Not "everybody." A guide for everybody is read by nobody.</p>
+  <p>You do not make this person up from your head. You build her from the comments you just collected. Paste your hook bank into Claude with this:</p>
+  <pre>Using the comments I pasted, build me a one-page customer avatar. Use only what is in the comments. Include: her age and life stage; what she is afraid of; what she has already tried that did not work; the exact words she uses to describe her problem; what she wants most; and the one small first step she would say yes to. Do not invent details that are not in the comments. Then write one sentence: "I help [this kind of person] get [this result], without [this common problem]."</pre>
+  <h3>Your one-sentence promise</h3>
+  <p>This is the most repeated advice from every digital product teacher I studied: <b>one person, one problem.</b> Fill in the sentence and say it out loud:</p>
+  <div class="note"><span class="nt">Fill in the blanks</span>I help <b>[this kind of person]</b> get <b>[this result]</b>, without <b>[this common problem]</b>.</div>
+  <p>My example: "I help women over fifty write their first guide, without feeling behind on tech." If it could be for anyone, make it smaller. A planner for everybody is a planner for nobody.</p>
+  <h3>Save it in your brain file</h3>
+  <p>Add the avatar and the sentence to Part 1 of your brain file. Now every helper you hire knows exactly who it is writing for.</p>
+  <pre>please add this customer avatar and my one-sentence promise to my brain file.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">28</div></div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 4</div>
+  <h2>Pick <em>one idea.</em></h2>
+  <p>The people who win at this are not the ones with the most ideas. They are the ones who finish the first one. Here are thirty ideas in six buckets, each one small enough to make in a couple of weeks.</p>
+  <table>
+    <tbody><tr><th>Bucket</th><th>Ideas</th></tr>
+    <tr><td><b>Printables and planners</b></td><td>A planner for one moment of the year. A life organizer pack. A 30-day content calendar. A first-ninety-days planner for a big life change. A weekly planner for one kind of week.</td></tr>
+    <tr><td><b>Short guides, one fast result</b></td><td>A beginner guide for one tool and one age group. AI for everyday life. Organizing your money. Learning anything faster after fifty. A beginner guide to a platform.</td></tr>
+    <tr><td><b>Prompt packs that do one job</b></td><td>Fifty Claude prompts for women starting over. A set for one small business job. Quote posts that sound like a real person. A year of captions. A fill-in-the-blank swipe file.</td></tr>
+    <tr><td><b>Your own story</b></td><td>Turn your career into a product. A life story book for your family. Finding work after fifty with AI. Becoming a small helper for others. A guide for one life stage.</td></tr>
+    <tr><td><b>Teach one platform</b></td><td>Facebook Reels made simple. Facebook Groups for beginners. Threads for beginners. YouTube for beginners over fifty. Starting a page in midlife. Put the date on the cover, platforms change.</td></tr>
+    <tr><td><b>The ladder</b></td><td>How to write a simple sales page. How to price your first product. A free first gift. A kitchen table newsletter. A bundle of three small guides.</td></tr>
+  </tbody></table>
+  <h3>Seven quiet businesses, no face required</h3>
+  <p>A "what I know" guide. Printables and templates. A kitchen table newsletter. A faceless hobby page. Honest recommendations of tools you really use. An AI helper for local businesses. Life stories and family memoirs. Quiet is not small. Quiet is how you start.</p>
+  <h3>Three questions to choose</h3>
+  <ol>
+    <li>What do people already ask me about?</li>
+    <li>Do I want to show my face? Both answers are fine.</li>
+    <li>Could I enjoy this for a whole year? The best business is the one you don't quit.</li>
+  </ol>
+  <p>Still stuck between two? Pick the one you would do even if nobody paid you for the first three months. Write its number down. One idea only.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">29</div></div>
+
+<div class="page">
+  <div class="kick">Module 4 · Part 5</div>
+  <h2>Ask before <em>you build.</em></h2>
+  <p>Before you spend weeks on anything, find out if people want it. This takes one post and a few days.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Ask your people.</b> Post this: "I'm thinking of making a short guide about this. Would that help you?" Replies tell you if you are on track. "Can it cover this too?" is a free idea.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Check for proof.</b> Look at what already sells on a big shop site or bookstore site for your topic. Find proof first, then build.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Run the idea check.</b> Paste 10 to 20 real comments (names removed) with this prompt:</div></div>
+  </div>
+  <pre>Here are comments from people I want to help. Tell me the three problems that come up most. Use their words. Then suggest one small product idea for each problem. Do not make anything up that is not in the comments.</pre>
+  <h3>Give it ninety days</h3>
+  <p>I can't promise what your first idea will earn. Nobody honestly can. Give it ninety days before you judge it. Your first one won't be perfect. Mine weren't.</p>
+  <div class="goal"><span class="nt">Module 4 done when</span>You have your hook bank, your one-page customer avatar, your one-sentence promise, and ONE product idea written down.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">30</div></div>
+<!-- ============ MODULE 5 : AI HELPERS ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">05</div>
+  <h2>Your <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">AI helpers.</em></h2>
+  <p>I have a team. It's just not made of people. Each helper has one job, reads your brain file first, and gets a little smarter every week.</p>
+  <div class="by">ONE AFTERNOON FOR THE FIRST ONE · FROM MY VIDEOS 4, 8, 16, 23, 30, 31, 35, 39, 41</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 5 · Part 1</div>
+  <h2>What an AI helper <em>really is.</em></h2>
+  <p class="lead">An AI helper is simply a job description that you write once and save, so Claude can do that job for you over and over, the same way every time. You write the job once, and Claude does the job forever.</p>
+  <p>Your brain file says who <i>you</i> are. A job file says what <i>this helper</i> does. Together, they are why a post comes back sounding like you.</p>
+  <h3>The four jobs a small team does</h3>
+  <ol>
+    <li><strong>Find what is working.</strong> Look at what other people's posts did well, and why. To learn from, never to copy.</li>
+    <li><strong>Write it in my voice.</strong> Using the brain file.</li>
+    <li><strong>Check the work.</strong> A quality gate, before anything goes out.</li>
+    <li><strong>Schedule it.</strong> Once you say yes, it is scheduled.</li>
+  </ol>
+  <h3>The three jobs you keep</h3>
+  <p><b>Decide</b> what to say this week. <b>Approve</b> everything, nothing goes out until you look and say yes. <b>Press publish.</b> A team that posts without asking you isn't a team. It's a risk.</p>
+  <div class="quote">Hiring an AI helper is just typing a short job description.</div>
+  <h3>Hire them in this order</h3>
+  <table>
+    <tbody><tr><th>When</th><th>Who</th></tr>
+    <tr><td><b>Week 1</b></td><td>The Post Writer and the Brand Reviewer (your quality gate)</td></tr>
+    <tr><td><b>Week 2</b></td><td>The Viral Spotter and the Image Maker</td></tr>
+    <tr><td><b>Week 3</b></td><td>The Reel Scripter and the Scheduler</td></tr>
+    <tr><td><b>Later</b></td><td>The Video Editor. Hire this one last, on purpose.</td></tr>
+  </tbody></table>
+  <p>Two helpers working beats seven half set up. If you hire all seven at once, you will drown.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">32</div></div>
+
+<div class="page">
+  <div class="kick">Module 5 · Step by step</div>
+  <h2>Build your first helper <em>in one afternoon.</em></h2>
+  <div class="time">ABOUT 1 TO 2 HOURS</div>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Pick one boring job.</b> Not the whole business. Not the fun job. The tiring one. Ask: do I do this every week? Does it drain me? Could I explain the rules in plain words? Three yeses means that is your first helper. Good first jobs: writing posts, captions, replying to comments, planning your week.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Open a new chat in your project</b> (your brain file is already there). Paste the helper prompt below.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Ask for a first draft.</b> It won't be perfect. But it will sound like you, because it read the brain file first.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Correct it.</b> "Make it shorter." "Make it warmer." "That sounds too much like an ad, I would never say it that way."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Save the lesson.</b> "Please update my brain file with that lesson." The helper never makes the same mistake twice.</div></div>
+  </div>
+  <pre>you are my helper for this one job: [name the job]. Use my brain file, ask me anything you need to know, and then give me a first draft.</pre>
+  <h4>For posts, here is how I make the Post Writer</h4>
+  <pre>I want you to act as my post writer. Here is how I write, here are my rules, and here is how I always end. Save this as a job description, and from now on, when I give you an idea, write the post exactly this way.</pre>
+  <h4>Turn one idea into a whole week</h4>
+  <pre>take this one idea, and turn it into seven different posts, one for each day of the week, each with a different angle.</pre>
+  <p>That is how my whole week gets written in one sitting. Then I read every single one.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">33</div></div>
+
+<div class="page">
+  <div class="kick">Module 5 · Job files</div>
+  <h2>The job files, <em>ready to copy.</em></h2>
+  <p>These are my real job files, shortened. Copy each into its own note or its own project. Fill the blanks. Every helper starts with the same first line: "Read my brain file first."</p>
+  <pre>THE POST WRITER
+Read my brain file first.
+YOUR JOB: Write social posts in MY voice from ideas I give you.
+RULES
+1. Hook first. The first line must stop a scroller. Give me 3 hook options.
+2. Short sentences. Simple words. No marketing speak.
+3. One idea per post. Not three. One.
+4. End with my one call to action.
+5. No income claims, no hype words. The Brand Reviewer will check you.
+FORMAT: HOOK (3 options) · BODY (5 to 9 short lines) · CTA (one line)
+When I say "3 posts about X," give me 3 different angles: one story, one how-to, one myth-buster.</pre>
+  <pre>THE BRAND REVIEWER (THE QUALITY GATE)
+Read my brain file first. You are the last stop before publish.
+YOUR JOB: Catch problems BEFORE they go out. Be tough. I can take it.
+CHECK EVERY PIECE FOR
+1. Income claims or hype words. FAIL, rewrite the line.
+2. Voice drift. Does this sound like me or like a marketer?
+3. The hook. Would a stranger stop scrolling?
+4. One clear call to action. Not two. One.
+5. Anything I'd be embarrassed by in six months.
+OUTPUT: VERDICT: PASS or FIX. If FIX, list each problem and the corrected line.</pre>
+  <pre>THE VIRAL SPOTTER
+Read my brain file first.
+YOUR JOB: Find proven post ideas in my niche so I never guess.
+1. I give you 5 to 15 creators in my niche.
+2. For each, find OUTLIERS: posts with about 5x their usual engagement.
+3. For each outlier tell me: the idea in one sentence, WHY it worked, and how I could rebuild it in MY voice with MY knowledge.
+4. NEVER tell me to copy anything word for word. We take the proof, not the words.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">34</div></div>
+
+<div class="page">
+  <div class="kick">Module 5 · Job files, continued</div>
+  <h2>Pictures, reels <em>and the calendar.</em></h2>
+  <pre>THE IMAGE MAKER
+Read my brain file first.
+YOUR JOB: Turn approved posts into graphics that look like MY brand every time.
+MY BRAND (fill in once): colors (3 max) · fonts (one bold, one clean) · style words: clean, warm, no clutter.
+WHAT YOU MAKE
+1. Single image posts: one big idea, huge headline.
+2. Carousels, 5 to 8 slides: slide 1 is the hook only, middle slides one point each, last slide the call to action.
+RULE: same colors, same fonts, every time. Boring and consistent beats pretty and random.</pre>
+  <pre>THE REEL SCRIPTER
+Read my brain file first.
+YOUR JOB: Write 20 to 40 second talking scripts.
+1. HOOK in the first 2 seconds. A question or a bold statement.
+2. Write it the way I talk. If a real person wouldn't say it at a kitchen table, rewrite it.
+3. Structure: hook, the point, one example, call to action.
+4. About 60 to 100 words. Give me 3 hook options per script.</pre>
+  <pre>THE SCHEDULER
+Read my brain file first.
+YOUR JOB: Plan the calendar. What goes out, when, and on which platform.
+1. Never repeat the same kind of post two days in a row.
+2. Keep a simple log of what went out, so I never repeat myself.
+3. Never schedule or publish anything unless I say yes first.</pre>
+  <div class="note"><span class="nt">The Video Editor</span>Hire it last. It takes a finished script and your AI twin clips and helps you build the video. You will meet it again in Module 6.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">35</div></div>
+
+<div class="page">
+  <div class="kick">Module 5 · Part 3</div>
+  <h2>The quality gate. <em>Your most important helper.</em></h2>
+  <p class="lead">Automation without a quality gate is just a faster way to publish mistakes.</p>
+  <p>The Brand Reviewer is separate on purpose. The person who made something is the worst person to check it. So a second pass, with its own checklist, reads everything first. It has caught things that would have genuinely embarrassed me.</p>
+  <p>You can also ask Claude to write you a short checklist from your own rules. Mine asks:</p>
+  <ul class="chk">
+    <li>Is it in simple words?</li>
+    <li>Is there a made-up story in it?</li>
+    <li>Is there a big promise, or a number I can't prove?</li>
+    <li>Does it sound like me?</li>
+  </ul>
+  <p>Before any post goes out, I say:</p>
+  <pre>check this against my checklist</pre>
+  <p>When it finds a problem, I tell it once, and it adds a line to the checklist.</p>
+  <h3>The approval rule</h3>
+  <p>Put this in your brain file, in your own words:</p>
+  <pre>never schedule or publish anything unless I say yes first</pre>
+  <p>Then read each post out loud. Does it sound like you? Is every fact true? Would you be proud of it? If yes, approve it. If not, say what to change.</p>
+  <div class="two">
+    <div><b>Claude does</b>The heavy part. The first draft. The checking against your rules.</div>
+    <div><b>You do</b>The reading. The facts. The yes. The press of the button.</div>
+  </div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">36</div></div>
+
+<div class="page">
+  <div class="kick">Module 5 · Part 4</div>
+  <h2>Let your own numbers <em>teach your team.</em></h2>
+  <p>I did not guess what my best posts look like. I asked my own data.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Collect your posts.</b> I gave Claude 202 of my Facebook posts from four weeks.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Ask the question.</b> "Which posts worked best?"</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Look for the shape.</b> The same seven posts won, and they all had the same shape. The first line said "I asked Claude to do one small thing." Then one honest sentence about what I used to do wrong. Then four short steps. Then one line that sticks. Then one word to comment. Those got three to ten times more views.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Teach it to the writer.</b> My writing helper now uses that shape every time. This is my own data, so yours will be different. Do the same with your own posts.</div></div>
+  </div>
+  <pre>which posts worked best?</pre>
+  <h3>One number every morning</h3>
+  <p>When you are tired, ten numbers feel like a test. One number feels like a quick check. Pick one: comments or saves. Ask Claude to tell you in two sentences how it went. Then close the screen and go live your day.</p>
+  <h3>My thirteen helpers, so you can see where this goes</h3>
+  <p>I started with seven: one to find what works, one to write, one to make pictures and carousels, one to write reel scripts, one to check, one to schedule, and one to build videos. Over time I added guides, apps, my website, emails, voice, and a plain personal assistant. You do not need thirteen. <b>Start with one.</b></p>
+  <div class="goal"><span class="nt">Module 5 done when</span>One helper writes a draft that sounds like you, your quality gate checklist is saved, and your approval rule is in your brain file.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">37</div></div>
+
+<!-- ============ MODULE 6 : AI TWIN ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">06</div>
+  <h2>Your AI twin <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">and voice.</em></h2>
+  <p>Your face and your voice, without filming every day. Built once, used often, and always honest.</p>
+  <div class="by">ABOUT 1 TO 2 HOURS TO SET UP · FROM MY VIDEOS 9, 19, 26, 30, 47</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 6 · Part 1</div>
+  <h2>What a twin is, and <em>the honest rules.</em></h2>
+  <p class="lead">An AI twin is a picture-and-video version of you. It is made by a tool called Higgsfield, from your real photos and your own voice. It is like a camera, but one that you talk to.</p>
+  <p>Camera fear stops more businesses than tech fear. Your face matters, because people trust faces. But filming takes energy: hair, lights, making the same sentence sound right ten times. My twin does the filming so I can live my life.</p>
+  <p>It doesn't replace me. <b>The ideas are mine. The words are mine. The decisions are mine.</b> The tool makes it. I approve it.</p>
+  <h3>My five honest rules</h3>
+  <ol>
+    <li><strong>I always say it's AI.</strong> In videos, in descriptions, and in YouTube's setting that marks a video as using AI.</li>
+    <li><strong>Only my own face and my own voice.</strong> Never anyone else's. Never a friend, never a celebrity, never anyone who hasn't said yes. Your twin is only you.</li>
+    <li><strong>No made-up stories, customers or results.</strong> What I say is true and I check it.</li>
+    <li><strong>I watch every video before it goes out.</strong> The last button is always mine.</li>
+    <li><strong>When I show a tool, I show the real screen.</strong> Not a made-up one.</li>
+  </ol>
+  <div class="note"><span class="nt">The trust test</span>If my audience found out exactly how this clip was made, would they shrug, or would they feel lied to? Shrug is fine. Feeling lied to means don't make it.</div>
+  <div class="quote">Your viewers trust you. Don't spend that trust.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">39</div></div>
+
+<div class="page">
+  <div class="kick">Module 6 · Step 1</div>
+  <h2>Higgsfield and <em>your photos.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Make an account.</b> Go to <a href="https://higgsfield.ai?fpr=josee-9610b8" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">higgsfield.ai?fpr=josee-9610b8</a> and sign up. Menu across the top: Explore, Image, Video, Audio. Looking around is free. Making pictures and videos uses credits. Connecting it to Claude needs a paid Higgsfield plan, so check yours first.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Take your photos.</b> Good light, near a window. Clear, sharp face: no sunglasses, no hat covering half. A few angles: straight on, and a little to each side. Look like yourself: real haircut, real glasses. Phone photos are fine. Five to ten good ones is plenty. Hand your phone to anyone and take them this afternoon.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Use only photos of you.</b> This is the most important rule in the whole module.</div></div>
+  </div>
+  <h3>Connect Higgsfield to Claude</h3>
+  <p>Claude can talk to Higgsfield for you, through what is called a connector. Think of it as a plug.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>In Claude, open Customize, then Connectors.</b></div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Choose "add custom connector."</b> Type the name Higgsfield. Paste the address: https://mcp.higgsfield.ai/mcp</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Click Connect.</b> Your browser opens. Log in to Higgsfield and approve.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Test it.</b> Start a new chat with Higgsfield switched on and ask: "what is my Higgsfield credit balance?" If Claude answers, you are connected. Stuck? Take a screenshot and ask "I'm stuck, what do I do?"</div></div>
+  </div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">40</div></div>
+
+<div class="page">
+  <div class="kick">Module 6 · Step 2</div>
+  <h2>Make your first <em>picture of you.</em></h2>
+  <p>Upload your photos, then tell Claude what to keep the same. Paste this first:</p>
+  <pre>Here are my real photos. I want you to make new pictures of me. Keep my face exactly the same. Don't change my hair. Don't make me look younger. Make me look like me.</pre>
+  <p>Then ask for a first picture:</p>
+  <pre>me in a kitchen, holding a cup of coffee, smiling</pre>
+  <h3>The recipe for a good scene</h3>
+  <p>Ask for a candid phone photo. Say the face should match your reference photos. Then say what you are wearing, where you are and what you are doing. Ask for natural skin and sharp focus, so it looks like a photo and not a painting. For example: <b>"me sitting on a dock by a lake, morning light."</b></p>
+  <h3>Check every picture. Never skip this.</h3>
+  <p>Is it really me? Are the glasses right? Are my hands right? Is anything strange? If something is wrong, say so plainly:</p>
+  <pre>The face is off. Try again, and keep it closer to my photos.</pre>
+  <pre>The glasses are wrong. They should be on top of my head. Fix that.</pre>
+  <p>I don't accept a picture I don't like. Never let a tool post a picture of you that you haven't looked at.</p>
+  <div class="note"><span class="nt">Lock your look</span>Once you love a look, never keep changing the base picture. Pick your favorite photos and make new scenes from those, not from scratch. Consistency is what makes people recognize you. A few good pictures beat a hundred random ones.</div>
+  <p>Every picture and video costs credits. Make a few, not hundreds. Read every permission box that Claude shows you before you allow it. Choose "allow once" if the request looks right.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">41</div></div>
+
+<div class="page">
+  <div class="kick">Module 6 · Step 3</div>
+  <h2>Make your twin <em>talk.</em></h2>
+  <p>This is how I make the short clip that opens many of my videos. My hands-on time is about three minutes.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Write a short script.</b> Ask Claude to write it in your voice, in short sentences. Read it. Say what you don't like. Claude fixes it. You must be able to say it at a kitchen table without stumbling.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Get the audio.</b> Your own voice reading the script (see Step 4).</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Open Lipsync Studio</b> in Higgsfield (<a href="https://higgsfield.ai/lipsync-studio" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">higgsfield.ai/lipsync-studio</a>). Upload ONE photo of your twin where it says "Upload an image." Add your audio.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Pick the settings.</b> Model: Kling Avatars. Quality: Pro. Prompt: just <b>talking naturally</b>. Short and plain wins. My two-word prompt beat every long fancy one I tried.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Generate and watch.</b> A few minutes later, there you are, talking. Watch the whole clip. If something looks strange, say "that doesn't look like me" and try again.</div></div>
+  </div>
+  <img class="shot" src="masterclass-shots/higgsfield-lipsync.jpg" alt="Higgsfield Lipsync Studio">
+  <div class="cap">HIGGSFIELD LIPSYNC STUDIO · YOUR IMAGE AND YOUR AUDIO ON THE LEFT, THE RESULT ON THE RIGHT</div>
+  
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">42</div></div><div class="page"><div class="note warn"><span class="nt">Money-saving rules</span>Know the cost before you press generate. Never regenerate a take you already approved. Fix small problems by trimming the clip. Keep prompts short: long ones caused garbled text burned into my video.</div><div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">43</div></div>
+
+<div class="page">
+  <div class="kick">Module 6 · Step 4</div>
+  <h2>Your <em>voice.</em></h2>
+  <p>There are three ways to do this. All three use your real voice. Pick the easiest one first.</p>
+  <table>
+    <tbody><tr><th>Way</th><th>How</th></tr>
+    <tr><td><b>1. Easy</b></td><td>Read your script on your phone's voice memo app. Your real voice and your real accent. A quiet room beats fancy equipment.</td></tr>
+    <tr><td><b>2. Clone it on your computer</b></td><td>Voicebox is a free, open-source voice studio that runs on your own computer, so nothing goes to the cloud. Download it at <a href="https://voicebox.sh" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">voicebox.sh</a>, click Create Voice, and read the short sample lines out loud. After that it reads any script in your voice. I used it for months.</td></tr>
+    <tr><td><b>3. Text-to-speech with a saved voice</b></td><td>This is what I use now: Higgsfield's text-to-speech with a saved voice, one clip per slide, so every slide has an exact length. Tools like this limit requests, so make clips in small groups.</td></tr>
+  </tbody></table>
+  <div class="note warn"><span class="nt">Your voice, your rules</span>Clone only your own voice. Never clone anyone else's. A generic AI voice sounds like a robocall. Your realness is the product. Keep your recordings safe and use trusted tools only.</div>
+  <h3>When I do not use my twin</h3>
+  <ul>
+    <li>Very personal or sad things. I want it to be me, really me.</li>
+    <li>Big claims about health or money. I don't make those claims at all.</li>
+    <li>Never to trick anyone. If someone asks "is that real?" I tell the truth.</li>
+    <li>Long videos are mostly the real me. The twin is for openers and short clips.</li>
+  </ul>
+  <h3>If you are scared of the camera</h3>
+  <p>Start small. First, just look at photos and pick ones you like. Next, try one picture of yourself in a new place. Then try one short clip just for yourself. You don't have to post it. And you don't need a face at all. Plenty of good businesses use no face.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">44</div></div>
+
+<div class="page">
+  <div class="kick">Module 6 · Options</div>
+  <h2>Four ways to show up. <em>Pick yours.</em></h2>
+  <div class="two">
+    <div><b>1. No face at all</b>Words and images only. Fully private. Many good businesses work this way.</div>
+    <div><b>2. Real photos, no video</b>Your own photos in your posts and on your website.</div>
+    <div><b>3. The twin</b>Pictures and short talking clips made from your photos and voice.</div>
+    <div><b>4. The mix</b>The twin for daily openers and short clips. The real you for the moments that matter. This is my choice.</div>
+  </div>
+  <img class="shot" style="width:2.4in;display:block;margin:6pt auto 2pt" src="masterclass-shots/frame-talking-clip.jpg" alt="A finished talking clip">
+  <div class="cap">A REAL FRAME FROM ONE OF MY FINISHED TALKING CLIPS · MADE THE WAY THIS MODULE TEACHES</div>
+  <div class="quote">The twin extends my reach. It doesn't replace my presence.</div>
+  <div class="goal"><span class="nt">Module 6 done when</span>You have five to ten good photos, a connected Higgsfield, one picture of you that you approve, and (if you want it) one short talking clip. If you want a faceless business, skip to Module 7. You lose nothing.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">45</div></div>
+<!-- ============ MODULE 7 : BRAND ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">07</div>
+  <h2>Your brand <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">and pictures.</em></h2>
+  <p>A brand is a short list of decisions you refuse to remake. Make them once. Claude repeats them forever. You stop being the designer and become the creative director.</p>
+  <div class="by">ABOUT 2 HOURS · FROM MY VIDEOS 3, 13, 24, 26, 43 · PAIRS WITH THE BRANDBUILDER APP</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 7 · Part 1</div>
+  <h2>Why your images look <em>homemade.</em></h2>
+  <p class="lead">Because you make design decisions from scratch every time. Monday's font is not Wednesday's font. Friday's gold is a different gold. Stop making design decisions at 11 PM. Make them once.</p>
+  <h3>The brand kit: four parts</h3>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Exact colors.</b> Real color codes, not "gold-ish." Three colors is plenty. Mine are gold, white and black.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Two fonts, by name.</b> One heavy bold font for headlines. One clean font for labels. Two fonts is a brand. Twelve fonts is a ransom note.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Your real photos</b> in one folder. Claude uses your actual face in every design. No fake person.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Your rules.</b> What never appears. Mine: no hype language, no cluttered layouts, nothing covering my face with text, no income claims. Ever.</div></div>
+  </div>
+  <div class="note"><span class="nt">The easy way</span>Don't know your colors and fonts yet? Use the <b>BrandBuilder app</b> in your Club. It asks you nine questions and gives you colors, fonts, a logo and more. The walkthrough is on the next pages.</div>
+  <h3>Teach Claude your picture style</h3>
+  <p>Show Claude an example post you like (take a screenshot and paste it). Then tell it what you want. Fix what you don't like by talking, one change at a time.</p>
+  <pre>I need words on these pictures. Big words. Easy to read. In my colors. Here is an example I like.</pre>
+  <pre>I don't like that. The words are too small. Make them bigger.   ·   put the words at the top.</pre>
+    <p>Then say the magic words that turn it into something Claude can repeat:</p>
+  <pre>Save this as my picture style. Write down every rule we just used, so you can do it again.</pre>
+  <p>From then on, just say: <b>make me a new post about this.</b></p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">47</div></div>
+
+<div class="page">
+  <div class="kick">Module 7 · Part 2</div>
+  <h2>Four moves that keep <em>everything consistent.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>The four words.</b> Once your style is saved, ask for "Create my next post." Claude picks a topic, picks a layout, picks a fitting photo of you, puts the headline on the image so nothing covers your face, writes the caption and saves a finished file. For volume, change one word: "Create my next 10 posts."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>The rotation.</b> Rotate through a few proven layouts: a photo card, a bold text card, a split layout, a quote card. Same colors, same fonts, same face, a different shape each time. Hard rule: never the same layout twice in a row. Start with three and add more when you get bored.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>The read-back.</b> After each image, ask Claude to look at the finished file again. Is text covering my face? Is anything cut off at the edge? Is the gold on the right words? Did anything banned sneak in? It fixes problems before you see them.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Check the first ten like a hawk.</b> Tell Claude why when you correct something, so the style sharpens. After the third batch, you stop opening the files to fix them. You open them to choose.</div></div>
+  </div>
+  <pre>Please check this against my brain file. Does it sound like me? Did I break any of my rules?</pre>
+  <div class="quote">Consistency isn't a talent. It's a system.</div>
+  <h3>Carousels in one idea</h3>
+  <p>A carousel is one idea across many slides. Slide 1 is the hook only. Middle slides carry one point each. The last slide is your call to action. Show Claude an example you like and fix it by talking:</p>
+  <pre>I want to make carousels. One idea. Many slides. In my colors. Here's an example I like.</pre>
+  <pre>I don't like the first slide. It needs a bigger title.</pre>
+  <pre>write down every rule. Save it as my carousel skill.</pre>
+  <pre>make a carousel about this idea.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">48</div></div>
+
+<div class="page">
+  <div class="kick">Module 7 · The BrandBuilder app</div>
+  <h2>A whole brand from <em>nine questions.</em></h2>
+  <div class="time">ABOUT 1 AFTERNOON</div>
+  <img class="shot" src="masterclass-shots/brandbuilder-app.jpg" alt="BrandBuilder app">
+  <div class="cap">BRANDBUILDER · <a href="https://brandbuilder.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">brandbuilder.joseebedard.com</a></div>
+  <p>BrandBuilder asks you nine coach-style questions, one at a time, and builds your brain file, colors and fonts, brand name ideas, a logo, a website, thirty days of posts and a PDF report. You never write a prompt.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Create your account</b> with the same email you used for the Club. Use the button on your member page.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Add your Google key (about 2 minutes, once).</b> The app uses Google's AI with your own free key. It is free, needs no credit card, and is yours, so no one else uses your quota. Open Google AI Studio, sign in, press "Create API key," copy it, paste it into the app and press "Save my key." Never show your key on camera.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Answer the nine questions.</b> Name and what you do. What you love. Your story. The moment that changed things. Who you want to help. What you offer. Who else is out there. How you sound when you talk. The one place you want people to go. Talk like you're texting a friend. "I don't know" is an answer. Longer answers give better results.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Read your brain file.</b> To fix something, type the change and press Update. Download it and paste it into any AI tool before asking it to write for you.</div></div>
+  </div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">49</div></div>
+
+<div class="page">
+  <div class="kick">Module 7 · The BrandBuilder app, continued</div>
+  <h2>Look, logo, <em>website.</em></h2>
+  <div class="steps" style="counter-reset:st 4">
+    <div class="step"><div class="n"></div><div class="t"><b>Your look.</b> It picks four colors and two fonts and tells you why. Want different ones? Use the color wheel or just tell it.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Brand name ideas</b> appear on real color tiles. Click one, type your own, or ask for more. Then press "Make my logo next."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Your logo.</b> It shows twelve styles from your colors and fonts. Type the name and all twelve update. Choose a symbol or initials, pick one of four color mixes and tap. Download it as a picture or press "Use this logo."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Your website.</b> Pick a style, or paste the link to a site you love and it copies the look using your words. It builds only from what you told it, with no made-up products or numbers. Click a photo spot to choose a photo. Change anything by typing, for example "Make the button bigger." or "Add a section about my free guide."</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Publish it free.</b> Make a free Vercel account, create a key named "BrandBuilder," paste it into the app, pick a site name and press "Publish my website." Your live link appears. Delete the key afterwards. A custom domain costs extra, yearly.</div></div>
+  </div>
+  <div class="steps" style="counter-reset:st 9">
+    <div class="step"><div class="n"></div><div class="t"><b>30 days of posts, plus your report.</b> Press the button for ten posts in your voice, then twice more. Each post is a picture plus a caption: copy the caption, download the picture, post both. You also get a PDF report with your story, colors, fonts, logo and first seven days.</div></div>
+  </div>
+  <div class="note warn"><span class="nt">The honest part</span>BrandBuilder gives you a starting brand, a real one. It won't post for you. Your logo is simple, made from shapes and letters, not a custom agency design. I can't promise what happens when you use it.</div>
+  <div class="goal"><span class="nt">Module 7 done when</span>You have your colors, two fonts, a logo, and your picture style saved. And you made one post that looks like your brand.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">50</div></div>
+
+<!-- ============ MODULE 8 : CONTENT ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">08</div>
+  <h2>Content that <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">sounds like you.</em></h2>
+  <p>Posts, stories, carousels and reels. Small true stories beat lists of tips. People don't connect with perfect. They connect with real.</p>
+  <div class="by">ABOUT 2 HOURS · FROM MY VIDEOS 8, 12, 25, 39, 41, 47, 52 · PAIRS WITH THE AI CONTENT SYSTEM APP</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 8 · Part 1</div>
+  <h2>The shape of a post <em>that works.</em></h2>
+  <p>Every post I write has four parts. Read yours against this list before you approve it.</p>
+  <table>
+    <tbody><tr><th>Part</th><th>What it does</th></tr>
+    <tr><td><b>Hook</b></td><td>The first line stops the scroll.</td></tr>
+    <tr><td><b>Meat</b></td><td>Three to six short lines that deliver ONE idea.</td></tr>
+    <tr><td><b>Heart</b></td><td>One honest human line from your story.</td></tr>
+    <tr><td><b>Door</b></td><td>The ending points to your one place.</td></tr>
+  </tbody></table>
+  <h3>The shape that won for me</h3>
+  <p>When I looked at my own numbers, the winners all looked alike. Copy the shape, then fill it with your own life:</p>
+  <ol>
+    <li>First line: "I asked Claude to do one small thing."</li>
+    <li>One honest sentence about what you used to do wrong.</li>
+    <li>Four short steps.</li>
+    <li>One line that sticks.</li>
+    <li>One word to comment.</li>
+  </ol>
+  <p>Compare: "Here are five tips to save time with AI" versus "I asked Claude to do one small thing, and it surprised me." The second one is a story. You don't need a big idea. You need one small ask.</p>
+  <h3>A week of posts in one sitting</h3>
+  <pre>Using my brain file, write seven short, helpful Facebook posts about my topic. Each one starts with a real worry my people have, then gives one small tip. Mention my guide in only one of them.</pre>
+  <p>I use the 90/10 rule for selling too. Ninety percent of my posts are helpful. Ten percent mention what I sell. Talk about the problem, not the product.</p>
+  <div class="note"><span class="nt">Where the link goes</span>Put your link in the first comment, not in the post itself. And end with one clear action, such as one word to comment.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">52</div></div>
+
+<div class="page">
+  <div class="kick">Module 8 · Part 2</div>
+  <h2>Tell a story people <em>remember.</em></h2>
+  <p>You don't need a big life story. A story can be five minutes of your day. Use four short parts. Keep each one short enough to read in ten seconds.</p>
+  <div class="az">
+    <div><b>C</b><span><strong>Context.</strong> Where were you, what was going on? One or two sentences.</span></div>
+    <div><b>A</b><span><strong>Action.</strong> What did you do? One thing.</span></div>
+    <div><b>R</b><span><strong>Result.</strong> What happened? Good, bad or surprising.</span></div>
+    <div><b>T</b><span><strong>Takeaway.</strong> The one lesson, in one sentence.</span></div>
+  </div>
+  <div class="note"><span class="nt">An example in my style</span>Context: I was staring at a blank page and had nothing to post. Action: I asked Claude to do one small thing. Turn my rough idea into three short lines. Result: In one minute I had a post I liked, and it sounded like me. Takeaway: You don't need a big idea. You need one small ask.</div>
+  <h3>Seven moves that make it stick</h3>
+  <ol>
+    <li>Start with curiosity: "I did not expect this."</li>
+    <li>Add a little tension: "I almost didn't hit send."</li>
+    <li>Be specific. Not "I tried a tool" but "I typed one sentence into Claude."</li>
+    <li>Change the pace. A short line after a long one.</li>
+    <li>Add something unexpected.</li>
+    <li>Make it personal. Use "I" and "you."</li>
+    <li>End with one clear takeaway, not three.</li>
+  </ol>
+  <p>Add one honest line about what was hard: "I almost quit." "I was scared." "It was messy." It tells people, <i>me too.</i> Make sure it is true.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">53</div></div>
+
+<div class="page">
+  <div class="kick">Module 8 · Part 2, continued</div>
+  <h2>Steal a story <em>from your week.</em></h2>
+  <p>On paper, write three small things from this week: something you tried, something that went wrong, something that made you smile. Those are story seeds. Type your rough, messy notes into Claude, then:</p>
+  <pre>Turn these notes into a short story in four parts: context, action, result, takeaway. Use simple words and short sentences. Keep it true to what I wrote. Do not add details I did not give you.</pre>
+  <p>Read it. Change any line that doesn't sound like you. If a detail did not happen, take it out.</p>
+  <h3>Three more shapes</h3>
+  <ul>
+    <li><strong>The oops story.</strong> Something went a little wrong. What you tried, what happened, what you learned.</li>
+    <li><strong>The before and after.</strong> Keep it small and true. No big-change promises.</li>
+    <li><strong>The small win.</strong> Something tiny worked. For example, you pressed publish.</li>
+  </ul>
+  <p>Tell one of each per week and you have three posts, emails or videos.</p>
+  <h3>Reels and short videos</h3>
+  <p>Ask Claude to write a 20 to 40 second script in your voice. The hook goes in the first two seconds. Read it out loud. Then use your twin (Module 6) or your own voice over pictures, your hands, your desk or your coffee.</p>
+  <pre>I want to make short videos with my AI twin. A video of me, talking. You write the words. Higgsfield makes the video. And you put text on the screen. Show me how to do it step by step.</pre>
+  <p>I watch every reel before it goes out. If something looks off I say, "That doesn't look like me. Try again."</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">54</div></div>
+
+<div class="page">
+  <div class="kick">Module 8 · The AI Content System app</div>
+  <h2>Posts and pictures <em>in your voice.</em></h2>
+  <img class="shot" src="masterclass-shots/content-system-app.jpg" alt="The AI Content System">
+  <div class="cap">THE AI CONTENT SYSTEM · <a href="https://system.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">system.joseebedard.com</a></div>
+  <p>This is the app I built so you do not have to write a prompt every time. You type your idea, pick a style, and it writes the post and makes the picture, in your own voice.</p>
+  <ul>
+    <li><strong>Posts</strong> for Threads, Facebook and Instagram.</li>
+    <li><strong>Carousels, quotes and daily posts</strong> in six picture looks.</li>
+    <li><strong>A Reel Maker</strong> and a way to recreate a post style that worked.</li>
+    <li><strong>A Post Now button</strong>, and an option to connect your scheduler.</li>
+  </ul>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Create your account</b> from your member page, with the same email you used for the Club.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Add your free Google key</b> if the app asks. The BrandBuilder steps on the earlier page show exactly how.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Type one idea.</b> Pick a style. Read what comes back. Change what you don't like.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Approve it.</b> The same rule as always: read every word before it goes out.</div></div>
+  </div>
+  <div class="goal"><span class="nt">Module 8 done when</span>You have written one story with the four-part shape, made seven posts for a week, and read them against the quality gate.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">55</div></div>
+
+<div class="page">
+  <div class="kick">Module 8 · The Faceless Content System guide</div>
+  <h2>Your whole week <em>in one session.</em></h2>
+  <img class="shot" style="max-height:3.4in" src="masterclass-shots/content-board.png" alt="The Content Board">
+  <div class="cap">THE CONTENT BOARD · EVERY PAGE, EVERY DAY, ON ONE SCREEN</div>
+  <p>This is the guide behind how I post now. One working session a week builds all your Facebook and Instagram content, and it posts itself. No face needed. The Content Board is the page I look at to see what is ready and what is missing.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Show Claude what you like.</b> Paste a few posts that work. Claude copies the format and writes yours.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Claude builds the week.</b> Text, pictures and Reels for every day, saved in one folder.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>You look and say "go".</b> Nothing goes out until you approve it.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Upload the folder to Google Drive.</b> One folder, named with the dates of the week.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Claude files it, and Blotato posts it.</b> Each morning the next day's posts are sent out.</div></div>
+  </div>
+  <div class="note"><span class="nt">Where to find it</span>The full guide, The Faceless Content System, is in your downloads on your member page. It has the exact prompts, the rules file, the five picture layouts and the Content Board. Start with one page and text posts only, then add pictures, then Reels, then the board.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">56</div></div>
+
+<!-- ============ MODULE 9 : RESEARCH ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">09</div>
+  <h2><em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">Research:</em> listen, don't guess.</h2>
+  <p>The market votes every day. Your job is to listen. A tool called Eden makes it faster. And you can always do it by hand.</p>
+  <div class="by">30 MINUTES A WEEK · FROM MY VIDEOS 4, 19, 20, 27, 38, 39, 41</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 9</div>
+  <h2>Outliers: <em>the market raising its hand.</em></h2>
+  <p class="lead">Say a creator in your niche normally gets modest engagement. Then one post explodes far past normal. That is an outlier. It is the market raising its hand and saying "more of this."</p>
+  <div class="note warn"><span class="nt">The rule</span>Never copy. Take the proof (the topic or angle works), and rebuild it with your own knowledge, your story and your voice. We take the proof, not the words.</div>
+  <h3>How I use Eden</h3>
+  <p>Eden is a research tool. I use its search to find outlier posts, then I read the comments under them. Get it here: <a href="https://eden.so/?via=eden-6ebcdbf62229" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">eden.so/?via=eden-6ebcdbf62229</a></p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Search by fear, not topic.</b> Use the fear words you wrote in Module 4.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Save only the best finds.</b> Not long lists. A small board for each purpose: posts your people click, titles that win, carousels that hold attention, creators like you, next product ideas.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Read the comments on a saved post.</b> Paste the best ones into Claude. Have Claude file the best sentences into a note called "Hook Bank: Their Words," grouped by fear.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Do it every week.</b> Follow about five creators like you and watch what lands for them. I have a Monday routine that emails me five outliers.</div></div>
+  </div>
+  <div class="note"><span class="nt">No Eden? No problem.</span>Everything in this module works by hand. Search a fear on Facebook or YouTube, read the comments, copy the best lines into one document, and paste them into Claude. Eden just makes it faster. Skip posts where people only comment a keyword to get a link, because those comments are not real words.</div>
+  <div class="goal"><span class="nt">Module 9 done when</span>You have one saved board or folder of outliers and a hook bank with at least ten real comments.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">58</div></div>
+<!-- ============ MODULE 10 : FIRST PRODUCT ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">10</div>
+  <h2>Your first <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">product.</em></h2>
+  <p>One file. One problem. One honest price. Made with Claude, in small pieces, by you.</p>
+  <div class="by">1 TO 2 WEEKS · FROM MY VIDEOS 10, 24, 25, 34, 38, 46, 49, 51 · PAIRS WITH THE PRODUCT LIBRARY APP</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 10 · Part 1</div>
+  <h2>"I have nothing to sell" <em>is a lie.</em></h2>
+  <p class="lead">You have been solving problems for free for thirty years. The neighbor with the tomatoes can make a simple planting calendar for people with black thumbs. The retired bookkeeper can make a checklist that keeps a small business out of trouble at tax time. The person who fed a big family on a tight budget can make a month of cheap dinners with shopping lists.</p>
+  <p>A digital product is a file that helps someone solve one problem. It could be a guide, checklist, templates or a plan. You make it once and it keeps helping people. No boxes, no shipping, no inventory. It is not a 40-video course. It is not a store. It is not becoming an influencer.</p>
+  <div class="quote">The AI organizes the knowledge. You are the knowledge.</div>
+  <h3>Step 1 · Pick your one problem</h3>
+  <p>The test: has a real person ever asked you for help with this? Open Claude in your project, where your brain file and customer avatar already live. Paste:</p>
+  <pre>You know my story from my brain file. Ask me ten questions, one at a time, to find the problems I have solved in my own life that other people still struggle with.</pre>
+  <p>Answer like you are at the kitchen table. Then:</p>
+  <pre>From my answers, list the five strongest product ideas. For each one, tell me who it helps and what it saves them.</pre>
+  <p>Pick the one that makes you start talking fast. If you already chose an idea in Module 4, use it.</p>
+  <div class="note"><span class="nt">Start small</span>Not a 12-module course. A product you can make in a couple of weeks that solves one small problem. Your first product is not your masterpiece. It's your first step.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">60</div></div>
+
+<div class="page">
+  <div class="kick">Module 10 · Step 2</div>
+  <h2>The outline, then <em>one part at a time.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Ask for the outline.</b> Paste the prompt below, filled in.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Read it like the author.</b> Move things, cut things, add the step only you know, like the mistake everyone makes in week two. Tell it in your own messy words and it writes it clean.</div></div>
+  </div>
+  <pre>Create an outline for a short, practical guide that solves this problem: [your problem]. Five to seven parts. Each part is one clear step. Simple words. No jargon. Written for a complete beginner who is a little bit nervous.</pre>
+  <pre>add a new part after part three, about the mistake I see beginners make, and here is what it is: [your mistake].</pre>
+  <h3>Step 3 · Write part by part, never all at once</h3>
+  <p>Nobody checks forty pages carefully. Ask for one part at a time, in your voice. Treat the draft like a new helper's first day of work.</p>
+  <pre>Write part one of the guide, in my voice, using my brain file. Keep it simple and warm. Short sentences. Real examples.</pre>
+  <p>Fix it with one sentence at a time:</p>
+  <pre>This example is not true for me, replace it with this one: [your example].</pre>
+  <pre>Too fancy here, say it like I would say it to a neighbor.</pre>
+  <p>Add your own stories: a real moment, a mistake, a lesson. Read one page out loud. If you stumble, it's too fancy.</p>
+  <p>Repeat for each part. Then run the whole guide through your quality gate:</p>
+  <pre>Check this guide against my rules. Flag anything that overpromises, anything vague, and anything a beginner would not understand.</pre>
+  <div class="note warn"><span class="nt">Everything must be true</span>Everything in your product must be true, and tested by you. If you haven't done it, it doesn't go in. Check every fact. Health, money and legal facts must be checked somewhere reliable. Your name is on this. And keep to the 90/10 rule: the AI does 90 percent, you do the 10 percent that matters.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">61</div></div>
+
+<div class="page">
+  <div class="kick">Module 10 · Step 4</div>
+  <h2>Make it look <em>real.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>The name.</b> The result they want, in the plainest words. The tomato calendar. The tax time checklist. The cheap dinners plan. Boring names sell. Clever names confuse.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>The cover.</b> Ask your image maker. Your name goes on it. Don't hide it. Your name is the trust.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>The layout.</b> Ask Claude to format your guide into a clean document with big readable type, one idea per page and a checklist at the end of every part. Then export it as a PDF in one click.</div></div>
+  </div>
+  <pre>create a simple cover for my guide, big title, calm colors, my name at the bottom.</pre>
+  <div class="quote">That file on my screen. That's a product.</div>
+  <h3>Step 5 · The honest price</h3>
+  <p>Keep your first price small, a price someone can say yes to without asking anyone. Not free, because free gets downloaded and forgotten. Not huge, because your first product is a first lesson. A small price brings more people and faster learning. I won't tell you what it will earn. Nobody honestly can.</p>
+  <h3>Step 6 · The buy button</h3>
+  <p>Three boring pieces: a page that describes the product, a button that takes payment, and the file delivered automatically. Many simple tools do all three in one afternoon. Make one page, upload your PDF, set your price. Read the fees before you choose. Your page needs the name, who it's for, what's inside in plain words, the price and the button. No countdown timers. No fake scarcity.</p>
+  <div class="note"><span class="nt">If nobody buys</span>A slow start is information, not a verdict. Change the name or the page. Ask buyers what made them click. Version two only exists because version one shipped.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">62</div></div>
+
+<div class="page">
+  <div class="kick">Module 10 · The Product Library app</div>
+  <h2>Don't want to start <em>from a blank page?</em></h2>
+  <img class="shot" src="masterclass-shots/product-library-app.jpg" alt="The Product Library">
+  <div class="cap">THE PRODUCT LIBRARY · <a href="https://library.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">library.joseebedard.com</a></div>
+  <p>The Product Library is a shelf of ready-made books, each made for one kind of person. You pick one that fits your person, make it your own, and get a rebranded PDF plus a simple sales page for each book. Every book is a strong first draft. Your job is the same as always: read it, add your touch, check the facts.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Create your account</b> with the same email you used for the Club, from your member page.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Browse the shelf.</b> Which topic fits your one person from Module 4? A planner for everybody is a planner for nobody. Choose the book that is closest to your person.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Make it yours.</b> Type your own name, pick your color, and change the words and pictures inside so it sounds like you.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Download your PDF and sales page.</b> Then follow Module 11 to put it where people can find it.</div></div>
+  </div>
+  <div class="note warn"><span class="nt">Make it yours, for real</span>Add your own stories and examples before you share it. Tell people when AI helped. Don't promise results.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">63</div></div>
+
+<div class="page">
+  <div class="kick">Module 10 · Part 3</div>
+  <h2>Seven mistakes. <em>Seven fixes.</em></h2>
+  <p>Small, asked-for, finished and shared beats big, guessed, perfect and hidden. I have made almost every mistake with a first product, and some cost me weeks.</p>
+  <table>
+    <tbody><tr><th>Mistake</th><th>The fix</th></tr>
+    <tr><td><b>1. Starting big</b></td><td>Make something you can finish in a couple of weeks. One problem.</td></tr>
+    <tr><td><b>2. Building before you ask</b></td><td>Read what your people ask, in their own words. Use the idea check in Module 4.</td></tr>
+    <tr><td><b>3. Waiting until it's perfect</b></td><td>Done beats perfect. Set a finish date and publish that day. Make a better version later.</td></tr>
+    <tr><td><b>4. Selling everywhere at once</b></td><td>One place to sell. Add more later. Own your pieces: website, shop page and especially your email list.</td></tr>
+    <tr><td><b>5. No email list</b></td><td>Give away something free and collect emails. A way to say hello that no platform can turn off.</td></tr>
+    <tr><td><b>6. Telling nobody</b></td><td>Talk about the problem, not the product. 90 percent helpful, 10 percent what you sell.</td></tr>
+    <tr><td><b>7. Going it alone</b></td><td>Find your people. A community, a friend who asks you on Friday how it went.</td></tr>
+  </tbody></table>
+  <h3>Your first seven days</h3>
+  <ol>
+    <li>Write the one problem you want to help with, in one sentence.</li>
+    <li>Read twenty real comments and paste them into Claude with the idea check.</li>
+    <li>Pick the smallest product that solves one of those problems. A checklist or a short guide counts.</li>
+    <li>Ask Claude for an outline and write the first section.</li>
+    <li>Finish the draft. Don't over-polish. Set your finish date.</li>
+    <li>Pick one place to sell. Set up a free gift to collect emails.</li>
+    <li>Share one helpful post about the problem, not the product.</li>
+  </ol>
+  <div class="goal"><span class="nt">Module 10 done when</span>You have a finished PDF with a name and a cover, checked by your quality gate, and read by you out loud.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">64</div></div>
+
+<!-- ============ MODULE 11 : SELL ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">11</div>
+  <h2>Sell it <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">and show up.</em></h2>
+  <p>One front door. Your own pieces. A free gift, an email list, a simple page, and a scheduler that posts while you live your life.</p>
+  <div class="by">ABOUT 1 WEEK · FROM MY VIDEOS 2, 8, 11, 12, 18, 19, 38, 43, 48, 51</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 11 · Part 1</div>
+  <h2>One front door. <em>Your own pieces.</em></h2>
+  <p class="lead">Every post, every reel and every carousel points to one place. Not five links. One door. You can upgrade the door later. You can't fix scattered.</p>
+  <p>Content builds trust. Trust brings people through the front door. Inside is where the help, and the offer, live.</p>
+  <h3>The path I use</h3>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>A free guide or gift</b> that solves one small problem and is linked to your paid product. The reader should be better off even if they never buy.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>An email.</b> They give you their email to get it. This is a way to say hello that no platform can turn off.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>A few helpful emails</b> over a week: who you are, a small tip, a short story, and what you have.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>A small product.</b> Then a handful of low-cost guides, each solving one problem. Not fifty. A handful.</div></div>
+  </div>
+  <h3>Make your free gift</h3>
+  <p>A short checklist, a one-page tip sheet, or a set of five prompts. Same recipe as your paid product (outline, write it part by part, cover, PDF), just smaller.</p>
+  <pre>Using my brain file, write a one-page free checklist for [my person] that helps them with [one small problem]. Simple words. One idea per line. No promises about results.</pre>
+  <h3>Your four helpful emails</h3>
+  <pre>Using my brain file, write four short, warm emails for people who just downloaded my free gift. Email 1: who I am and why I made it. Email 2: one small tip. Email 3: a short true story. Email 4: what I have for them, and one clear link. Simple words. No hype. Nothing I cannot prove.</pre>
+  <div class="note"><span class="nt">Own your own ground</span>Keep your own website, your own shop and your own email list. A payment company once froze my account and the money stopped. Never build your whole life on one platform.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">66</div></div>
+
+<div class="page">
+  <div class="kick">Module 11 · Part 2</div>
+  <h2>Your website: five things, <em>one afternoon.</em></h2>
+  <p>A website is your front door on the internet. Mine cost about fifteen dollars a year for the name, one afternoon, and zero code. I built it by typing sentences. Put five things on one page:</p>
+  <ol>
+    <li>Your name and your face (or your logo) big at the top.</li>
+    <li>Your story, short and real.</li>
+    <li>Your proof: true things you have done. Facts, not promises.</li>
+    <li>Your free gift.</li>
+    <li>One button.</li>
+  </ol>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Find your map.</b> Find a site you love. Never copy their words or pictures. Borrow the shape: the order of the rooms, not the furniture.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Tell Claude what you want.</b> Paste the prompt below. The first version is never perfect. It is a starting point you can see.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Fix it one sentence at a time.</b> About fifty little sentences, each taking seconds.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Make it true.</b> Real photos of you. Your real story, even the messy parts. Real proof. A true small thing beats a fake big thing, every time.</div></div>
+  </div>
+  <pre>Build me a simple one page website. Use the same structure as this website I like. My name big at the top, then my story from my brain file, then my proof, then my free guide, then one button to [my one place]. Use my brand colors. Big readable text. Simple.</pre>
+  <pre>Make my name bigger.   ·   That photo is too dark, use the other one.   ·   The story feels stiff, write it the way I'd tell a neighbor.   ·   Softer colors. Less orange.</pre>
+  <div class="note"><span class="nt">Just need one simple page?</span>Describe it right inside Claude. For example: "Please design a simple one-page website for my free gift. At the top, a short headline and a button that says Get the free guide. Then three short lines about what's inside. Then a short note about me. Keep it calm and easy to read, with lots of space. Big text, because my readers are over fifty." Then ask "please make this work well on a phone. The button should be easy to tap." Read every word before you put it online.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">67</div></div>
+
+<div class="page">
+  <div class="kick">Module 11 · Part 2, continued</div>
+  <h2>Your name, online, <em>for free.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Buy your name dot com</b> from any registrar, about fifteen dollars a year. At checkout say NO to email packages, hosting plans, protection add-ons and website builders. If your name is taken, add what you do.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Put it online for free.</b> GitHub Pages is free hosting. Ask Claude to walk you through every click:</div></div>
+  </div>
+  <pre>put my website online for free, and connect it to my domain. Walk me through every click.</pre>
+  <p>DNS is just the setting that connects your domain name to your files, like telling the post office where you live now. When I did mine, I had Claude connected to my browser, said "go set up my DNS," and watched it do the clicks. I said yes at each step. About twenty minutes later my site was live.</p>
+  <div class="steps" style="counter-reset:st 2">
+    <div class="step"><div class="n"></div><div class="t"><b>Back up your business.</b> GitHub is like a fireproof filing cabinet on the internet. Save your brain file, templates and prompts there so a dead computer can't end your business.</div></div>
+  </div>
+  <pre>Save my important files to GitHub, so I never lose them.</pre>
+  <div class="note warn"><span class="nt">Your website is your handshake</span>No stock-model photos. No made-up numbers. No earnings promises. Everything on it must be true. Don't rush to publish.</div>
+  <h3>The buy button, in short</h3>
+  <p>Your product page and checkout can live on your website or on a simple page tool. Pick one place first. You can add more later.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">68</div></div>
+
+<div class="page">
+  <div class="kick">Module 11 · Part 3</div>
+  <h2>Schedule a week <em>in one sitting.</em></h2>
+  <p class="lead">Claude makes the content. Blotato delivers it. That's my whole system in one sentence. Without a scheduler, posting by hand means your phone owns you.</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="t"><b>Make a Blotato account.</b> <a href="https://blotato.com/?ref=josee" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">blotato.com/?ref=josee</a></div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Connect your accounts.</b> Menu, then Accounts. Click Connect next to Facebook, log in and allow. Do the same for Instagram and Threads. Facebook only is fine.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Connect Blotato to Claude.</b> In Claude, go to Settings, then Connectors, then Add. Allow. (Or just schedule inside Blotato by hand. Both work.)</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Ask Claude to schedule.</b> Then look at the Blotato Calendar to see every slot lined up.</div></div>
+    <div class="step"><div class="n"></div><div class="t"><b>Look at every post.</b> Posts on the calendar are yours to approve.</div></div>
+  </div>
+  <pre>Schedule these pictures for next week. Three a day. Morning. Noon. And evening.</pre>
+  <img class="shot" src="masterclass-shots/frame-blotato-calendar.jpg" alt="Blotato calendar">
+  <div class="cap">A REAL FRAME FROM MY VIDEO · THE BLOTATO CALENDAR</div>
+  <div class="note"><span class="nt">Batch it</span>I work in batches of three days. I sit down once, check everything, and I'm done. Every check mark on that calendar went out while I was living my life. Start with one post a day, then add a second, then a third.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">69</div></div>
+
+<div class="page">
+  <div class="kick">Module 11 · Part 4</div>
+  <h2>Find your <em>people.</em></h2>
+  <p>You don't have to do this alone. A community gives you a place to ask questions, share wins and keep going. Mine is on Skool. I answer every question myself, because I want to. And the prompts from my videos are written out there, ready to copy.</p>
+  <p>Join here: <a href="https://skool.com/ai-digital-society-5263" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">skool.com/ai-digital-society-5263</a></p>
+  <h3>If you want your own community later</h3>
+  <p>Many people build their front door as a free group. Skool is where I host mine. To start your own, use my link: <a href="https://skool.com/signup?ref=20f22776f8d94037a3a92fa766a846d6" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">skool.com/signup?ref=20f22776f8d94037a3a92fa766a846d6</a>. Hosting your own group has a monthly fee.</p>
+  <h3>Stay safe online while you build</h3>
+  <ul>
+    <li><strong>Scams.</strong> If a message is urgent, asks for gift cards, or says your account is in trouble, stop. Don't click. Call the company on a number you already trust.</li>
+    <li><strong>Passwords.</strong> Writing them on sticky notes or using one password everywhere is the real danger. Use a password manager, or ask someone you trust to help set one up. Never paste a password into Claude.</li>
+    <li><strong>Easy money.</strong> If anyone promises you passive riches with no work, close the tab. This is a real business. It needs your thirty minutes a day.</li>
+  </ul>
+  <div class="goal"><span class="nt">Module 11 done when</span>You have one front door, one free gift, a first page online, a scheduler connected, and one week of posts waiting on the calendar.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">70</div></div>
+
+<!-- ============ MODULE 12 : DAILY ROUTINE ============ -->
+<div class="page mod">
+  <div class="kick">Module</div>
+  <div class="num">12</div>
+  <h2>Your daily <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">routine.</em></h2>
+  <p>The machine doesn't make the business. Your thirty minutes a day makes the business. Here is exactly what mine looks like, and a 30-day plan to follow.</p>
+  <div class="by">30 MINUTES A DAY · FROM MY VIDEOS 8, 16, 18, 39, 41, 49</div>
+</div>
+
+<div class="page">
+  <div class="kick">Module 12 · Part 1</div>
+  <h2>A day in <em>thirty minutes.</em></h2>
+  <table>
+    <tbody><tr><th>Time</th><th>What you do</th></tr>
+    <tr><td><b>Minute 1</b></td><td>Open Claude. Click your project. Type "Create my next post." Get coffee.</td></tr>
+    <tr><td><b>Minutes 5 to 15</b></td><td>Read the drafts. Does it have a hook, a point, a human line and a door? Does it sound like you? Approve, or fix with one sentence.</td></tr>
+    <tr><td><b>Minutes 15 to 20</b></td><td>Run the quality gate. Schedule what you approved.</td></tr>
+    <tr><td><b>Minutes 20 to 30</b></td><td>Go where your people are. Answer two comments. Welcome someone new. This is the human part. No helper does this for you.</td></tr>
+  </tbody></table>
+  <div class="quote">Approving takes one word. Fixing takes one sentence. That's the whole job.</div>
+  <h3>My morning, in small pieces</h3>
+  <ul>
+    <li><strong>Check one thing.</strong> One number: how posts did.</li>
+    <li><strong>Tell Claude what is needed.</strong> "Make my next carousel."</li>
+    <li><strong>Look. Say yes, or "change this."</strong></li>
+    <li><strong>Videos, one at a time.</strong> Claude builds. I watch the whole thing. I press public myself. That one button is mine.</li>
+  </ul>
+  <h3>Your Sunday reset · 10 minutes</h3>
+  <p>Three questions. Write the answers in a few lines, and don't be hard on yourself.</p>
+  <ol>
+    <li>What did I finish this week?</li>
+    <li>What got in the way?</li>
+    <li>What is the one thing for next week?</li>
+  </ol>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">72</div></div>
+
+<div class="page">
+  <div class="kick">Module 12 · Part 2</div>
+  <h2>Your 30-day <em>plan.</em></h2>
+  <p>Three rules: thirty minutes a day (fifteen still counts), one small thing only, and done beats perfect. Pick a time (morning coffee, after lunch, before bed) and a place. A kitchen table is perfect. It's not a feeling. It's a time.</p>
+  <p>Each day: first 5 minutes read yesterday's notes. Next 20 do today's step. Last 5 write tomorrow's step.</p>
+  <table>
+    <tbody><tr><th>Week</th><th>What you do</th></tr>
+    <tr><td><b>1 · Set up your team</b></td><td>Day 1: open Claude. Day 2: brain file (Module 3). Days 3 to 7: write down ten things people ask you about, a few per day.</td></tr>
+    <tr><td><b>2 · Pick and check</b></td><td>Days 8 to 9: choose one idea. Days 10 to 12: read comments on three popular posts about your topic. Days 13 to 14: ask your people if a guide would help.</td></tr>
+    <tr><td><b>3 · Make it with Claude</b></td><td>Day 15: outline. Days 16 to 20: one section a day. Read it, add your stories, check every fact. Day 21: turn it into a PDF.</td></tr>
+    <tr><td><b>4 · Open your little shop</b></td><td>Days 22 to 23: set up one place to get it. Day 24: make one free gift to collect emails. Days 25 to 30: one helpful post a day, and mention your product once a week.</td></tr>
+  </tbody></table>
+  <div class="note"><span class="nt">What gets in your way</span>A busy day: do tomorrow's step, don't catch up with an hour. Self-doubt: around week two or three everyone feels it. Perfectionism: done beats perfect. Comparing: your first won't look like someone else's tenth.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">73</div></div>
+
+<div class="page">
+  <div class="kick">Module 12 · Part 3</div>
+  <h2>Where people <em>quit, and why you won't.</em></h2>
+  <p>People who fail usually quit in week three, right before it gets good. You don't have to be perfect. You have to show up in small ways. A missed day is not failing. That's life. You don't start over. You just take the next small step.</p>
+  <h3>Give it ninety days</h3>
+  <p>Not ninety days of rushing. Ninety days of small steps. A little bit, most days. It improves every month, because your brain file remembers each fix.</p>
+  <h3>What this masterclass does not do</h3>
+  <ul>
+    <li>It does not promise income. Nobody honestly can.</li>
+    <li>It does not work if you skip your 10 percent.</li>
+    <li>It does not replace you. It gives you time and calm.</li>
+    <li>It is not "money while you sleep." If anyone promises that, close the tab.</li>
+  </ul>
+  <div class="quote">Burnout taught me that I can't do everything. Claude taught me that I don't have to.</div>
+  <h3>My promise to you</h3>
+  <p>I can't promise what this will earn for you. What I can promise is a helper, a clear first step, and the time to learn at your own pace. I'm not going to cheer you up. I'm going to hand you a plan.</p>
+  <p>You are not behind. You are not too old. You do not have to understand technology to build something with it. You are allowed to begin before you are sure.</p>
+  <div class="goal"><span class="nt">You made it</span>Finished doesn't mean you read every page. Finished means you got what you needed. Pick one module. Start today. And come tell me how it went.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">74</div></div>
+<!-- ============ APPENDIX A : A TO Z ============ -->
+<div class="page mod">
+  <div class="kick">Appendix</div>
+  <div class="num">A</div>
+  <h2>The <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">A-to-Z checklist.</em></h2>
+  <p>Twenty-six small steps, in order. Tick them off one at a time. This is the whole masterclass on two pages.</p>
+  <div class="by">PRINT IT · TICK IT · NOBODY IS TIMING YOU</div>
+</div>
+
+<div class="page">
+  <div class="kick">The A-to-Z checklist</div>
+  <h2>Steps <em>A to M.</em></h2>
+  <div class="az">
+    <div><b>A</b><span><strong>Accept</strong> that you are not behind. (Module 1)</span></div>
+    <div><b>B</b><span><strong>Begin</strong> with three things people always ask you. (1)</span></div>
+    <div><b>C</b><span><strong>Claude:</strong> install it and say hello. (2)</span></div>
+    <div><b>D</b><span><strong>Daily habit:</strong> open it every morning, even for five minutes. (2)</span></div>
+    <div><b>E</b><span><strong>Explain anything:</strong> ask it to say it simpler. (2)</span></div>
+    <div><b>F</b><span><strong>Folder:</strong> make your first project. (2)</span></div>
+    <div><b>G</b><span><strong>Get interviewed:</strong> let Claude write your brain file. (3)</span></div>
+    <div><b>H</b><span><strong>Hook bank:</strong> copy real comments, word for word. (4)</span></div>
+    <div><b>I</b><span><strong>Identify</strong> your one customer and your one sentence. (4)</span></div>
+    <div><b>J</b><span><strong>Just one idea:</strong> pick it and write it down. (4)</span></div>
+    <div><b>K</b><span><strong>Keep your 10 percent:</strong> decide, approve, publish. (1, 5)</span></div>
+    <div><b>L</b><span><strong>Lock your quality gate:</strong> a checklist for every post. (5)</span></div>
+    <div><b>M</b><span><strong>Make your first helper</strong> in one afternoon. (5)</span></div>
+  </div>
+  <div class="note"><span class="nt">Tip</span>You do not have to do the letters in a single week. Do A to F in your first week. Do G to M in your second. Everything after that is your pace.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">76</div></div>
+
+<div class="page">
+  <div class="kick">The A-to-Z checklist</div>
+  <h2>Steps <em>N to Z.</em></h2>
+  <div class="az">
+    <div><b>N</b><span><strong>Name your look:</strong> three colors, two fonts. (7)</span></div>
+    <div><b>O</b><span><strong>Own your face</strong> honestly: photos, twin, or no face. (6)</span></div>
+    <div><b>P</b><span><strong>Picture style:</strong> save it so Claude repeats it. (7)</span></div>
+    <div><b>Q</b><span><strong>Quiet voice:</strong> record your real voice, only yours. (6)</span></div>
+    <div><b>R</b><span><strong>Research</strong> weekly: listen to the comments. (9)</span></div>
+    <div><b>S</b><span><strong>Story:</strong> context, action, result, takeaway. (8)</span></div>
+    <div><b>T</b><span><strong>Twin:</strong> make one talking clip, and say it is AI. (6)</span></div>
+    <div><b>U</b><span><strong>Use the apps:</strong> Content System, BrandBuilder, Product Library. (7, 8, 10)</span></div>
+    <div><b>V</b><span><strong>Value first:</strong> write your outline, one part at a time. (10)</span></div>
+    <div><b>W</b><span><strong>Website:</strong> five things on one page. (11)</span></div>
+    <div><b>X</b><span><strong>X marks the door:</strong> one front door for everything. (11)</span></div>
+    <div><b>Y</b><span><strong>Your product:</strong> PDF, cover, honest price, buy button. (10)</span></div>
+    <div><b>Z</b><span><strong>Zero guesses:</strong> thirty minutes a day, ninety days. (12)</span></div>
+  </div>
+  <div class="quote">One step. One day. Done.</div>
+  <p>Running beats perfect, every single time. Seven days in, you are not finished. You are running.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">77</div></div>
+
+<!-- ============ APPENDIX B : PROMPT BANK ============ -->
+<div class="page mod">
+  <div class="kick">Appendix</div>
+  <div class="num">B</div>
+  <h2>The <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">prompt bank.</em></h2>
+  <p>Every prompt in this masterclass, in one place. Copy, paste, fill the [brackets].</p>
+  <div class="by">KEEP THIS OPEN NEXT TO CLAUDE</div>
+</div>
+
+<div class="page">
+  <div class="kick">Prompt bank · Getting started</div>
+  <h2>First days with <em>Claude.</em></h2>
+  <h4>First message</h4>
+  <pre>Hi Claude, this is my first time using you, and I'm a little nervous. I'm over fifty, and I want to start a simple digital business online. Can you explain, in simple words, how you can help me do that?</pre>
+  <h4>If you're nervous</h4>
+  <pre>I'm new to this and a little nervous about messing up. Please be gentle. Ask me one question at a time, and help me do one small thing today.</pre>
+  <h4>When you're stuck on any screen (paste a screenshot first)</h4>
+  <pre>I'm stuck. What do I do from here? Give me the steps.</pre>
+  <h4>Make any text kinder and shorter</h4>
+  <pre>make this a little shorter and a little warmer</pre>
+  <h4>Quick fixes</h4>
+  <pre>Explain that again, but simpler.   ·   explain it like I'm ten.   ·   that doesn't look right. Try again.   ·   put it back the way it was.   ·   let's start over.</pre>
+  <h4>Project instructions to start (before your brain file)</h4>
+  <pre>I'm new to this. Please use simple words and short sentences. Ask me one question at a time. Never delete or change my files. Always check with me before you decide something for me.</pre>
+  <h4>Read the files in a project</h4>
+  <pre>Please read the files in this project. Tell me, in simple words, what each one is. Then write me a one page summary.</pre>
+  <h4>Practice saying no</h4>
+  <pre>I need to say no to a request, and I feel nervous about it. Here is the request: [your request]. Please write me three short, kind ways to say no, in my voice. No long apology. No excuses. Warm, but clear.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">79</div></div>
+
+<div class="page">
+  <div class="kick">Prompt bank · Brain file and customer</div>
+  <h2>Who you are and <em>who you help.</em></h2>
+  <h4>The brain file interview</h4>
+  <pre>Interview me, so you can write my brain file, a short note about who I am, who I help, what I know, and how I talk. Ask me eight simple questions, one at a time. Then write the brain file in plain words, under three hundred words, so I can save it and use it every time.</pre>
+  <pre>please write this as my brain file.</pre>
+  <pre>please update my brain file with that lesson.</pre>
+  <h4>Two-answer test</h4>
+  <pre>write a short, friendly Facebook post inviting people to my free guide.</pre>
+  <h4>Three lists</h4>
+  <pre>Here are my three lists. What patterns do you see? What do I know that I might not realize is useful to someone else? Be honest, and don't flatter me.</pre>
+  <h4>Two lists (fills me up, empties me out)</h4>
+  <pre>read my two lists, what do you notice, and what pattern do you see in what fills me up?</pre>
+  <h4>Sort comments into piles</h4>
+  <pre>Here are comments from people I want to help. Sort them into piles by the fear behind each comment. Which pile is the biggest? What are the three strongest comments in each pile? Use their words. Do not make anything up that is not in the comments.</pre>
+  <h4>Customer avatar</h4>
+  <pre>Using the comments I pasted, build me a one-page customer avatar. Use only what is in the comments. Include: her age and life stage; what she is afraid of; what she has already tried that did not work; the exact words she uses to describe her problem; what she wants most; and the one small first step she would say yes to. Do not invent details that are not in the comments. Then write one sentence: "I help [this kind of person] get [this result], without [this common problem]."</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">80</div></div>
+
+<div class="page">
+  <div class="kick">Prompt bank · Helpers and content</div>
+  <h2>Helpers, posts <em>and stories.</em></h2>
+  <h4>Build a helper</h4>
+  <pre>you are my helper for this one job: [name the job]. Use my brain file, ask me anything you need to know, and then give me a first draft.</pre>
+  <h4>Post writer</h4>
+  <pre>I want you to act as my post writer. Here is how I write, here are my rules, and here is how I always end. Save this as a job description, and from now on, when I give you an idea, write the post exactly this way.</pre>
+  <h4>One idea into a week</h4>
+  <pre>take this one idea, and turn it into seven different posts, one for each day of the week, each with a different angle.</pre>
+  <h4>Seven helpful posts</h4>
+  <pre>Using my brain file, write seven short, helpful Facebook posts about my topic. Each one starts with a real worry my people have, then gives one small tip. Mention my guide in only one of them.</pre>
+  <h4>Quality gate</h4>
+  <pre>Please check this against my brain file. Does it sound like me? Did I break any of my rules?</pre>
+  <pre>check this against my checklist</pre>
+  <pre>never schedule or publish anything unless I say yes first</pre>
+  <h4>Learn from your own numbers</h4>
+  <pre>which posts worked best?</pre>
+  <h4>Story in four parts</h4>
+  <pre>Turn these notes into a short story in four parts: context, action, result, takeaway. Use simple words and short sentences. Keep it true to what I wrote. Do not add details I did not give you.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">81</div></div>
+
+<div class="page">
+  <div class="kick">Prompt bank · Brand, twin, product</div>
+  <h2>Pictures, twin <em>and product.</em></h2>
+  <h4>Picture style</h4>
+  <pre>Save this as my picture style. Write down every rule we just used, so you can do it again.</pre>
+  <h4>Your twin: keep my face</h4>
+  <pre>Here are my real photos. I want you to make new pictures of me. Keep my face exactly the same. Don't change my hair. Don't make me look younger. Make me look like me.</pre>
+  <pre>The face is off. Try again, and keep it closer to my photos.</pre>
+  <pre>what is my Higgsfield credit balance?</pre>
+  <h4>Talking clip (in Higgsfield Lipsync Studio)</h4>
+  <pre>talking naturally</pre>
+  <h4>Product: find the problem</h4>
+  <pre>You know my story from my brain file. Ask me ten questions, one at a time, to find the problems I have solved in my own life that other people still struggle with.</pre>
+  <h4>Product: outline and write</h4>
+  <pre>Create an outline for a short, practical guide that solves this problem: [your problem]. Five to seven parts. Each part is one clear step. Simple words. No jargon. Written for a complete beginner who is a little bit nervous.</pre>
+  <pre>Write part one of the guide, in my voice, using my brain file. Keep it simple and warm. Short sentences. Real examples.</pre>
+  <pre>Check this guide against my rules. Flag anything that overpromises, anything vague, and anything a beginner would not understand.</pre>
+  <h4>Finish one thing (paste a guide you bought)</h4>
+  <pre>Turn this guide into a one page checklist and a seven day plan. Use simple words. Put the easiest step first. Do not add anything that is not in the guide.</pre>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">82</div></div>
+
+<!-- ============ APPENDIX C : LINKS ============ -->
+<div class="page">
+  <div class="kick">Appendix C</div>
+  <h2>Tools <em>and links.</em></h2>
+  <p>Some of these are my affiliate links. I only name tools I use.</p>
+  <table>
+    <tbody><tr><th>What</th><th>Where</th></tr>
+    <tr><td><b>Claude</b> (free week)</td><td><a href="https://claude.ai/referral/F8tzMGyYig" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">claude.ai/referral/F8tzMGyYig</a></td></tr>
+    <tr><td><b>Claude desktop app</b></td><td><a href="https://claude.ai/download" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">claude.ai/download</a></td></tr>
+    <tr><td><b>Higgsfield</b> · your AI twin</td><td><a href="https://higgsfield.ai?fpr=josee-9610b8" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">higgsfield.ai?fpr=josee-9610b8</a></td></tr>
+    <tr><td><b>Higgsfield connector address</b></td><td>https://mcp.higgsfield.ai/mcp</td></tr>
+    <tr><td><b>Eden</b> · research</td><td><a href="https://eden.so/?via=eden-6ebcdbf62229" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">eden.so/?via=eden-6ebcdbf62229</a></td></tr>
+    <tr><td><b>Blotato</b> · scheduler</td><td><a href="https://blotato.com/?ref=josee" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">blotato.com/?ref=josee</a></td></tr>
+    <tr><td><b>Voicebox</b> · free local voice cloning</td><td><a href="https://voicebox.sh" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">voicebox.sh</a></td></tr>
+    <tr><td><b>My community</b></td><td><a href="https://skool.com/ai-digital-society-5263" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">skool.com/ai-digital-society-5263</a></td></tr>
+    <tr><td><b>Start your own group</b></td><td><a href="https://skool.com/signup?ref=20f22776f8d94037a3a92fa766a846d6" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">skool.com/signup?ref=20f22776f8d94037a3a92fa766a846d6</a></td></tr>
+  </tbody></table>
+  <h3>Your Club apps</h3>
+  <table>
+    <tbody><tr><td><b>The AI Content System</b></td><td><a href="https://system.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">system.joseebedard.com</a></td></tr>
+    <tr><td><b>BrandBuilder</b></td><td><a href="https://brandbuilder.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">brandbuilder.joseebedard.com</a></td></tr>
+    <tr><td><b>The Product Library</b></td><td><a href="https://library.joseebedard.com" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">library.joseebedard.com</a></td></tr>
+    <tr><td><b>Your member page</b></td><td><a href="https://aidigitalsociety.com/my-space.html" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">aidigitalsociety.com/my-space.html</a></td></tr>
+  </tbody></table>
+  <h3>My free guides</h3>
+  <p>Your One-Person AI Business, Pivot to What (10 simple businesses you can start after fifty), and They Already Wrote It (my comment method). Find them at <a href="https://joseebedard.com/tools" style="color:inherit;text-decoration:underline;text-decoration-color:#C9A04A" target="_blank" rel="noopener">joseebedard.com/tools</a>.</p>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">83</div></div>
+
+<!-- ============ APPENDIX D : STUCK ============ -->
+<div class="page">
+  <div class="kick">Appendix D</div>
+  <h2>When you get <em>stuck.</em></h2>
+  <table>
+    <tbody><tr><th>If this happens</th><th>Try this</th></tr>
+    <tr><td>The answer is flat or sounds like everyone</td><td>Paste your brain file, then: "here's who I am and who I help, now say it again like me."</td></tr>
+    <tr><td>It's too long</td><td>"make it half as long, and use shorter words."</td></tr>
+    <tr><td>You think it's wrong</td><td>"I think that's not correct, check it again, and show me how you know." Then check it yourself somewhere reliable.</td></tr>
+    <tr><td>You don't know what to type</td><td>Start with you, not the task: "I want to start something of my own after fifty, but every time I sit down, I freeze, and I don't know where to begin."</td></tr>
+    <tr><td>You hit the daily limit</td><td>Close it. Come back later. Nothing is lost.</td></tr>
+    <tr><td>Your screen looks different</td><td>Look for the same word in the menu, or take a screenshot and ask.</td></tr>
+    <tr><td>A picture doesn't look like you</td><td>Say so plainly. Never post it. Never keep changing the base picture.</td></tr>
+    <tr><td>You feel frozen</td><td>Shrink the step until you can do it tired. Ten minutes counts. A phone counts.</td></tr>
+  </tbody></table>
+  <h3>Read this before you publish anything</h3>
+  <div class="note warn"><span class="nt">My honest rules for AI</span>1. Tell people when you use AI.<br>2. Check every fact. Claude does the first draft, you check the facts.<br>3. Promise nothing you can't keep. No income numbers.<br>4. Only your own face and voice. Never anyone else's.<br>5. Never let a tool publish something you haven't read.<br>6. Never type passwords or bank details into any chat.</div>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">84</div></div>
+
+<!-- ============ VIDEOS ============ -->
+<div class="page">
+  <div class="kick">Appendix E</div>
+  <h2>The videos <em>behind each module.</em></h2>
+  <p>Want to watch me do it? These are the videos from my channel that each module is built from.</p>
+  <table>
+    <tbody><tr><th>Module</th><th>My videos</th></tr>
+    <tr><td><b>1 Mindset</b></td><td>Starting Over at 50 · Your 50s Can Be the Best Time · If Life Knocked You Down · You Don't Want to Stop Working, You Want to Stop Running on Empty · Why Women Over 50 Say Yes to Everything · Don't Start Over, Build On What You Know · Why You Never Finish Courses</td></tr>
+    <tr><td><b>2 Claude</b></td><td>Claude for Complete Beginners · Claude for Beginners, Start to Finish · If You're Afraid to Break Claude · Claude Projects for Beginners · How I'd Learn Claude From Scratch</td></tr>
+    <tr><td><b>3 Brain file</b></td><td>Don't Know What to Type in Claude · My AI Remembers Everything · You're Using AI Like Google</td></tr>
+    <tr><td><b>4 Your customer</b></td><td>I Turned 750 Comments Into My Next Product · I Read 872 Comments · 7 Quiet Businesses · 30 Digital Product Ideas</td></tr>
+    <tr><td><b>5 AI helpers</b></td><td>The AI Employee System · My First AI Helper in One Afternoon · Social Media Team With Zero Employees · My AI Team Documentary</td></tr>
+    <tr><td><b>6 AI twin</b></td><td>My AI Twin · My AI Twin: How I Made It</td></tr>
+    <tr><td><b>7 Brand</b></td><td>Claude Makes All My Branded Images · BrandBuilder · Claude Design for Beginners</td></tr>
+    <tr><td><b>8 Content</b></td><td>My AI Content System · Tell a Story People Remember</td></tr>
+    <tr><td><b>9 Research</b></td><td>I Connected Claude to My Whole Week · I Turned 750 Comments Into My Next Product</td></tr>
+    <tr><td><b>10 First product</b></td><td>Your First Digital Product · The Simplest Way to Make Your First Digital Product · 7 Mistakes With Your First Digital Product · The 30 Day Challenge</td></tr>
+    <tr><td><b>11 Sell it</b></td><td>My Website · The Low-Tech AI Business · I'm Not Afraid of Technology, I'm Tired of the Extra</td></tr>
+    <tr><td><b>12 Routine</b></td><td>I Built My Entire AI Business From Zero · The 30 Day Challenge · The Full Course</td></tr>
+  </tbody></table>
+<div class="footbrand">THE A-TO-Z MASTERCLASS · AI DIGITAL SOCIETY</div><div class="pagenum">85</div></div>
+
+<!-- ============ CLOSING ============ -->
+<div class="page big-divider">
+  <div class="kick">The end, and the start</div>
+  <h2>Copy me. Then <em style="font-family:'Newsreader',serif;color:#D6A843;font-weight:500">make it yours.</em></h2>
+  <p>Everything in this masterclass you can copy. I don't mind. I would rather you copy me than stay stuck. Then make it yours, in your own voice.</p>
+  <p>You are not behind. You are not too old. You are not starting from zero. Pick one module and take one small step today.</p>
+  <p>I want you to hear this from me. I have been exhausted, scared and sure it was over. I rebuilt anyway, one small step at a time, and so can you. You do not need to be fast. You do not need to be perfect. You do not need to know it all before you begin. You only need to start, and then keep showing up.</p>
+  <p>One small step today beats a perfect plan that never leaves your head. Some days it will feel slow. Some days a screen will confuse you. That is normal, and it does not mean you are failing. Take a breath, ask Claude, and take the next small step.</p>
+  <p>Your experience, your story and your heart are exactly what other people are looking for. I believe in you. Now go and make your first move. I'll be cheering you on.</p>
+  <p style="margin-top:24pt;font-size:11pt;color:#9C947F">Josée Bédard · AI Digital Society</p>
+  <p style="font-size:9pt;color:#9C947F;max-width:5.6in;margin-top:30pt">This masterclass teaches a system. It does not promise income, followers or sales. Results vary. My story is my own and it is not typical.</p>
+</div>
+
+
+
+</div>
+<script>
+(function(){
+  function fit(){
+    var s=document.getElementById('sheet'), w=816, avail=Math.min(window.innerWidth, document.documentElement.clientWidth)-16;
+    var z=Math.min(1, avail/w); s.style.zoom=z;
+  }
+  fit(); window.addEventListener('resize',fit);
+})();
+</script>
+</body></html>
