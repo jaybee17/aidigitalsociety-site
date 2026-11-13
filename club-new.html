@@ -103,6 +103,10 @@
 .nichechips span{border:1px solid rgba(11,10,8,.22);background:var(--cream-card);border-radius:999px;padding:9px 18px;font-size:15px}
 .dark .nichechips span{background:var(--black-2);border-color:var(--line-dark)}
 
+/* who made this */
+.story{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:44px;max-width:1000px;margin:34px auto 0;align-items:center}
+.story .photo img{width:100%;display:block;border-radius:20px;border:1px solid rgba(201,160,74,.6);box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.light .stats span{color:#3b3426;opacity:1;font-size:15px}
 /* content system showcase */
 .reels3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:760px;margin:22px auto 0}
 .reels3 figure{margin:0}
@@ -167,6 +171,7 @@
   .strip{grid-template-columns:repeat(3,1fr)}
   .nicheset{grid-template-columns:1fr}
   .nichegroups{grid-template-columns:1fr}
+  .story{grid-template-columns:1fr;gap:26px}.story .photo{max-width:320px;margin:0 auto}
   .nichegroups>div,.nichegroups>div:nth-child(n+4){grid-column:auto}
   .lessons,.gal.g5{grid-template-columns:1fr 1fr}
   .gal.g6{grid-template-columns:repeat(3,1fr)}
@@ -542,11 +547,12 @@
     <div class="eyebrow">Who made this</div>
     <h2 class="big">hi, I am Jos&eacute;e. <em>I built the Club for you.</em></h2>
   </div>
-  <div style="max-width:760px;margin:26px auto 0;font-size:18px;display:grid;gap:14px">
+  <div class="story"><div class="photo"><img src="img/club-josee-dock.jpg" alt="Josée on a dock, FREEDOM on the back of her hoodie" loading="lazy"></div>
+  <div style="font-size:18px;display:grid;gap:14px;align-content:center">
     <p>I started as a rural mail carrier. Then I tried the get-rich-quick schemes, and I earned nothing from every single one. I have worked for myself, full time, for over 17 years, building my own digital products and affiliate offers.</p>
     <p>Then I opened an agency and ran it for seven years on 80-hour weeks, until my body said stop. I rebuilt quietly, with no face on camera and no staff, using AI helpers that do the work.</p>
     <p>Now I show people how to build the same thing, one simple step at a time. The Club puts all of it in one place.</p>
-  </div>
+  </div></div>
   <div class="stats">
     <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">17+</b><span>years full time, no job since</span></div>
     <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">30,000+</b><span>products sold</span></div>
