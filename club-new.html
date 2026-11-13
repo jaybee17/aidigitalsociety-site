@@ -115,10 +115,16 @@
 .nicheset h4{font-family:'Newsreader',serif;font-weight:500;font-size:24px;color:#E8BE5A;margin-bottom:12px;text-align:center}
 .nicheset .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .nicheset video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;background:#000;cursor:pointer}
-.nichegroups{display:grid;gap:6px;margin-top:26px}
-.nichegroups>div{text-align:center}
-.nichegroups>div>b{display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#E8BE5A;margin-top:18px}
-.nichegroups .nichechips{margin-top:10px}
+.nichegroups{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:30px;counter-reset:ng}
+.nichegroups>div{grid-column:span 2;text-align:left;position:relative;overflow:hidden;background:linear-gradient(145deg,#1d1810,#2a210f);border:1px solid rgba(201,160,74,.5);border-radius:20px;padding:24px 24px 26px;box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.nichegroups>div:nth-child(n+4){grid-column:span 3}
+.nichegroups>div:before{counter-increment:ng;content:"0" counter(ng);position:absolute;right:18px;top:6px;font-family:'Newsreader',serif;font-style:italic;font-size:64px;line-height:1;color:rgba(232,190,90,.14)}
+.nichegroups>div>b{display:block;font-family:'Newsreader',serif;font-weight:500;font-size:25px;letter-spacing:0;text-transform:none;color:#F4EEDF;margin:0 0 4px;padding-bottom:12px;border-bottom:2px solid #C9A04A;width:max-content;max-width:100%}
+.nichegroups .nichechips{margin-top:16px;justify-content:flex-start;gap:9px}
+.nichegroups .nichechips span{background:rgba(232,190,90,.1);border:1px solid rgba(232,190,90,.45);color:#F4EEDF;font-size:15px;padding:8px 15px}
+.nichegroups .nichechips span:hover{background:#E8BE5A;color:#161310}
+.nicheclose{margin:28px auto 0;max-width:760px;text-align:center;font-weight:600;font-size:19px;padding:18px 24px;border-radius:16px;border:1.5px solid #C9A04A;background:rgba(232,190,90,.08)}
+.nicheclose em{color:#E8BE5A}
 .swap.lt .row{background:rgba(255,255,255,.04);border-color:var(--line-dark)}
 .swap.lt s{text-decoration-color:#E8BE5A}
 .swap.lt small{opacity:.7}
@@ -160,6 +166,8 @@
   .swap .row{grid-template-columns:1fr;gap:6px}
   .strip{grid-template-columns:repeat(3,1fr)}
   .nicheset{grid-template-columns:1fr}
+  .nichegroups{grid-template-columns:1fr}
+  .nichegroups>div,.nichegroups>div:nth-child(n+4){grid-column:auto}
   .lessons,.gal.g5{grid-template-columns:1fr 1fr}
   .gal.g6{grid-template-columns:repeat(3,1fr)}
   .gal.g3,.gal.g2{grid-template-columns:1fr}
@@ -463,7 +471,8 @@
         <video muted loop playsinline preload="none" poster="img/cs-med-3.jpg"><source src="img/cs-med-3.mp4" type="video/mp4"></video></div></div>
     </div>
     <div class="center" style="margin-top:56px">
-      <h3>works for any niche. even if you are starting from scratch.</h3>
+      <span class="eyebrow">Any niche</span>
+      <h3 style="margin-top:6px">works for any niche. <em>even if you are starting from scratch.</em></h3>
       <p class="lede" style="max-width:700px;margin:0 auto">From mindset to money to faceless content, the Content System works across every niche.</p>
     </div>
     <div class="nichegroups">
@@ -473,7 +482,7 @@
       <div><b>Content and creator</b><div class="nichechips"><span>Faceless content</span><span>Daily quotes</span><span>Storytelling</span><span>Personal branding</span><span>AI tools</span></div></div>
       <div><b>Faith, food and fitness</b><div class="nichechips"><span>Bible verses</span><span>Cooking and recipes</span><span>Meditation and calm</span><span>Fitness over 50</span></div></div>
     </div>
-    <p class="center" style="margin-top:22px;font-weight:600;font-size:18px">If people are already talking about it, you can build an audience around it.</p>
+    <p class="nicheclose">If people are already talking about it, <em>you can build an audience around it.</em></p>
 
     <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Content</span></div><img src="img/club-shot-content.jpg" alt="The Content tab with the writing tools"></div></div>
   </div>
