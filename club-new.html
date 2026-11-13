@@ -700,7 +700,7 @@ async function startCheckout(btn){
     const res = await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/product-checkout', {
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},
-      body: JSON.stringify({ product: 'club' })
+      body: JSON.stringify({ product: 'clubNew' })
     });
     const data = await res.json();
     if (data.url) { window.location.href = data.url; return; }
