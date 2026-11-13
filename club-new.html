@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Club: one app for your whole online business | AI Digital Society</title>
+<meta name="description" content="Stop juggling 99 apps. The Club is one all-in-one app with one login: video lessons, a product builder, your brand, 72 finished books and your content tools. Works with a free Google key, and with Claude too. One payment, no monthly fee.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+/* picture of the app, in a simple browser frame */
+.frame{border-radius:16px;overflow:hidden;border:1px solid rgba(201,160,74,.6);background:#F4EEDF;box-shadow:0 26px 70px rgba(0,0,0,.35),0 0 0 6px rgba(201,160,74,.08)}
+.frame .bar{display:flex;gap:7px;align-items:center;padding:11px 14px;background:#1b160c;border-bottom:1px solid rgba(201,160,74,.35)}
+.frame .bar i{width:11px;height:11px;border-radius:50%;background:#5b4a22;display:block}
+.frame .bar i:first-child{background:#C9A04A}
+.frame .bar span{margin-left:10px;font-size:12px;letter-spacing:.04em;color:#bda76e;opacity:.9}
+.frame img{display:block;width:100%}
+.hero-frame{max-width:980px;margin:46px auto 0}
+.trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.trust span{font-size:14px;font-weight:600;border:1px solid rgba(201,160,74,.55);border-radius:999px;padding:7px 15px;color:var(--gold-bright)}
+
+/* real results, right under the hook */
+.made{max-width:1000px;margin:52px auto 0}
+.made .eyebrow{display:block;text-align:center;margin-bottom:6px}
+.made h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,34px);text-align:center;margin-bottom:6px}
+.made p.cap{text-align:center;opacity:.75;font-size:16px}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px}
+.strip figure{margin:0}
+.strip img,.strip video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid rgba(201,160,74,.5);display:block;background:#111}
+.strip video{aspect-ratio:9/16}
+.strip figcaption{font-size:12.5px;opacity:.75;margin-top:7px;text-align:center}
+
+/* three pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.pillar{border:1px solid rgba(11,10,8,.16);border-radius:18px;padding:28px;background:var(--cream-card)}
+.pillar b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(180deg,#E8BE5A,#C9A04A);color:#161310;font-size:18px;margin-bottom:12px}
+.pillar h3{font-size:26px;margin-bottom:8px}
+.pillar p{opacity:.85}
+
+/* the 99 apps problem + the swap table */
+.hurts{max-width:760px;margin:30px auto 0;display:grid;gap:12px}
+.hurts div{display:flex;gap:14px;align-items:flex-start;font-size:18px}
+.hurts div:before{content:"";flex:0 0 10px;height:10px;border-radius:50%;background:#C9A04A;margin-top:9px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px;align-items:stretch}
+.ba .col{border-radius:18px;padding:28px}
+.ba .many{border:1px solid var(--line-dark);background:var(--black-2)}
+.ba .one{border:1.5px solid #C9A04A;background:linear-gradient(135deg,#1b160c,#2a210f);color:var(--cream)}
+.ba h3{font-size:24px;margin-bottom:6px}
+.ba .sm{font-size:15px;opacity:.7;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips span{font-size:15px;border-radius:999px;padding:7px 14px}
+.many .chips span{border:1px solid rgba(244,238,223,.28);text-decoration:line-through;text-decoration-color:rgba(232,190,90,.9);opacity:.75}
+.one .chips span{background:linear-gradient(180deg,#E8BE5A,#C9A04A);color:#161310;font-weight:700;text-decoration:none}
+.ba .foot{margin-top:18px;font-weight:600}
+.swap{max-width:900px;margin:36px auto 0;display:grid;gap:12px}
+.swap .row{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:center;background:var(--cream-card);border:1px solid rgba(11,10,8,.14);border-radius:16px;padding:18px 24px}
+.swap b{display:block;font-size:20px;font-family:var(--serif);font-weight:500}
+.swap small{display:block;font-size:13px;opacity:.65;margin-top:4px}
+.swap p{font-size:16px;opacity:.92}
+.swap p:before{content:"\2713\00a0";color:#9A7425;font-weight:700}
+
+/* the step-by-step blocks */
+.blk{display:block;padding:46px 0}
+.blk .pic{margin-top:28px}
+.blk .checks{columns:2;column-gap:40px}
+.blk .checks li{break-inside:avoid}
+.blk .top{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.blk .top .checks{columns:1}
+.blk .ban img{width:100%;display:block;border-radius:16px;border:1px solid rgba(201,160,74,.55);box-shadow:0 18px 44px rgba(0,0,0,.3)}
+.blk .ban.covers{display:flex;gap:14px;justify-content:center;align-items:center}
+.blk .ban.covers img{width:48%}
+.blk h3{font-size:clamp(28px,3.4vw,40px);margin:10px 0 12px}
+.blk .lede{font-size:18px;margin-bottom:10px;opacity:.9}
+.tag{display:inline-block;margin:14px 8px 0 0;font-size:14px;font-weight:600;color:#9A7425;border:1.5px solid #C9A04A;border-radius:999px;padding:6px 16px}
+.tag.gold{background:#E8BE5A;color:#161310;border-color:#E8BE5A}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:center;padding:34px 22px;background:linear-gradient(135deg,#1b160c,#2a210f);border-radius:16px;border:1px solid rgba(201,160,74,.6);box-shadow:0 26px 70px rgba(0,0,0,.28)}
+.chain span{font-weight:700;font-size:16px;border-radius:999px;padding:10px 18px;background:linear-gradient(180deg,#E8BE5A,#C9A04A);color:#161310}
+.chain i{font-style:normal;color:#E8BE5A;font-size:20px}
+.chain em.soon{flex:0 0 100%;text-align:center;font-style:normal;margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E8BE5A}
+
+/* galleries of real results */
+.gal{display:grid;gap:14px;margin-top:28px}
+.gal.g2{grid-template-columns:1fr 1fr}
+.gal.g3{grid-template-columns:repeat(3,1fr)}
+.gal.g5{grid-template-columns:repeat(5,1fr)}
+.gal.g6{grid-template-columns:repeat(6,1fr)}
+.gal figure{margin:0}
+.gal img{width:100%;display:block;border-radius:12px;border:1px solid rgba(11,10,8,.18);box-shadow:0 12px 30px rgba(0,0,0,.14)}
+.gal figcaption{font-size:14.5px;margin-top:9px;opacity:.88}
+.gal figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:18px;opacity:1}
+.wall{width:100%;display:block;border-radius:16px;border:1px solid rgba(201,160,74,.55);box-shadow:0 18px 44px rgba(0,0,0,.25);margin-top:28px}
+.lessons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.lessons figure{margin:0}
+.lessons img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid rgba(11,10,8,.2);display:block}
+.lessons figcaption{font-size:14px;margin-top:6px;line-height:1.3}
+.lessons figcaption b{color:#9A7425;margin-right:6px}
+.subh{font-family:var(--serif);font-weight:500;font-size:26px;margin-top:44px}
+.subh+p{opacity:.8;margin-top:4px}
+.nichechips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.nichechips span{border:1px solid rgba(11,10,8,.22);background:var(--cream-card);border-radius:999px;padding:9px 18px;font-size:15px}
+.dark .nichechips span{background:var(--black-2);border-color:var(--line-dark)}
+
+/* claude */
+.two3{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
+.box{border:1px solid var(--line-dark);border-radius:18px;padding:28px;background:var(--black-2)}
+.box.gold{border:1.5px solid #C9A04A;background:linear-gradient(135deg,#1b160c,#2a210f)}
+.box h3{font-size:26px;margin-bottom:8px}
+.box .sm{opacity:.75;margin-bottom:12px}
+
+/* first week */
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.week div{border:1px solid rgba(11,10,8,.16);border-radius:16px;padding:20px;background:var(--cream-card)}
+.week b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#9A7425;margin-bottom:8px}
+.week h3{font-size:20px;margin-bottom:6px}
+.week p{font-size:15px;opacity:.85}
+
+/* story */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stats div{border:1px solid var(--line-dark);border-radius:14px;padding:18px;text-align:center;background:var(--black-2)}
+.stats b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;color:var(--gold-bright)}
+.stats span{font-size:14px;opacity:.75}
+
+.peeks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.peeks img{border-radius:12px;border:1px solid rgba(11,10,8,.18);width:100%}
+.val{max-width:640px;margin:34px auto 0;border:1.5px solid #C9A04A;border-radius:18px;background:var(--cream-card);overflow:hidden}
+.val div{display:flex;justify-content:space-between;gap:16px;padding:13px 22px;border-bottom:1px solid rgba(11,10,8,.1);font-size:17px}
+.val div:last-child{border:0;background:#0B0A08;color:var(--cream);font-weight:700;font-size:19px}
+.val div:last-child b{color:var(--gold-bright)}
+.faq{max-width:760px;margin:30px auto 0}
+.faq details{border-bottom:1px solid rgba(11,10,8,.16);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px}
+.faq p{margin-top:10px;opacity:.85}
+@media(max-width:900px){
+  .blk .checks{columns:1}
+  .blk .top{grid-template-columns:1fr;gap:26px}
+  .pillars,.two3,.ba{grid-template-columns:1fr}
+  .swap .row{grid-template-columns:1fr;gap:6px}
+  .strip{grid-template-columns:repeat(3,1fr)}
+  .lessons,.gal.g5{grid-template-columns:1fr 1fr}
+  .gal.g6{grid-template-columns:repeat(3,1fr)}
+  .gal.g3,.gal.g2{grid-template-columns:1fr}
+  .week{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.peeks{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html" target="_blank" rel="noopener"><img src="img/logo.png" alt="AI Digital Society logo"><span>AI Digital Society</span></a>
+  <ul>
+    <li><a href="index.html#doors" target="_blank" rel="noopener">The products</a></li>
+    <li><a href="index.html#story" target="_blank" rel="noopener">My story</a></li>
+    <li><a href="free-guide.html" target="_blank" rel="noopener">Free guide</a></li>
+  </ul>
+</div></nav>
+
+<!-- 1. THE HOOK, THEN REAL RESULTS -->
+<header class="hero" style="padding-bottom:60px"><div class="wrap" style="grid-template-columns:1fr;text-align:center">
+  <div>
+    <div class="eyebrow">The Club &middot; for people who are not techy</div>
+    <h1>stop juggling 99 apps. <em>one app does it all.</em></h1>
+    <p class="sub" style="margin:0 auto 30px;max-width:760px">The Club is one app that takes you from &ldquo;where do I even start?&rdquo; to your first product and a week of posts. Watch a short lesson, click the next tab, and the app writes, designs and organizes it for you, in your own voice. No tech skills. No camera. No 99 logins.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-gold" href="#buy">Join the Club &middot; $147 &rarr;</a>
+      <a class="btn btn-ghost" href="#inside">See what is inside &darr;</a>
+    </div>
+    <div class="trust"><span>One payment</span><span>No monthly fee</span><span>No camera needed</span><span>Runs on a free Google key</span><span>Works with Claude too</span></div>
+  </div>
+
+  <div class="made">
+    <span class="eyebrow">Made inside the app, in minutes</span>
+    <h2>this is what it makes for you.</h2>
+    <p class="cap">Real posts and reels, made in the Club for different niches.</p>
+    <div class="strip">
+      <figure><img src="img/cook-p1.jpg" alt="A picture post made for a cooking page" loading="lazy"><figcaption>Picture post, cooking</figcaption></figure>
+      <figure><img src="img/faith-p1.jpg" alt="A picture post made for a Bible verse page" loading="lazy"><figcaption>Picture post, faith</figcaption></figure>
+      <figure><img src="img/rlq-p1.jpg" alt="A quote picture post" loading="lazy"><figcaption>Quote post</figcaption></figure>
+      <figure><video muted loop playsinline autoplay preload="metadata" poster="img/cook-r1.jpg"><source src="img/cook-r1.mp4" type="video/mp4"></video><figcaption>Reel, cooking</figcaption></figure>
+      <figure><video muted loop playsinline autoplay preload="metadata" poster="img/reel-1.jpg"><source src="img/reel-1.mp4" type="video/mp4"></video><figcaption>Reel, faceless tips</figcaption></figure>
+      <figure><video muted loop playsinline autoplay preload="metadata" poster="img/faith-r1.jpg"><source src="img/faith-r1.mp4" type="video/mp4"></video><figcaption>Reel, faith</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="hero-frame frame">
+    <div class="bar"><i></i><i></i><i></i><span>club.aidigitalsociety.com</span></div>
+    <img src="img/club-shot-player.jpg" alt="The Club app: your video lessons and the five tabs">
+  </div>
+</div></header>
+
+<!-- 2. WHAT IT IS, IN ONE LOOK -->
+<section class="light"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">What the Club is</div>
+    <h2 class="big">learn it. build it. <em>post it.</em></h2>
+    <p class="lead" style="max-width:760px;margin:0 auto;font-size:19px">Everything I use to build a faceless business with AI, in one app, in the order I do it. You never wonder what to do next, because the next tab is right there.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><b>1</b><h3>Learn it</h3><p>16 short video lessons and an 86-page guide, right inside the app. Watch one lesson, do the step, come back.</p></div>
+    <div class="pillar"><b>2</b><h3>Build it</h3><p>Find what to make, set your brand once, and pick from 72 finished books you can make your own.</p></div>
+    <div class="pillar"><b>3</b><h3>Post it</h3><p>Pick a tool, type one idea, and it writes the post, the picture and the reel in your own voice.</p></div>
+  </div>
+</div></section>
+
+<!-- 3. THE PROBLEM + ONE PLACE INSTEAD OF 99 -->
+<section class="dark"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">Sound familiar</div>
+    <h2 class="big">you do not have a time problem. <em>you have a too-many-apps problem.</em></h2>
+  </div>
+  <div class="hurts">
+    <div>You open one app for words, another for pictures, another to schedule, another for notes, another for your lessons.</div>
+    <div>Each one has its own login, its own bill and its own way of doing things.</div>
+    <div>None of them know who you help or how you sound, so you explain yourself again every single time.</div>
+    <div>By Friday you have a dozen tabs open, and nothing posted.</div>
+  </div>
+  <div class="ba">
+    <div class="col many">
+      <h3>The way it is now</h3>
+      <p class="sm">Every one of these is another login.</p>
+      <div class="chips">
+        <span>A writing app</span><span>A design app</span><span>A scheduler</span><span>A notes app</span><span>A brand tool</span><span>A course site</span><span>A file folder</span><span>A product tool</span><span>Yet another password</span>
+      </div>
+      <p class="foot">None of them know who you are.</p>
+    </div>
+    <div class="col one">
+      <h3>The Club</h3>
+      <p class="sm">One app. One login. Five tabs.</p>
+      <div class="chips">
+        <span>Welcome</span><span>Product Factory</span><span>Brand</span><span>Library</span><span>Content</span>
+      </div>
+      <p class="foot" style="color:var(--gold-bright)">You say who you help once. Everything else already knows.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="light"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">One place instead of 99</div>
+    <h2 class="big">stop jumping between apps. <em>do the whole job here.</em></h2>
+    <p class="lead" style="max-width:720px;margin:0 auto">Most people write in one app, design in another, learn in a third, then lose the thread. In the Club it is all one job, in one place.</p>
+  </div>
+  <div class="swap">
+    <div class="row"><div><b>Learn it step by step</b><small>instead of YouTube tabs and saved course links</small></div><p>16 short video lessons and an 86-page guide, in the same app you build in.</p></div>
+    <div class="row"><div><b>Find what to make, and build it</b><small>instead of ChatGPT, notes apps and a blank page</small></div><p>Answer a few questions and the Product Factory builds the guide, the sales words and the posts with you. Opening soon.</p></div>
+    <div class="row"><div><b>Set up your look</b><small>instead of Canva, a logo maker and a website builder</small></div><p>Colors, fonts, a logo from twelve styles and a one-page website, made from your answers.</p></div>
+    <div class="row"><div><b>Get something ready to sell</b><small>instead of writing a book from scratch</small></div><p>72 finished books you make yours with your name, color and logo, saved as PDFs.</p></div>
+    <div class="row"><div><b>Write the post, make the picture, the carousel and the reel</b><small>instead of ChatGPT, Canva and a video editor</small></div><p>Type one idea. Get the post, the picture, the carousel and a short reel.</p></div>
+    <div class="row"><div><b>Remember who you help</b><small>instead of pasting the same prompt every day</small></div><p>Say it once in your brain file. Every tool starts from it.</p></div>
+  </div>
+  <div class="frame" style="max-width:900px;margin:40px auto 0">
+    <div class="bar"><i></i><i></i><i></i><span>one app, five tabs, left to right</span></div>
+    <img src="img/club-shot-tabs.jpg" alt="The five tabs of the Club: Welcome, Product Factory, Brand, Library, Content">
+  </div>
+</div></section>
+
+<!-- 4. HOW IT SOLVES IT, STEP BY STEP, WITH REAL EXAMPLES -->
+<section class="dark" id="inside"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">What is inside</div>
+    <h2 class="big">here is how it solves it. <em>step by step.</em></h2>
+    <p class="lead" style="max-width:700px;margin:0 auto">Work from left to right. Each tab hands you to the next one, and each has a short lesson that goes with it.</p>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="blk">
+    <div class="top"><div>
+      <span class="eyebrow">Step 1 &middot; Welcome</span>
+      <h3>Start by watching. I show you everything, in order.</h3>
+      <p class="lede">Your first stop is a short welcome video, then the lessons, one at a time. The 86-page guide sits next to them so you can follow along and copy the prompts.</p>
+      <ul class="checks">
+        <li>16 video lessons, about 2 hours 27 minutes, at your own pace</li>
+        <li>The A-to-Z Masterclass guide, to read online or keep as a PDF</li>
+        <li>The Faceless Content System guide and the bonus Claude skill</li>
+        <li>My community, for the days you have a question</li>
+      </ul>
+      <span class="tag">Club only</span>
+    </div><div class="ban covers"><img src="img/masterclass-cover.png" alt="The A-to-Z Masterclass guide cover"><img src="img/guide-cover-web.jpg" alt="The Faceless Content System guide cover"></div></div>
+    <p class="subh">the 16 video lessons</p>
+    <p>One at a time. Pick any lesson, in any order. Nobody is timing you.</p>
+    <div class="lessons">
+      <figure><img src="https://i.ytimg.com/vi/c2VXU6JCqTc/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>00</b>Welcome: read this first</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/tnNHIq0e8nM/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>01</b>Mindset</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/-F-__hO8F5E/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>02</b>Claude from zero</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/jGKOf2SbDoM/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>03</b>Your brain file</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/RoTCQyZWeGo/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>04</b>Your customer</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/3zIxC5rUxIA/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>05</b>Your AI helpers</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/Q1jIaoJI-Zk/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>06</b>Your AI twin and voice</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/aJ8iINuW8I0/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>07</b>Your brand and pictures</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/ysxBuOGciCk/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>08</b>Content that sounds like you</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/b54PkePZm2U/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>09</b>Research: listen, don't guess</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/8IGdltRQn4U/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>10</b>Your first product</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/Z50yAp0uAc4/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>11</b>Sell it and show up</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/dABeJMUzxOg/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>12</b>Your daily routine</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/wANhFh1QutM/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>A</b>The A-to-Z checklist</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/jbahVsLtJxI/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>B</b>The prompt bank</figcaption></figure>
+      <figure><img src="https://i.ytimg.com/vi/s-0LpYU2iYs/mqdefault.jpg" alt="" loading="lazy"><figcaption><b>C</b>Tools, stuck, and the end</figcaption></figure>
+    </div>
+    <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Welcome</span></div><img src="img/club-shot-welcome.jpg" alt="The Welcome tab"></div></div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="blk">
+    <div class="top"><div>
+      <span class="eyebrow">Step 2 &middot; Product Factory</span>
+      <h3>Find what to make. Then make it.</h3>
+      <p class="lede">Not sure what to sell? Answer a few questions about what you already know. The Product Factory helps you pick an idea, then builds the product with you, in your own voice.</p>
+      <ul class="checks">
+        <li>Ideas worth making, from what you already know</li>
+        <li>A written guide, chapter by chapter</li>
+        <li>The words for your sales page</li>
+        <li>A welcome note for your buyers</li>
+        <li>A week of posts to sell it, and a PDF to keep</li>
+      </ul>
+      <span class="tag gold">Opening soon</span><span class="tag">Included in the Club</span>
+    </div><div class="chain"><span>Your questions</span><i>&rarr;</i><span>Your idea</span><i>&rarr;</i><span>Your guide</span><i>&rarr;</i><span>Your sales words</span><i>&rarr;</i><span>Your posts</span><em class="soon">Product Factory &middot; opening soon</em></div></div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="blk">
+    <div class="top"><div>
+      <span class="eyebrow">Step 3 &middot; Brand</span>
+      <h3>Tell it who you help, once. It never forgets.</h3>
+      <p class="lede">Answer a few simple questions and the Club knows who you help, what you sell and how you sound. Every other tab starts from that, so you never type it again.</p>
+      <ul class="checks">
+        <li>Your brain file: who you are, who you help, how you talk</li>
+        <li>Your colors and fonts, as ready-to-use tiles</li>
+        <li>Your logo, from twelve styles, yours to download</li>
+        <li>A real one-page website you edit by typing</li>
+        <li>30 days of posts with hooks and captions</li>
+        <li>A nine-page Brand Report PDF to keep</li>
+      </ul>
+      <span class="tag">$47 on its own</span>
+    </div><div class="ban"><img src="img/brandbuilder-app.jpg" alt="BrandBuilder: your colors, logo, website and content"></div></div>
+    <p class="subh">what it builds from your answers</p>
+    <p>Real screens, from a sample brand called Maria Cooks.</p>
+    <div class="gal g2">
+      <figure><img src="img/club-brand-1.jpg" alt="Your colors and fonts" loading="lazy"><figcaption><b>Your colors and fonts</b>Ready-to-use tiles, with the exact color codes.</figcaption></figure>
+      <figure><img src="img/club-brand-2.jpg" alt="Your logo" loading="lazy"><figcaption><b>Your logo</b>Pick a symbol and a style. It is made from your colors and fonts.</figcaption></figure>
+      <figure><img src="img/club-brand-3.jpg" alt="Your website" loading="lazy"><figcaption><b>Your website</b>A real one-page site, built for you. You edit it by typing.</figcaption></figure>
+      <figure><img src="img/club-brand-4.jpg" alt="30 days of posts" loading="lazy"><figcaption><b>30 days of posts</b>A picture and a caption for every day, ready to copy.</figcaption></figure>
+    </div>
+    <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Brand</span></div><img src="img/club-shot-brand.jpg" alt="The Brand tab: say it once, every tool uses it"></div></div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="blk">
+    <div class="top"><div>
+      <span class="eyebrow">Step 4 &middot; Library</span>
+      <h3>72 finished books. Yours in a click.</h3>
+      <p class="lede">Never start from a blank page. Pick a book, add your name, color and logo, and keep it as a PDF to give away or sell.</p>
+      <ul class="checks">
+        <li>72 finished books in nine categories</li>
+        <li>Your name, brand color and logo on every book</li>
+        <li>Save any book as a PDF in one click</li>
+        <li>The 48-page Where-to-Sell Guide: 12 platforms, fees and listing templates</li>
+        <li>New books added over time</li>
+      </ul>
+      <span class="tag">$67 on its own</span>
+    </div><div class="ban"><img src="img/product-library-app.jpg" alt="The Product Library: finished books you make your own"></div></div>
+    <p class="subh">72 books to choose from</p>
+    <p>Twelve of them, and every one gets your name, color and logo.</p>
+    <img class="wall" src="img/club-cover-wall.jpg" alt="Twelve of the 72 finished books in the Library" loading="lazy">
+    <p class="subh">a look inside a book</p>
+    <p>Real pages: simple steps, short lists and clear rules. A sample from &ldquo;The Digital Product Blueprint&rdquo;.</p>
+    <div class="gal g5">
+      <figure><img src="img/club-page-01.jpg" alt="Book cover" loading="lazy"></figure>
+      <figure><img src="img/club-page-02.jpg" alt="Contents page" loading="lazy"></figure>
+      <figure><img src="img/club-page-04.jpg" alt="Name and niche page" loading="lazy"></figure>
+      <figure><img src="img/club-page-07.jpg" alt="Your product page" loading="lazy"></figure>
+      <figure><img src="img/club-page-09.jpg" alt="Price it page" loading="lazy"></figure>
+    </div>
+    <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Library</span></div><img src="img/club-shot-library.jpg" alt="The Library tab with the finished books"></div></div>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="blk">
+    <div class="top"><div>
+      <span class="eyebrow">Step 5 &middot; Content</span>
+      <h3>Post every day without staring at a blank page.</h3>
+      <p class="lede">Pick a tool, type one idea, and it writes in your own voice. Copy it, paste it, post it.</p>
+      <ul class="checks">
+        <li>Posts and captions for Facebook, Instagram and Threads</li>
+        <li>A full day of content in one click</li>
+        <li>Carousels, slide by slide, ready to upload</li>
+        <li>Ten quotes at a time, for days you have nothing to say</li>
+        <li>Short silent reels, made right in your browser</li>
+        <li>A post recreator: paste a post you like, get your own version</li>
+      </ul>
+      <span class="tag">$47 on its own</span>
+    </div><div class="ban"><img src="img/content-system-app.jpg" alt="The AI Content System: posts, pictures and reels"></div></div>
+    <p class="subh">picture posts for any niche</p>
+    <p>Different pages, different looks, the same one-idea start.</p>
+    <div class="gal g6">
+      <figure><img src="img/cook-p2.jpg" alt="Cooking picture post" loading="lazy"></figure>
+      <figure><img src="img/cook-p3.jpg" alt="Cooking picture post" loading="lazy"></figure>
+      <figure><img src="img/faith-p2.jpg" alt="Bible verse picture post" loading="lazy"></figure>
+      <figure><img src="img/faith-p3.jpg" alt="Bible verse picture post" loading="lazy"></figure>
+      <figure><img src="img/rlq-p2.jpg" alt="Quote picture post" loading="lazy"></figure>
+      <figure><img src="img/rlq-p3.jpg" alt="Quote picture post" loading="lazy"></figure>
+    </div>
+    <div class="nichechips">
+      <span>Faith and Bible verses</span><span>Cooking and recipes</span><span>Meditation and calm</span><span>Fitness</span><span>Coaching and business</span><span>Digital products</span><span>Faceless content</span><span>Personal growth</span>
+    </div>
+    <div class="pic"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Content</span></div><img src="img/club-shot-content.jpg" alt="The Content tab with the writing tools"></div></div>
+  </div>
+</div></section>
+
+<!-- 5. WORKS WITH CLAUDE -->
+<section class="light"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">Claude, if you want it</div>
+    <h2 class="big">no Claude? no problem. <em>love Claude? it plugs right in.</em></h2>
+    <p class="lead" style="max-width:720px;margin:0 auto">The Club does not make you pay for another AI plan. And if you already use Claude, everything you build here works with it.</p>
+  </div>
+  <div class="two3">
+    <div class="box" style="background:var(--cream-card);border-color:rgba(11,10,8,.16);color:inherit">
+      <h3>On its own</h3>
+      <p class="sm">The simple way. Nothing else to buy.</p>
+      <ul class="checks">
+        <li>The Club runs on your own free Google AI key</li>
+        <li>I show you how to get it in three minutes</li>
+        <li>No Claude account and no paid AI plan needed</li>
+        <li>Your key is saved on your account, so it works on any device</li>
+      </ul>
+    </div>
+    <div class="box gold">
+      <h3>With Claude</h3>
+      <p class="sm">If you already pay for it, or want to.</p>
+      <ul class="checks">
+        <li>The Masterclass teaches Claude from zero: your brain file, your AI helpers, your voice</li>
+        <li>Your brain file works in both. Say who you help once, and Claude sounds like you too</li>
+        <li>Download the Content System for Claude, the same style and rules to paste into a Claude Project</li>
+        <li>Coming next: connect the Club to your own Claude, so it already knows your brand</li>
+      </ul>
+    </div>
+  </div>
+  <p class="center" style="margin-top:22px;opacity:.7;font-size:15px">A paid Claude plan (about $20 a month) is optional. Claude has its own plans and prices.</p>
+</div></section>
+
+<!-- 6. A SIMPLE FIRST WEEK -->
+<section class="dark"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">Your first week</div>
+    <h2 class="big">a simple plan. <em>nobody is timing you.</em></h2>
+    <p class="lead" style="max-width:640px;margin:0 auto">Go faster or slower. This is just the easy way through, so you always know the next step.</p>
+  </div>
+  <div class="week">
+    <div style="background:var(--black-2);border-color:var(--line-dark)"><b>Day 1 &middot; Welcome</b><h3>Watch and set up</h3><p>Watch the welcome video. Add your free Google key. Say who you help.</p></div>
+    <div style="background:var(--black-2);border-color:var(--line-dark)"><b>Day 2 &middot; Brand</b><h3>Pick your look</h3><p>Choose your colors, fonts and logo so everything looks like you.</p></div>
+    <div style="background:var(--black-2);border-color:var(--line-dark)"><b>Day 3 &middot; Product</b><h3>Choose what to sell</h3><p>Find your idea in the Product Factory, or pick your first book in the Library.</p></div>
+    <div style="background:var(--black-2);border-color:var(--line-dark)"><b>Day 4 &middot; Content</b><h3>Make a week of posts</h3><p>Pick a tool, type an idea, and let it write in your voice.</p></div>
+    <div style="background:var(--black-2);border-color:var(--line-dark)"><b>Day 5 &middot; Post</b><h3>Share it</h3><p>Copy, paste and post. Then come back for the next lesson.</p></div>
+  </div>
+</div></section>
+
+<!-- 7. WHO MADE THIS -->
+<section class="light"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">Who made this</div>
+    <h2 class="big">hi, I am Jos&eacute;e. <em>I built the Club for you.</em></h2>
+  </div>
+  <div style="max-width:760px;margin:26px auto 0;font-size:18px;display:grid;gap:14px">
+    <p>I started as a rural mail carrier. Then I tried the get-rich-quick schemes, and I earned nothing from every single one. I have worked for myself, full time, for over 17 years, building my own digital products and affiliate offers.</p>
+    <p>Then I opened an agency and ran it for seven years on 80-hour weeks, until my body said stop. I rebuilt quietly, with no face on camera and no staff, using AI helpers that do the work.</p>
+    <p>Now I show people how to build the same thing, one simple step at a time. The Club puts all of it in one place.</p>
+  </div>
+  <div class="stats">
+    <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">17+</b><span>years full time, no job since</span></div>
+    <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">30,000+</b><span>products sold</span></div>
+    <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">Top 3%</b><span>affiliate</span></div>
+    <div style="background:var(--cream-card);border-color:rgba(11,10,8,.16)"><b style="color:#9A7425">140K</b><span>Facebook community</span></div>
+  </div>
+  <p class="center" style="margin-top:18px;opacity:.65;font-size:14px">My story is my own and is not a promise of your results.</p>
+</div></section>
+
+<!-- 8. GUIDE PEEKS, EVERYTHING IN ONE PLACE, VALUE -->
+<section class="dark"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">A look inside the guide</div>
+    <h2 class="big">simple words. <em>real screenshots.</em></h2>
+    <p class="lead" style="max-width:680px;margin:0 auto">Every step in the guide has a "Do this", a "You will see" and a "Why". Here are real pages.</p>
+  </div>
+  <div class="peeks">
+    <img src="img/guide-peek-tools.jpg" alt="Guide page: the tools in plain words" loading="lazy">
+    <img src="img/guide-peek-brain.jpg" alt="Guide page: Claude interviews you" loading="lazy">
+    <img src="img/guide-peek-board.jpg" alt="Guide page: the content board" loading="lazy">
+    <img src="img/guide-peek-numbers.jpg" alt="Guide page: real numbers" loading="lazy">
+  </div>
+
+  <div class="center" style="margin-top:70px">
+    <div class="eyebrow">Everything in one place</div>
+    <h2 class="big">what used to be separate. <em>now one app.</em></h2>
+  </div>
+  <div style="max-width:900px;margin:30px auto 0"><img src="img/club-collage.jpg" alt="The AI Content System, BrandBuilder, the Product Library and the Faceless Content System guide, all inside the Club" style="width:100%;display:block;border-radius:18px;border:1px solid rgba(201,160,74,.55)" loading="lazy"></div>
+</div></section>
+
+<section class="light"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">The value</div>
+    <h2 class="big">bought one by one. <em>or all in one app.</em></h2>
+  </div>
+  <div class="val">
+    <div><span>The AI Content System</span><span>$47</span></div>
+    <div><span>BrandBuilder</span><span>$47</span></div>
+    <div><span>The Product Library</span><span>$67</span></div>
+    <div><span>The Faceless Content System guide</span><span>$27</span></div>
+    <div><span>A-to-Z Masterclass: 86-page guide + 16 video lessons</span><span>Club only</span></div>
+    <div><span>Product Factory</span><span>Club only</span></div>
+    <div><span>Bought one by one: $188. The Club, all in one app:</span><b>$147</b></div>
+  </div>
+
+  <div class="center" style="margin-top:70px">
+    <div class="eyebrow">Is it for you</div>
+    <h2 class="big">who the Club is <em>for.</em></h2>
+  </div>
+  <div class="two3">
+    <div class="box" style="background:var(--cream-card);border-color:rgba(11,10,8,.16);color:inherit">
+      <h3>It is for you if</h3>
+      <ul class="checks">
+        <li>You are tired of a new app and a new login for everything</li>
+        <li>You are not techy and want simple steps</li>
+        <li>You do not want to show your face</li>
+        <li>You want content and products you can make with AI</li>
+        <li>You prefer one payment over monthly fees</li>
+      </ul>
+    </div>
+    <div class="box" style="background:var(--cream-card);border-color:rgba(11,10,8,.16);color:inherit">
+      <h3>Before you start</h3>
+      <ul class="checks">
+        <li>The Club runs on your own free Google AI key. I show you how to get it in three minutes</li>
+        <li>You do not need a paid Claude plan. The Masterclass shows how I use Claude, and a paid plan helps if you want to follow along</li>
+        <li>Blotato, the scheduler, is optional and has its own price</li>
+        <li>Results vary. This is education and tools, not a promise of income</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <div class="center" style="margin-top:20px">
+    <div class="eyebrow">Questions</div>
+    <h2 class="big">quick <em>answers.</em></h2>
+  </div>
+  <div class="faq" style="--x:0">
+    <details><summary>Why one app instead of many?</summary><p>Because every extra app is another login, another bill and another thing to learn. In the Club you tell it who you help once, and the writing, the books and the products all start from that.</p></details>
+    <details><summary>Is it really one payment?</summary><p>Yes. Once. No monthly fee from me. Updates are included.</p></details>
+    <details><summary>How do I get in after I pay?</summary><p>You get an email with the link to the Club. Make your password with the same email you paid with, and you are in. Everything is there.</p></details>
+    <details><summary>Do I need Claude or a paid AI plan?</summary><p>No. The Club runs on your own free Google AI key, and I show you how to get it in three minutes. If you already pay for Claude, the Masterclass shows how I use it, and there is an optional file that brings the same style and rules into your own Claude.</p></details>
+    <details><summary>Do I need to be good with tech?</summary><p>No. Every step is in simple words, with pictures and copy-and-paste prompts.</p></details>
+    <details><summary>Do I have to show my face?</summary><p>No. This is built for faceless content and faceless products.</p></details>
+    <details><summary>What about refunds?</summary><p>These are digital products, so all sales are final. Please read the <a href="refunds.html" target="_blank" rel="noopener">refund policy</a> before you buy.</p></details>
+  </div>
+</div></section>
+
+<section class="club" id="join"><div class="wrap">
+  <div class="eyebrow">Join the Club</div>
+  <h2 class="big">one app. <em>one payment.</em></h2>
+  <div class="pricebox">
+    <div class="eyebrow" style="color:#9A7425">The Club</div>
+    <div class="amt">$147</div>
+    <small style="display:block;opacity:.6;margin-top:6px">One time. No monthly fee. Updates included.</small>
+    <ul>
+      <li>Welcome: 16 video lessons + the 86-page Masterclass guide</li>
+      <li>Product Factory (opening soon, included)</li>
+      <li>Brand: your brain file, logo, colors and website</li>
+      <li>Library: 72 finished books, with the Where-to-Sell Guide</li>
+      <li>Content: posts, carousels, quotes and reels</li>
+      <li>The Faceless Content System guide and bonus Claude skill</li>
+      <li>Works with a free Google key, and with Claude too</li>
+      <li>One login for all of it</li>
+    </ul>
+    <a class="btn btn-dark" href="#buy" style="display:block;text-align:center">Join the Club &rarr;</a>
+    <small style="display:block;opacity:.6;margin-top:12px;text-align:center">All sales are final. See the <a href="refunds.html" target="_blank" rel="noopener">refund policy</a>.</small>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>&copy; 2026 AI Digital Society</div>
+  <div class="links">
+    <a href="terms.html" target="_blank" rel="noopener">Terms of sale</a>
+    <a href="refunds.html" target="_blank" rel="noopener">Refunds</a>
+    <a href="privacy.html" target="_blank" rel="noopener">Privacy</a>
+    <a href="index.html" target="_blank" rel="noopener">Home</a>
+  </div>
+</div>
+<p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
+</footer>
+
+<script>
+async function startCheckout(btn){
+  const label = btn.textContent;
+  btn.style.pointerEvents='none'; btn.textContent='Loading...';
+  try {
+    const res = await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/product-checkout', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},
+      body: JSON.stringify({ product: 'club' })
+    });
+    const data = await res.json();
+    if (data.url) { window.location.href = data.url; return; }
+    throw new Error('no url');
+  } catch (e) {
+    btn.style.pointerEvents=''; btn.textContent=label;
+    alert('Something went wrong starting checkout. Please try again.');
+  }
+}
+document.querySelectorAll('a[href="#buy"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); startCheckout(a); }));
+window.addEventListener('pageshow', () => { document.querySelectorAll('a[href="#buy"]').forEach(a => { a.style.pointerEvents=''; }); });
+</script>
+</body>
+</html>
