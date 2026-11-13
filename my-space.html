@@ -33,6 +33,19 @@
 .row.on .rm{color:#161310}
 @media(max-width:860px){.player{grid-template-columns:1fr}.list{max-height:420px}}
 </style>
+<style>
+.fgrid{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center}
+.cov{display:block}
+.cov img{width:100%;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.28);display:block}
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+.acard{background:#161310;border:1px solid rgba(201,160,74,.35);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.acard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.acard .ab{padding:20px 22px 24px}
+.acard h3{margin:8px 0 4px;font-size:22px}
+.acard p{margin:0 0 14px;opacity:.85}
+.acard .al{font-size:13px;opacity:.65;margin-top:10px}
+@media(max-width:860px){.fgrid{grid-template-columns:1fr;gap:26px}.fgrid .cov{max-width:260px}.agrid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <nav><div class="wrap">
@@ -77,24 +90,33 @@
 <button class="row" data-id="s-0LpYU2iYs" data-t="Appendix C: Tools, stuck, and the end"><span class="rn">C</span><span class="rt">Tools, stuck, and the end</span><span class="rm">7 min</span></button>
   </div>
 </section>
-<section style="padding-bottom:0"><div class="wrap" style="text-align:center"><div class="eyebrow">Your apps</div><h2 class="big" style="margin:8px 0 0">click each one <em>to create your account.</em></h2><p style="margin:10px auto 0;opacity:.8">Use the same email you paid with, for all three.</p></div></section>
-<section><div class="wrap">
-  <div class="inside" style="grid-template-columns:repeat(3,1fr)">
-    <div class="item"><span class="tag">App</span><h3>The AI Content System</h3><p>Make your posts, pictures and reels.</p><a class="btn btn-gold" href="https://system.joseebedard.com/auth?mode=signup" style="margin-top:14px">Create my account &rarr;</a><div style="font-size:13px;opacity:.65;margin-top:10px">Already have one? Just sign in.</div></div>
-    <div class="item"><span class="tag">App</span><h3>BrandBuilder</h3><p>Build your logo, colors and brand.</p><a class="btn btn-gold" href="https://brandbuilder.joseebedard.com/app.html" style="margin-top:14px">Create my account &rarr;</a><div style="font-size:13px;opacity:.65;margin-top:10px">Already have one? Just sign in.</div></div>
-    <div class="item"><span class="tag">App</span><h3>The Product Library</h3><p>Pick a book and make it your own.</p><a class="btn btn-gold" href="https://library.joseebedard.com/login.html#signup" style="margin-top:14px">Create my account &rarr;</a><div style="font-size:13px;opacity:.65;margin-top:10px">Already have one? Just sign in.</div></div>
+<section class="light" style="padding:64px 0"><div class="wrap">
+  <div class="fgrid">
+    <a href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-A-to-Z-Masterclass.pdf" target="_blank" rel="noopener" class="cov"><img src="img/masterclass-cover.png" alt="The A-to-Z Masterclass guide cover"></a>
+    <div>
+      <div class="eyebrow">Follow along</div>
+      <h2 class="big" style="margin:8px 0 12px">open the guide <em>next to the videos.</em></h2>
+      <p style="margin:0 0 18px;max-width:520px">Each video lesson matches a module in the 86-page guide. Keep the guide open on the side, pause the video, and do each step with the prompts right there to copy.</p>
+      <div class="btns"><a class="btn btn-gold" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-A-to-Z-Masterclass.pdf" target="_blank" rel="noopener">Open the guide to follow along &rarr;</a><a class="btn btn-ghost" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-A-to-Z-Masterclass.pdf" download>Download the PDF</a></div>
+    </div>
   </div>
 </div></section>
-<section class="light"><div class="wrap">
-  <div class="eyebrow">Your downloads</div>
-  <h2 class="big">the guide, <em>the masterclass, and the bonus.</em></h2>
-  <div class="btns" style="margin-top:20px">
-    <a class="btn btn-gold" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-Faceless-Content-System.pdf">Download the guide (PDF) &rarr;</a>
-    <a class="btn btn-ghost" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/faceless-content-system.zip">Download the Claude skill (zip) &rarr;</a>
+<section><div class="wrap" style="text-align:center;padding-bottom:10px"><div class="eyebrow">Your apps</div><h2 class="big" style="margin:8px 0 0">click each one <em>to create your account.</em></h2><p style="margin:10px auto 0;opacity:.8">Use the same email you paid with, for all three.</p></div>
+<div class="wrap"><div class="agrid">
+  <div class="acard"><img src="img/content-system-app.jpg" alt="The AI Content System"><div class="ab"><span class="tag">App</span><h3>The AI Content System</h3><p>Make your posts, pictures and reels.</p><a class="btn btn-gold" href="https://system.joseebedard.com/auth?mode=signup">Create my account &rarr;</a><div class="al">Already have one? Just sign in.</div></div></div>
+  <div class="acard"><img src="img/brandbuilder-app.jpg" alt="BrandBuilder"><div class="ab"><span class="tag">App</span><h3>BrandBuilder</h3><p>Build your logo, colors and brand.</p><a class="btn btn-gold" href="https://brandbuilder.joseebedard.com/app.html">Create my account &rarr;</a><div class="al">Already have one? Just sign in.</div></div></div>
+  <div class="acard"><img src="img/product-library-app.jpg" alt="The Product Library"><div class="ab"><span class="tag">App</span><h3>The Product Library</h3><p>Pick a book and make it your own.</p><a class="btn btn-gold" href="https://library.joseebedard.com/login.html#signup">Create my account &rarr;</a><div class="al">Already have one? Just sign in.</div></div></div>
+</div></div></section>
+<section class="light" style="padding:64px 0"><div class="wrap">
+  <div class="fgrid">
+    <a href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-Faceless-Content-System.pdf" class="cov"><img src="img/guide-cover-web.jpg" alt="The Faceless Content System guide cover"></a>
+    <div>
+      <div class="eyebrow">Your downloads</div>
+      <h2 class="big" style="margin:8px 0 12px">the guide <em>and the bonus.</em></h2>
+      <p style="margin:0 0 18px;max-width:520px">My Faceless Content System guide, plus the bonus Claude skill that goes with it.</p>
+      <div class="btns"><a class="btn btn-gold" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-Faceless-Content-System.pdf">Download the guide (PDF) &rarr;</a><a class="btn btn-ghost" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/faceless-content-system.zip">Download the Claude skill (zip) &rarr;</a></div>
+    </div>
   </div>
-  <h3 style="margin-top:34px">The A-to-Z Masterclass (guide)</h3>
-  <p style="max-width:620px">86 pages, step by step: mindset, Claude from zero, your brain file, your customer, your AI helpers and AI twin, your brand, content, your first product and how to sell it. Includes the 26-step A-to-Z checklist and every prompt in one place.</p>
-  <div class="btns" style="margin-top:14px"><a class="btn btn-gold" href="https://aidigitalsociety.com/downloads/b987f607a669a6e8b9/The-A-to-Z-Masterclass.pdf">Download the masterclass (PDF) &rarr;</a></div>
 </div></section>
 
 <footer><div class="wrap">
