@@ -33,6 +33,14 @@
 .box{border:1px solid rgba(11,10,8,.16);border-radius:16px;padding:26px;background:var(--cream-card)}
 .box h3{font-size:24px;margin-bottom:8px}
 @media(max-width:860px){.blk{grid-template-columns:1fr;gap:26px}.blk.flip .pic{order:0}.peeks{grid-template-columns:1fr 1fr}.two3{grid-template-columns:1fr}}
+.note-j{max-width:720px;margin:0 auto;background:var(--cream-card);border:1px solid rgba(11,10,8,.14);border-radius:18px;padding:30px 34px;font-size:18px;display:grid;gap:14px}
+.note-j .sig{font-family:'Newsreader',serif;font-style:italic;font-size:30px;color:#9A7425;margin-top:4px}
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,10,8,.96);border-top:2px solid #E8BE5A;padding:10px 16px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;transform:translateY(110%);transition:transform .3s}
+.stick.show{transform:none}
+.stick .t{font-size:15px;color:#F4EEDF}
+.stick .t b{color:#E8BE5A}
+.stick .btn{padding:11px 22px;font-size:16px}
+body{padding-bottom:70px}
 </style>
 </head>
 <body>
@@ -47,7 +55,7 @@
 
 <header class="hero" style="padding-bottom:60px"><div class="wrap" style="grid-template-columns:1fr;text-align:center">
   <div>
-    <div style="background:#E8BE5A;color:#161310;border-radius:12px;padding:14px 18px;margin:0 auto 26px;max-width:640px;font-weight:700;font-size:17px;line-height:1.4">BLACK FRIDAY SALE: the Club is <s style="opacity:.6">$147</s> <span style="font-size:22px">$97</span> through Nov 30.<br><span style="font-weight:600;font-size:15px">Type the code <b>BLACKFRIDAY97</b> in the promo code box at checkout.</span></div>
+    <div style="background:#E8BE5A;color:#161310;border-radius:12px;padding:14px 18px;margin:0 auto 26px;max-width:640px;font-weight:700;font-size:17px;line-height:1.4">BLACK FRIDAY SALE: the Club is <s style="opacity:.6">$147</s> <span style="font-size:22px">$97</span> through Nov 30.<br><span style="font-weight:600;font-size:15px">Type the code <b>BLACKFRIDAY97</b> in the promo code box at checkout.</span><div class="cd" style="margin-top:10px;font-size:15px;font-weight:700">Sale ends in <span class="cdv" style="font-variant-numeric:tabular-nums">...</span></div></div>
     <div class="eyebrow">The Club</div>
     <h1>the whole package. <em>one payment.</em></h1>
     <p class="sub" style="margin:0 auto 34px">Three apps, my Faceless Content System guide, and my A-to-Z Masterclass, as an 86-page guide and full video lessons. One login opens everything. No monthly fee.</p>
@@ -59,6 +67,17 @@
   <div style="width:100%;max-width:900px;margin:44px auto 0"><div style="font-family:Lora,Georgia,serif;font-size:26px;font-weight:600;color:#E8BE5A;margin-bottom:16px;line-height:1.3">Watch this to see everything you get inside the Club</div><a id="vidbox" href="https://youtu.be/z7Y-6hT9HJM" target="_blank" rel="noopener" style="display:block;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:18px;border:1px solid rgba(201,160,74,.55);background:#000"><img src="img/club-cover-new.png" alt="Watch: Inside The Club" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:#E8BE5A;display:flex;align-items:center;justify-content:center"><span style="border-style:solid;border-width:16px 0 16px 28px;border-color:transparent transparent transparent #161310;margin-left:6px"></span></span></a></div><script>document.getElementById("vidbox").addEventListener("click",function(e){e.preventDefault();this.innerHTML="<iframe src=\"https://www.youtube.com/embed/z7Y-6hT9HJM?autoplay=1&rel=0\" title=\"Inside The Club\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>"});</script>
   
 </div></header>
+
+<!-- NOTE FROM JOSEE -->
+<section class="light" style="padding:64px 0 10px"><div class="wrap">
+  <div class="note-j">
+    <div class="eyebrow">A note from Jos&eacute;e</div>
+    <p>I started as a rural mail carrier. I tried the get-rich-quick schemes and earned nothing from every one. I have now worked for myself, full time, for over 17 years, building my own digital products.</p>
+    <p>I did it with a few simple steps, done in order, and AI helpers that do the heavy part. So I put everything I use into the Club, with one login, and made it simple enough that you do not need to be techy.</p>
+    <p>The Black Friday price is $97 until Nov 30. After that it goes back to $147. Come in, watch the first lesson, and take it one step at a time.</p>
+    <p class="sig">Jos&eacute;e</p>
+  </div>
+</div></section>
 
 <section class="light"><div class="wrap">
   <div class="eyebrow">What the Club is</div>
@@ -282,7 +301,27 @@
 <p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
 </footer>
 
+<div class="stick" id="stick">
+  <span class="t"><b>Black Friday: $97</b> <s style="opacity:.55">$147</s> &middot; ends in <span class="cdv" style="font-variant-numeric:tabular-nums">...</span></span>
+  <a class="btn btn-gold" href="#buy">Join the Club &rarr;</a>
+</div>
+
 <script>
+(function(){
+  var end = Date.UTC(2026, 11, 1, 5, 0, 0); // midnight ET, end of Nov 30
+  var vals = document.querySelectorAll('.cdv'), stick = document.getElementById('stick');
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var ms = end - Date.now();
+    if (ms <= 0) { vals.forEach(function(v){ v.textContent = 'the sale has ended'; }); return; }
+    var s = Math.floor(ms / 1000), d = Math.floor(s / 86400), hr = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sc = s % 60;
+    var t = d + 'd ' + pad(hr) + 'h ' + pad(m) + 'm ' + pad(sc) + 's';
+    vals.forEach(function(v){ v.textContent = t; });
+  }
+  tick(); setInterval(tick, 1000);
+  function onScroll(){ stick.classList.toggle('show', window.scrollY > 600); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
 async function startCheckout(btn){
   const label = btn.textContent;
   btn.style.pointerEvents='none'; btn.textContent='Loading...';
