@@ -151,6 +151,14 @@
 .swap.lt small{opacity:.7}
 .signin{margin-left:22px;font-size:14px;font-weight:700;text-decoration:none;color:#161310;background:linear-gradient(180deg,#E8BE5A,#C9A04A);padding:9px 18px;border-radius:999px;white-space:nowrap}
 .signin:hover{filter:brightness(1.08)}
+.note-j{max-width:720px;margin:0 auto;background:var(--cream-card);border:1px solid rgba(11,10,8,.14);border-radius:18px;padding:30px 34px;font-size:18px;display:grid;gap:14px}
+.note-j .sig{font-family:'Newsreader',serif;font-style:italic;font-size:30px;color:#9A7425;margin-top:4px}
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,10,8,.96);border-top:2px solid #E8BE5A;padding:10px 16px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;transform:translateY(110%);transition:transform .3s}
+.stick.show{transform:none}
+.stick .t{font-size:15px;color:#F4EEDF}
+.stick .t b{color:#E8BE5A}
+.stick .btn{padding:11px 22px;font-size:16px}
+body{padding-bottom:70px}
 /* claude */
 .two3{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
 .box{border:1px solid var(--line-dark);border-radius:18px;padding:28px;background:var(--black-2)}
@@ -214,7 +222,7 @@
 <!-- 1. THE HOOK, THEN REAL RESULTS -->
 <header class="hero" style="padding-bottom:60px"><div class="wrap" style="grid-template-columns:1fr;text-align:center">
   <div>
-    <div style="background:#E8BE5A;color:#161310;border-radius:12px;padding:14px 18px;margin:0 auto 26px;max-width:640px;font-weight:700;font-size:17px;line-height:1.4">BLACK FRIDAY SALE: the Club is <s style="opacity:.6">$147</s> <span style="font-size:22px">$97</span> through Nov 30.<br><span style="font-weight:600;font-size:15px">Type the code <b>BLACKFRIDAY97</b> in the promo code box at checkout.</span></div>
+    <div style="background:#E8BE5A;color:#161310;border-radius:12px;padding:14px 18px;margin:0 auto 26px;max-width:640px;font-weight:700;font-size:17px;line-height:1.4">BLACK FRIDAY SALE: the Club is <s style="opacity:.6">$147</s> <span style="font-size:22px">$97</span> through Nov 30.<br><span style="font-weight:600;font-size:15px">Type the code <b>BLACKFRIDAY97</b> in the promo code box at checkout.</span><div class="cd" data-cd style="margin-top:10px;font-size:15px;font-weight:700">Sale ends in <span class="cdv" style="font-variant-numeric:tabular-nums">...</span></div></div>
     <div class="eyebrow">The Club &middot; for people who are not techy</div>
     <h1>stop juggling 99 apps. <em>one app does it all.</em></h1>
     <p class="sub" style="margin:0 auto 30px;max-width:760px">The Club is one app that takes you from &ldquo;where do I even start?&rdquo; to your first product and a week of posts. Watch a short lesson, click the next tab, and the app writes, designs and organizes it for you, in your own voice. No tech skills. No camera. No 99 logins.</p>
@@ -240,6 +248,17 @@
     <img src="img/club-shot-player.jpg" alt="The Club app: your video lessons and the five tabs">
   </div>
 </div></header>
+
+<!-- NOTE FROM JOSEE -->
+<section class="light" style="padding:64px 0 10px"><div class="wrap">
+  <div class="note-j">
+    <div class="eyebrow">A note from Jos&eacute;e</div>
+    <p>I started as a rural mail carrier. I tried the get-rich-quick schemes and earned nothing from every one. I have now worked for myself, full time, for over 17 years, and I did not do it with 99 different apps.</p>
+    <p>I did it with a few simple steps, done in order, and AI helpers that do the heavy part. So I put everything I use into one app, with one login, and made it simple enough that you do not need to be techy.</p>
+    <p>The Black Friday price is $97 until Nov 30. After that it goes back to $147. Come in, watch the first lesson, and take it one tab at a time.</p>
+    <p class="sig">Jos&eacute;e</p>
+  </div>
+</div></section>
 
 <!-- 2. WHAT IT IS, IN ONE LOOK -->
 <section class="light"><div class="wrap">
@@ -700,7 +719,27 @@
 <p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
 </footer>
 
+<div class="stick" id="stick">
+  <span class="t"><b>Black Friday: $97</b> <s style="opacity:.55">$147</s> &middot; ends in <span class="cdv" style="font-variant-numeric:tabular-nums">...</span></span>
+  <a class="btn btn-gold" href="#buy">Join the Club &rarr;</a>
+</div>
+
 <script>
+(function(){
+  var end = Date.UTC(2026, 11, 1, 5, 0, 0); // midnight ET, end of Nov 30
+  var vals = document.querySelectorAll('.cdv'), stick = document.getElementById('stick');
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var ms = end - Date.now();
+    if (ms <= 0) { vals.forEach(function(v){ v.textContent = 'the sale has ended'; }); return; }
+    var s = Math.floor(ms / 1000), d = Math.floor(s / 86400), hr = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sc = s % 60;
+    var t = d + 'd ' + pad(hr) + 'h ' + pad(m) + 'm ' + pad(sc) + 's';
+    vals.forEach(function(v){ v.textContent = t; });
+  }
+  tick(); setInterval(tick, 1000);
+  function onScroll(){ stick.classList.toggle('show', window.scrollY > 600); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+})();
 async function startCheckout(btn){
   const label = btn.textContent;
   btn.style.pointerEvents='none'; btn.textContent='Opening secure checkout... one moment';
