@@ -33,6 +33,19 @@
 .box{border:1px solid rgba(11,10,8,.16);border-radius:16px;padding:26px;background:var(--cream-card)}
 .box h3{font-size:24px;margin-bottom:8px}
 @media(max-width:860px){.blk{grid-template-columns:1fr;gap:26px}.blk.flip .pic{order:0}.peeks{grid-template-columns:1fr 1fr}.two3{grid-template-columns:1fr}}
+.shots{margin:6px 0 44px;padding:30px;border:1px solid rgba(201,160,74,.35);border-radius:20px;background:rgba(255,255,255,.03)}
+.shots .sh-t{font-family:'Newsreader',serif;font-size:clamp(26px,3vw,34px);color:#E8BE5A;margin:0 0 4px}
+.shots .sh-s{font-size:17px;opacity:.85;margin:0 0 18px}
+.shots .sh-c{font-size:15.5px;opacity:.9;margin:10px 0 20px}
+.shots .csbox{background:#E8DFCC;border-radius:16px;padding:16px}
+.shots .csbox img{width:100%;display:block;border-radius:8px}
+.shots .g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.shots .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.shots figure{margin:0}
+.shots figure img,.shots .wall{width:100%;display:block;border-radius:12px;border:1px solid rgba(201,160,74,.45);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.shots figcaption{font-size:15.5px;margin-top:9px;opacity:.9}
+.shots figcaption b{display:block;font-family:'Newsreader',serif;font-weight:500;font-size:20px;color:#E8BE5A}
+@media(max-width:860px){.shots{padding:18px}.shots .g2{grid-template-columns:1fr}.shots .g5{grid-template-columns:repeat(3,1fr)}}
 .note-j{max-width:720px;margin:0 auto;background:var(--cream-card);border:1px solid rgba(11,10,8,.14);border-radius:18px;padding:30px 34px;font-size:18px;display:grid;gap:14px}
 .note-j .sig{font-family:'Newsreader',serif;font-style:italic;font-size:30px;color:#9A7425;margin-top:4px}
 .stick{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,10,8,.96);border-top:2px solid #E8BE5A;padding:10px 16px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;transform:translateY(110%);transition:transform .3s}
@@ -128,6 +141,17 @@ body{padding-bottom:70px}
     </div>
     <div class="pic"><img src="img/content-system-app.jpg" alt="The AI Content System app"></div>
   </div>
+  <div class="shots">
+    <p class="sh-t">See what it makes for you</p>
+    <p class="sh-s">These came straight out of the app. Real screens, for many different niches.</p>
+    <div class="csbox"><img src="img/cs-pictures.jpg" alt="Picture posts for faith and Bible verses, fitness, cooking and recipes, and coaching and business" loading="lazy"></div>
+    <p class="sh-c">Picture posts. Faith, fitness, cooking, business: different looks, the same one-tap button.</p>
+    <div class="g2">
+      <div><div class="csbox"><img src="img/cs-carousels.jpg" alt="Six carousel looks" loading="lazy"></div><p class="sh-c">Six carousel looks. Pick one, add your photo and brand name.</p></div>
+      <div><div class="csbox"><img src="img/cs-reels.jpg" alt="Three reel styles" loading="lazy"></div><p class="sh-c">Three reel styles. Your words type onto your photo or your own video.</p></div>
+    </div>
+  </div>
+
 
   <div class="blk flip">
     <div>
@@ -146,6 +170,17 @@ body{padding-bottom:70px}
     </div>
     <div class="pic"><img src="img/brandbuilder-app.jpg" alt="The BrandBuilder app"></div>
   </div>
+  <div class="shots">
+    <p class="sh-t">What it builds from your answers</p>
+    <p class="sh-s">Real screens, from a sample brand called Maria Cooks.</p>
+    <div class="g2">
+      <figure><img src="img/club-brand-1.jpg" alt="Your colors and fonts" loading="lazy"><figcaption><b>Your colors and fonts</b>Ready-to-use tiles, with the exact color codes.</figcaption></figure>
+      <figure><img src="img/club-brand-2.jpg" alt="Your logo" loading="lazy"><figcaption><b>Your logo</b>Pick a symbol and a style. It is made from your colors and fonts.</figcaption></figure>
+      <figure><img src="img/club-brand-3.jpg" alt="Your website" loading="lazy"><figcaption><b>Your website</b>A real one-page site, built for you. You edit it by typing.</figcaption></figure>
+      <figure><img src="img/club-brand-4.jpg" alt="30 days of posts" loading="lazy"><figcaption><b>30 days of posts</b>A picture and a caption for every day, ready to copy.</figcaption></figure>
+    </div>
+  </div>
+
 
   <div class="blk">
     <div>
@@ -164,6 +199,20 @@ body{padding-bottom:70px}
     </div>
     <div class="pic"><img src="img/product-library-app.jpg" alt="The Product Library app"></div>
   </div>
+  <div class="shots">
+    <p class="sh-t">72 books to choose from</p>
+    <p class="sh-s">Twelve of them, and every one gets your name, color and logo.</p>
+    <img class="wall" src="img/club-cover-wall.jpg" alt="Twelve of the 72 finished books in the Library" loading="lazy">
+    <p class="sh-s" style="margin-top:26px">A look inside a book. Real pages: simple steps, short lists and clear rules.</p>
+    <div class="g5">
+      <figure><img src="img/club-page-01.jpg" alt="Book cover" loading="lazy"></figure>
+      <figure><img src="img/club-page-02.jpg" alt="Contents page" loading="lazy"></figure>
+      <figure><img src="img/club-page-04.jpg" alt="Name and niche page" loading="lazy"></figure>
+      <figure><img src="img/club-page-07.jpg" alt="Your product page" loading="lazy"></figure>
+      <figure><img src="img/club-page-09.jpg" alt="Price it page" loading="lazy"></figure>
+    </div>
+  </div>
+
 
   <div class="blk flip">
     <div>
