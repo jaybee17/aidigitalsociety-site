@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your Challenge File | The No-Face AI Challenge</title>
+<meta name="description" content="Your file for The No-Face AI Challenge. Download it, drop it into Claude and type start.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+:root{--orange:#C8562A;--paper:#FBF7EC}
+.start{max-width:760px;margin:0 auto;text-align:center}
+.start h1{margin-bottom:14px}
+.getbox{margin:34px auto 0;max-width:560px;background:var(--black-2);border:1.5px solid var(--gold);border-radius:22px;padding:30px 24px}
+.getbox .btn{display:block;width:100%;text-align:center;font-size:18px;padding:17px 20px;cursor:pointer}
+.getbox .or{margin:16px 0;font-size:14px;opacity:.7}
+.btn-line{background:transparent;border:1.5px solid var(--gold);color:var(--cream);border-radius:999px;font:inherit;font-weight:600}
+.getbox .tiny{margin-top:14px;font-size:14px;opacity:.75;min-height:20px}
+.hsteps{list-style:none;padding:0;margin:34px auto 0;max-width:640px;text-align:left}
+.hsteps li{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(28,26,23,.12)}
+.hsteps li:last-child{border-bottom:0}
+.hsteps .n{flex:0 0 46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
+.hsteps h3{margin:0 0 4px;font-size:21px}
+.hsteps p{margin:0;font-size:18px;line-height:1.55}
+.hsteps a{color:var(--orange);font-weight:600}
+.tip{max-width:640px;margin:26px auto 0;background:#fff;border-left:5px solid var(--orange);border-radius:12px;padding:18px 22px;text-align:left;font-size:17px;line-height:1.55}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html" target="_blank" rel="noopener"><img src="img/logo.png" alt="AI Digital Society logo"><span>AI Digital Society</span></a>
+  <ul>
+    <li><a href="index.html#doors" target="_blank" rel="noopener">The products</a></li>
+    <li><a href="index.html#story" target="_blank" rel="noopener">My story</a></li>
+    <li><a href="challenge.html" target="_blank" rel="noopener">Free challenge</a></li>
+    <li><a href="free-guide.html" target="_blank" rel="noopener">Free guide</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero phero"><div class="wrap start" style="display:block">
+  <div class="eyebrow">The No-Face AI Challenge &middot; You are in</div>
+  <h1>your challenge file <em>is right here.</em></h1>
+  <p class="sub" style="margin-left:auto;margin-right:auto">One small file. It does the coaching for you. Pick the way that is easiest for you.</p>
+  <div class="getbox">
+    <a class="btn btn-gold" href="downloads/No-Face-AI-Challenge.txt" download="No-Face-AI-Challenge.txt">Download my challenge file &darr;</a>
+    <div class="or">or, if you are on your phone</div>
+    <button class="btn btn-line" id="copybtn" type="button">Copy the challenge instead</button>
+    <div class="tiny" id="copymsg"></div>
+  </div>
+</div></header>
+
+<section class="light"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">What to do now</div>
+    <h2 class="big">three steps. <em>ten minutes.</em></h2>
+  </div>
+  <ul class="hsteps">
+    <li><div class="n">1</div><div><h3>Open Claude</h3><p>Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> and sign in. The free plan is fine. Start a new chat.</p></div></li>
+    <li><div class="n">2</div><div><h3>Give Claude the challenge</h3><p>If you downloaded the file, drop it into the chat. If you copied it, paste it into the chat.</p></div></li>
+    <li><div class="n">3</div><div><h3>Type: start</h3><p>Claude takes you through Day 1, one question at a time. Tomorrow, open the same chat and type <strong>next day</strong>.</p></div></li>
+  </ul>
+  <div class="tip"><strong>Then check in.</strong> Post "Day 1 done" in my free group, so you are not doing this alone: <a style="color:var(--orange);font-weight:600" href="https://www.skool.com/ai-digital-society-5263/" target="_blank" rel="noopener">join the free group</a>.</div>
+  <div class="tip"><strong>Keep this page.</strong> Save it or keep the email, so you can get your file again any time.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>&copy; 2026 AI Digital Society</div>
+  <div class="links"><a href="privacy.html" target="_blank" rel="noopener">Privacy</a><a href="index.html" target="_blank" rel="noopener">Home</a></div>
+</div>
+<p class="disc">This challenge describes a working method. It is not a guarantee of results, and it contains no income claims.</p>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById("copybtn"),m=document.getElementById("copymsg");
+  b.addEventListener("click",async function(){
+    try{
+      var t=await (await fetch("downloads/No-Face-AI-Challenge.txt")).text();
+      if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(t);}
+      else{var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove();}
+      b.textContent="Copied";m.textContent="Now open Claude, paste it into a new chat and send it. Then type: start";
+    }catch(e){m.textContent="That did not work. Use the download button above.";}
+  });
+})();
+</script>
+</body>
+</html>
