@@ -135,7 +135,7 @@ section.dark{background:var(--black);color:var(--cream);padding:78px 0}
       <input type="text" id="fg-name" placeholder="Your first name" aria-label="Your first name" autocomplete="given-name" maxlength="60" required>
       <input type="email" id="fg-email" placeholder="Your email" aria-label="Your email" required>
       <input type="text" id="fg-website" name="website" style="display:none" tabindex="-1" autocomplete="off">
-      <label><input type="checkbox" id="fg-consent"> Yes, send me the challenge and your emails. You can stop them any time.</label>
+      <label><input type="checkbox" id="fg-consent"> Yes, email me my free challenge file. Jos&eacute;e can also email me her tips. I can unsubscribe any time.</label>
       <button class="btn btn-gold" id="fg-btn" type="submit">Save my spot, it is free &rarr;</button>
       <div class="fg-msg" id="fg-msg"></div>
     </form>
@@ -305,7 +305,7 @@ section.dark{background:var(--black);color:var(--cream);padding:78px 0}
     if(!name){say("Please tell me your first name.",true);return;}
     var email=document.getElementById("fg-email").value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){say("Please enter a valid email address.",true);return;}
-    if(!document.getElementById("fg-consent").checked){say("Please tick the box so I know you want the challenge and my emails.",true);return;}
+    if(!document.getElementById("fg-consent").checked){say("Please tick the box so I can email you the challenge file.",true);return;}
     var SIGNUP_ENDPOINT="https://trobqziwskkxclablptx.supabase.co/functions/v1/guide-subscribe";
     if(!SIGNUP_ENDPOINT){say("Sign-up is not connected yet.",true);return;}
     btn.disabled=true;btn.textContent="Sending...";
