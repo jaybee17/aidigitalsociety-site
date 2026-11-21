@@ -17,7 +17,7 @@
 .vwrap img,.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
 .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.1));cursor:pointer;border:0;width:100%}
 .play span{width:84px;height:84px;border-radius:50%;background:var(--gold);color:#161310;font-size:34px;display:flex;align-items:center;justify-content:center;padding-left:6px}
-.now{margin:16px 2px 0}
+.cc{position:absolute;inset:0;z-index:3;cursor:pointer}.pz{position:absolute;inset:0;z-index:4;background:rgba(10,8,6,.78);display:none;align-items:center;justify-content:center;cursor:pointer}.vwrap.paused .pz{display:flex}.pz span{width:84px;height:84px;border-radius:50%;background:var(--gold);color:#161310;font-size:34px;display:flex;align-items:center;justify-content:center;padding-left:6px}.cbar{position:absolute;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:12px;padding:26px 16px 12px;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0));opacity:0;transition:opacity .25s}.vwrap:hover .cbar,.vwrap.paused .cbar{opacity:1}.cbar button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;padding:4px 8px}.seek{flex:1;accent-color:#E8BE5A}.tm{color:#fff;font:600 13px Inter,sans-serif;white-space:nowrap}.endscr{position:absolute;inset:0;z-index:8;background:rgba(10,8,6,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}.endscr button{border:0;border-radius:999px;font:700 18px Inter,sans-serif;padding:15px 30px;cursor:pointer}.cbtn{background:var(--gold);color:#161310}.cbtn.ok{background:#3b7a3b;color:#fff}.nbtn{background:transparent;color:var(--cream);border:1.5px solid rgba(201,160,74,.6)!important}.chk{margin-left:auto;flex:none;width:24px;height:24px;border-radius:50%;border:2px solid #b49a62;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1;color:transparent;cursor:pointer}.chk:hover{border-color:#3b7a3b}.row.done .chk{background:#3b7a3b;border-color:#3b7a3b;color:#fff}.row.on .chk{border-color:#161310}.row.on.done .chk{border-color:#3b7a3b}.rm{margin-left:10px}.now{margin:16px 2px 0}
 .now small{color:var(--gold);letter-spacing:.2em;font-size:12px;font-weight:700}
 .now h2{font-size:26px;margin:4px 0 6px}
 .now p{margin:0;opacity:.8}
@@ -138,11 +138,61 @@
 </div>
 <p class="disc">Results vary. Everything here is education and tools, not a promise of income.</p>
 </footer>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function(){
-  var cur='c2VXU6JCqTc', vw=document.getElementById('vw');
-  function load(){ vw.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+cur+'?rel=0&autoplay=1" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'; }
-  function facade(){ vw.innerHTML='<img src="https://i.ytimg.com/vi/'+cur+'/hqdefault.jpg" alt=""><button class="play" aria-label="Play"><span>&#9654;</span></button>'; vw.querySelector('.play').addEventListener('click',load); }
+  var cur='c2VXU6JCqTc', vw=document.getElementById('vw'), player=null, apiReady=false, pending=false, timer=null, dragging=false;
+  var KEY='ads_lessons_done', done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+  function paint(){document.querySelectorAll('.row').forEach(function(r){r.classList.toggle('done',!!done[r.getAttribute('data-id')])});}
+  document.querySelectorAll('.row').forEach(function(r){var c=document.createElement('span');c.className='chk';c.setAttribute('role','checkbox');c.setAttribute('title','Mark as completed');c.innerHTML='&#10003;';c.addEventListener('click',function(e){e.stopPropagation();var id=r.getAttribute('data-id');if(done[id])delete done[id];else done[id]=1;save();paint();});r.appendChild(c);});
+  paint();
+  window.onYouTubeIframeAPIReady=function(){apiReady=true;if(pending)load();};
+  function fmt(t){t=Math.floor(t||0);var m=Math.floor(t/60),x=t%60;return m+':'+(x<10?'0':'')+x}
+  function endScreen(){
+    var d=document.createElement('div');d.className='endscr';
+    var row=document.querySelector('.row[data-id="'+cur+'"]');var nxt=row&&row.nextElementSibling;
+    d.innerHTML='<button class="cbtn">'+(done[cur]?'Completed &#10003;':'Mark as completed &#10003;')+'</button>'+(nxt?'<button class="nbtn">Next lesson &rarr;</button>':'');
+    d.querySelector('.cbtn').addEventListener('click',function(){done[cur]=1;save();paint();this.innerHTML='Completed &#10003;';this.classList.add('ok');});
+    if(nxt)d.querySelector('.nbtn').addEventListener('click',function(){nxt.click();});
+    vw.appendChild(d);
+  }
+  function toggle(){ if(!player||!player.getPlayerState)return; if(player.getPlayerState()===1)player.pauseVideo(); else player.playVideo(); }
+  function ui(){
+    vw.insertAdjacentHTML('beforeend','<div class="cc"></div><div class="pz"><span>&#9654;</span></div><div class="cbar"><button class="pp" aria-label="Play or pause">&#10074;&#10074;</button><input class="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span class="tm">0:00</span><button class="fsb" aria-label="Full screen">&#x26F6;</button></div>');
+    vw.querySelector('.cc').addEventListener('click',toggle);
+    vw.querySelector('.pz').addEventListener('click',toggle);
+    vw.querySelector('.pp').addEventListener('click',toggle);
+    var sk=vw.querySelector('.seek');
+    sk.addEventListener('input',function(){dragging=true;});
+    sk.addEventListener('change',function(){dragging=false;var d=player.getDuration();if(d)player.seekTo(sk.value/1000*d,true);});
+    vw.querySelector('.fsb').addEventListener('click',function(){
+      if(document.fullscreenElement){document.exitFullscreen();}else{(vw.requestFullscreen||vw.webkitRequestFullscreen||function(){}).call(vw);}
+    });
+    clearInterval(timer);
+    timer=setInterval(function(){
+      if(!player||!player.getDuration)return; var d=player.getDuration(),c=player.getCurrentTime();
+      if(d&&!dragging){sk.value=Math.round(c/d*1000);}
+      vw.querySelector('.tm').textContent=fmt(c)+' / '+fmt(d);
+    },300);
+  }
+  function setState(st){
+    var pp=vw.querySelector('.pp');
+    if(st===1){vw.classList.remove('paused');if(pp)pp.innerHTML='&#10074;&#10074;';}
+    if(st===2){vw.classList.add('paused');if(pp)pp.innerHTML='&#9654;';}
+    if(st===0){vw.classList.remove('paused');clearInterval(timer);endScreen();}
+  }
+  function load(){
+    if(!apiReady){pending=true;return;}
+    pending=false; clearInterval(timer);
+    if(player&&player.destroy){try{player.destroy()}catch(e){}}
+    vw.classList.remove('paused');
+    vw.innerHTML='<div id="ytp"></div>';
+    player=new YT.Player('ytp',{videoId:cur,host:'https://www.youtube-nocookie.com',playerVars:{autoplay:1,controls:0,disablekb:1,fs:0,rel:0,modestbranding:1,iv_load_policy:3,playsinline:1},
+      events:{onReady:function(){ui();},onStateChange:function(e){setState(e.data);}}});
+  }
+  function facade(){ clearInterval(timer); vw.classList.remove('paused'); vw.innerHTML='<img src="https://i.ytimg.com/vi/'+cur+'/hqdefault.jpg" alt=""><button class="play" aria-label="Play"><span>&#9654;</span></button>'; vw.querySelector('.play').addEventListener('click',load); }
   vw.querySelector('.play').addEventListener('click',load);
   document.querySelectorAll('.row').forEach(function(r){ r.addEventListener('click',function(){
     document.querySelectorAll('.row').forEach(function(x){x.classList.remove('on')}); r.classList.add('on');
